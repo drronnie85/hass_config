@@ -10,8 +10,19 @@ views:
     icon: 'mdi:home-assistant'
     cards:
       - type: entities
+        title: Датчики
+        entities:
+          - type: state-icon
+            entity: binary_sensor.livingroom_motion
+          - type: state-icon
+            entity: binary_sensor.livingroom_window          
+          - type: state-icon
+            entity: binary_sensor.livingroom_balcony
+      - type: entities
         title: Освещение
         entities:
+          - entity: switch.livingroom_screen
+          - type: divider
           - toggle: true
             entity: light.livingroom
             type: 'custom:slider-entity-row'

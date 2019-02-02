@@ -3,3 +3,13 @@
     state_topic: 'bridge/rfin'
     payload_on: 'C001019A1800A0EC86'
     off_delay: 15
+  - platform: mqtt
+    name: livingroom_window
+    state_topic: 'bridge/rfin'
+    payload_on: 'C00101421800B777A9'
+    off_delay: 15
+  - platform: mqtt
+    name: livingroom_balcony
+    state_topic: 'bridge/rfin'
+    payload_on: 'C001014318007AEA59'
+    off_delay: 15

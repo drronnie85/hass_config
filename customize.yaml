@@ -4,6 +4,7 @@ sensor.br_bedroom_humidity:
   friendly_name: Влажность
 sensor.br_livingroom_temperature:
   friendly_name: Температура
+
 light.livingroom:
   friendly_name: Зал
 light.livingroom_back:
@@ -23,3 +24,12 @@ light.bathroom:
 light.hall:
   friendly_name: Прихожая
   
+switch.livingroom_screen:
+  friendly_name: Экран
+  
+binary_sensor.livingroom_motion:
+  friendly_name: Зал движение
+binary_sensor.livingroom_window:
+  friendly_name: Зал окно
+binary_sensor.livingroom_balcony:
+  friendly_name: Зал балкон
