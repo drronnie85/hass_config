@@ -1,10 +1,25 @@
 sensor.br_bedroom_temperature:
-  friendly_name: Спальня температура
+  friendly_name: Температура
 sensor.br_bedroom_humidity:
-  friendly_name: Спальня влажность
+  friendly_name: Влажность
 sensor.br_livingroom_temperature:
   friendly_name: Зал температура
 light.livingroom:
   friendly_name: Зал
 light.livingroom_back:
   friendly_name: Зал ночник
+light.bedroom:
+  friendly_name: Спальня
+light.kitchen:
+  friendly_name: Кухня
+light.kitchen_back:
+  friendly_name: Кухня ночник
+light.wc:
+  friendly_name: Туалет
+light.corridor:
+  friendly_name: Коридор
+light.bathroom:
+  friendly_name: Ванная
+light.hall:
+  friendly_name: Прихожая
+  

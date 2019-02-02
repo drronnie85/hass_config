@@ -20,14 +20,30 @@ views:
             type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
-            entity: light.spalnia_svet
+            entity: light.bedroom
             type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
-            entity: light.kukhnia_svet
+            entity: light.kitchen
             type: 'custom:slider-entity-row'
           - toggle: true
-            entity: light.kukhnia_svet_nochnik
+            entity: light.kitchen_back
+            type: 'custom:slider-entity-row'
+          - type: divider
+          - toggle: true
+            entity: light.wc
+            type: 'custom:slider-entity-row'
+          - type: divider
+          - toggle: true
+            entity: light.corridor
+            type: 'custom:slider-entity-row'
+          - type: divider
+          - toggle: true
+            entity: light.bathroom
+            type: 'custom:slider-entity-row'
+          - type: divider
+          - toggle: true
+            entity: light.hall
             type: 'custom:slider-entity-row'
   - id: weather
     title: Погода
@@ -37,9 +53,12 @@ views:
         type: 'custom:weather-card'
       - type: entities
         entities:
+          - type: section
+            label: Спальня
           - sensor.br_bedroom_temperature
           - sensor.br_bedroom_humidity
-          - type: divider
+          - type: section
+            label: Зал
           - sensor.br_livingroom_temperature
         show_header_toggle: false
       - type: iframe
