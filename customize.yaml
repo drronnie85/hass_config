@@ -1,0 +1,6 @@
+sensor.br_bedroom_temperature:
+  friendly_name: Спальня температура
+sensor.br_bedroom_humidity:
+  friendly_name: Спальня влажность
+sensor.br_livingroom_temperature:
+  friendly_name: Зал температура
