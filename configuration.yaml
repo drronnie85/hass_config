@@ -65,105 +65,6 @@ mqtt:
   broker: 192.168.1.4
   port: 1883
 
-# Sensors
-sensor:
-  # Weather prediction
-  - platform: moon
-  - platform: yr
-  - platform: broadlink
-    name: br_bedroom
-    update_interval: 60
-    host: 192.168.1.52
-    mac: 'b4:43:0d:d1:18:d2'
-    monitored_conditions:
-      - temperature
-      - humidity
-      - air_quality
-      - light
-      - noise
-  - platform: broadlink
-    name: br_livingroom
-    update_interval: 60
-    host: 192.168.1.51
-    mac: 'B4:43:0D:EE:EF:E7'
-    monitored_conditions:
-      - temperature
-
-switch:
-  - platform: broadlink
-    host: 192.168.1.51
-    mac: 'B4:43:0D:EE:EF:E7'
-    type: rm2_pro_plus
-    friendly_name: 'livingroom'
-    timeout: 15
-    switches:
-      # Will work on most Phillips TVs:
-      projector_screen:
-        friendly_name: "Экран"
-        command_on: 'eACuAAoeHwoeCgofCh4fCR8KHwkLHgoeCx4eCgofCgABOAoeHwoKHh8KHgofCh4KCx4KHh8KHgoKHx4KHwkLHgoeHwofCR8KCh4LHgoeHwoKHgoAATkKHh8JCx4eCh8KHwkfCgoeCx4eCh8KCh4fCh4KCx4KHh8JHwofCgoeCh4LHh8JCx4KAAE4Cx4eCgsdHwofCR8KHwoKHgoeHwofCQseHwkfCgoeCx4eCh8KBAAF3AAAAAAAAAAAAAA='
-        command_off: 'eAC4AB4LHQsJIAkfHgsdCx4LCR8eCwkfCR8KHwkAAToJHx0LCSAdCx4LHQseCwkfCh8dCx4LCR8dDB0LCSAJHx4LHQseCwkfHQwJHwkfCh8JAAE5Ch8dCwkfHgsdDB0LHgsJHwkfHgseCgofHgoeCwkfCh8dCx4LHQsKHx0LCh8JHwofCQABOQoeHgsJIB0LHgoeCx4LCR8JHx4LHgsJHx0LHgsJIAggHQseCx0LCh8dCwofCR8JHwoABdw='
-  - platform: mqtt
-    name: "Туалет вытяжка"
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001015A18000BDAA8"
-    payload_off: "C001015A18000BDAA2"
-
-light:
-  - platform: mqtt
-    name: livingroom
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001000018007636A4"
-    payload_off: "C001000018007636A1"
-  - platform: mqtt
-    name: livingroom_back
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001000018007636A8"
-    payload_off: "C001000018007636A2"
-  - platform: mqtt
-    name: bedroom
-    command_topic: "bridge/rfout/set"
-    payload_on: "C00100001800F94164"
-    payload_off: "C00100001800F94161"
-  - platform: mqtt
-    name: kitchen
-    command_topic: "bridge/rfout/set"
-    payload_on: "C0010155180089C868"
-    payload_off: "C0010156180089C862"
-  - platform: mqtt
-    name: kitchen_back
-    command_topic: "bridge/rfout/set"
-    payload_on: "C0010156180089C864"
-    payload_off: "C0010156180089C861"
-  - platform: mqtt
-    name: wc
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001015A18000BDAA4"
-    payload_off: "C001015A18000BDAA1"
-  - platform: mqtt
-    name: corridor
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001015F1800304A64"
-    payload_off: "C001015F1800304A61"
-  - platform: mqtt
-    name: bathroom
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001015F1800304A68"
-    payload_off: "C001015F1800304A62"
-  - platform: mqtt
-    name: hall
-    command_topic: "bridge/rfout/set"
-    payload_on: "C00101631800F94168"
-    payload_off: "C00101621800F94162"
-#    retain: true
-#    optimistic: false
-#    qos: 0
-#  - platform: group
-#    name: Living Room Lights
-#    entities:
-#      - light.lifx3
-#      - light.lifxnrguest
-#      - light.lifxnrkitchen
-
 # Text to speech
 tts:
   - platform: google
@@ -176,3 +77,6 @@ cloud:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+light: !include light.yaml

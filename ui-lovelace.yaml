@@ -10,7 +10,7 @@ views:
     icon: 'mdi:home-assistant'
     cards:
       - type: entities
-        title: Lights
+        title: Освещение
         entities:
           - toggle: true
             entity: light.livingroom

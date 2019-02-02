@@ -1,0 +1,20 @@
+  - platform: moon
+  - platform: yr
+  - platform: broadlink
+    name: br_bedroom
+    update_interval: 60
+    host: 192.168.1.52
+    mac: 'b4:43:0d:d1:18:d2'
+    monitored_conditions:
+      - temperature
+      - humidity
+      - air_quality
+      - light
+      - noise
+  - platform: broadlink
+    name: br_livingroom
+    update_interval: 60
+    host: 192.168.1.51
+    mac: 'B4:43:0D:EE:EF:E7'
+    monitored_conditions:
+      - temperature
