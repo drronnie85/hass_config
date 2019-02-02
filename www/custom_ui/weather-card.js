@@ -31,23 +31,23 @@ const weatherIconsNight = {
 };
 
 const windDirections = [
-  "N",
-  "NNE",
-  "NE",
-  "ENE",
-  "E",
-  "ESE",
-  "SE",
-  "SSE",
-  "S",
-  "SSW",
-  "SW",
-  "WSW",
-  "W",
-  "WNW",
-  "NW",
-  "NNW",
-  "N"
+  "С",
+  "ССВ",
+  "СВ",
+  "ВСВ",
+  "В",
+  "ВЮВ",
+  "ЮВ",
+  "ЮЮВ",
+  "Ю",
+  "ЮЮЗ",
+  "ЮЗ",
+  "ЗЮЗ",
+  "З",
+  "ЗСЗ",
+  "СЗ",
+  "ССЗ",
+  "С"
 ];
 
 const fireEvent = (node, type, detail, options) => {
@@ -168,11 +168,6 @@ class WeatherCard extends LitElement {
                 ><ha-icon icon="mdi:weather-sunset-up"></ha-icon
               ></span>
               ${next_rising.toLocaleTimeString()}
-              <br />
-              <span class="ha-icon"
-                ><ha-icon icon="mdi:weather-night"></ha-icon
-              ></span>
-              ${moon_rise.toLocaleTimeString()}
             </li>
             <li>
               <span class="ha-icon"><ha-icon icon="mdi:gauge"></ha-icon></span
@@ -191,11 +186,6 @@ class WeatherCard extends LitElement {
                 ><ha-icon icon="mdi:weather-sunset-down"></ha-icon
               ></span>
               ${next_setting.toLocaleTimeString()}
-              <br />
-              <span class="ha-icon"
-                ><ha-icon icon="mdi:theme-light-dark"></ha-icon
-              ></span>
-              ${moon_set.toLocaleTimeString()}
             </li>
           </ul>
         </span>
