@@ -13,6 +13,9 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+lovelace:
+  mode: yaml
+  
 # Show links to resources in log and frontend
 introduction:
 
@@ -107,12 +110,12 @@ switch:
 
 light:
   - platform: mqtt
-    name: "Зал свет"
+    name: livingroom
     command_topic: "bridge/rfout/set"
     payload_on: "C001000018007636A4"
     payload_off: "C001000018007636A1"
   - platform: mqtt
-    name: "Зал свет ночник"
+    name: livingroom_back
     command_topic: "bridge/rfout/set"
     payload_on: "C001000018007636A8"
     payload_off: "C001000018007636A2"

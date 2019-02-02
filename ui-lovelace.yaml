@@ -1,0 +1,53 @@
+title: Andrew and Oksana's home
+resources:
+  - type: module
+    url: /local/custom_ui/weather-card.js?v=0.24
+  - type: js
+    url: /local/custom_ui/slider-entity-row.js?v=0.3
+views:
+  - id: home
+    title: Дом
+    icon: 'mdi:home-assistant'
+    cards:
+      - type: entities
+        title: Lights
+        entities:
+          - toggle: true
+            entity: light.livingroom
+            type: 'custom:slider-entity-row'
+          - toggle: true
+            entity: light.livingroom_back
+            type: 'custom:slider-entity-row'
+          - type: divider
+          - toggle: true
+            entity: light.spalnia_svet
+            type: 'custom:slider-entity-row'
+          - type: divider
+          - toggle: true
+            entity: light.kukhnia_svet
+            type: 'custom:slider-entity-row'
+          - toggle: true
+            entity: light.kukhnia_svet_nochnik
+            type: 'custom:slider-entity-row'
+  - id: weather
+    title: Погода
+    icon: 'mdi:weather-cloudy'
+    cards:
+      - entity: weather.dark_sky
+        type: 'custom:weather-card'
+      - type: entities
+        entities:
+          - sensor.br_bedroom_temperature
+          - sensor.br_bedroom_humidity
+          - type: divider
+          - sensor.br_livingroom_temperature
+        show_header_toggle: false
+      - type: iframe
+        url: >-
+          https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
+        aspect_ratio: 90%
+  - badges:
+      - group.all_lights
+      - group.all_switches
+    title: test
+    cards: []
