@@ -3,7 +3,7 @@ sensor.br_bedroom_temperature:
 sensor.br_bedroom_humidity:
   friendly_name: Влажность
 sensor.br_livingroom_temperature:
-  friendly_name: Зал температура
+  friendly_name: Температура
 light.livingroom:
   friendly_name: Зал
 light.livingroom_back:
