@@ -1,0 +1,11 @@
+  - platform: mqtt
+    name: livingroom_motion
+    state_topic: 'bridge/rfin'
+    payload_on: 'C001019A1800A0EC86'
+    off_delay: 15
+  # - platform: mqtt
+  #   name: rashmilife360
+  #   friendly_name: Rashmi Life360
+  #   state_topic: "smartthings/Rashmi_Life360/presence"
+  #   payload_on: 'present'
+  #   payload_off: 'not present'
