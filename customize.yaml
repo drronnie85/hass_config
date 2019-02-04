@@ -45,6 +45,11 @@ device_tracker.phone_oksana:
   friendly_name: Телефон Оксаны
 device_tracker.phone_andrey:
   friendly_name: Телефон Андрея
+
+binary_sensor.phone_oksana:
+  friendly_name: Телефон Оксаны
+binary_sensor.phone_andrey:
+  friendly_name: Телефон Андрея
 binary_sensor.router_main:
   friendly_name: Прихожая роутер
 binary_sensor.router_kitchen:

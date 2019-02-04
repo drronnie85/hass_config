@@ -15,6 +15,16 @@
     off_delay: 15
 
   - platform: ping
+    name: phone_oksana
+    host: 192.168.1.21
+    count: !secret ping_count
+    count: !secret ping_interval
+  - platform: ping
+    name: phone_andrey
+    host: 192.168.1.23
+    count: !secret ping_count
+    count: !secret ping_interval
+  - platform: ping
     name: router_main
     host: 192.168.1.1
     count: !secret ping_count
