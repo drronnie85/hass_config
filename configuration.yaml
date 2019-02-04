@@ -86,7 +86,7 @@ notify:
     chat_id: !secret telegram_chatid_andrey
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include automation.yaml
 script: !include scripts.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
@@ -94,4 +94,3 @@ light: !include light.yaml
 binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
-automation: !include automation.yaml
