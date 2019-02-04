@@ -29,23 +29,17 @@ light.hall:
 switch.projector_screen:
   friendly_name: Экран
   
-binary_sensor.livingroom_motion:
-  friendly_name: Зал движение
-binary_sensor.livingroom_window:
-  friendly_name: Зал окно
-binary_sensor.livingroom_balcony:
-  friendly_name: Зал балкон
-  
-binary_sensor.phone_oksana:
-  friendly_name: Оксана
-binary_sensor.phone_andrey:
-  friendly_name: Андрей
-  
 device_tracker.phone_oksana:
   friendly_name: Телефон Оксаны
 device_tracker.phone_andrey:
   friendly_name: Телефон Андрея
 
+  binary_sensor.livingroom_motion:
+  friendly_name: Зал движение
+binary_sensor.livingroom_window:
+  friendly_name: Зал окно
+binary_sensor.livingroom_balcony:
+  friendly_name: Зал балкон
 binary_sensor.phone_oksana:
   friendly_name: Телефон Оксаны
 binary_sensor.phone_andrey:
