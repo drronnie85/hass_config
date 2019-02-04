@@ -2,4 +2,4 @@
   - platform: ping
     hosts:
       phone_oksana: 192.168.1.21
-      phone_andrey: 192.168.1.23
+      phone_andrew: 192.168.1.23

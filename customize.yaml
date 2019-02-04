@@ -31,7 +31,7 @@ switch.projector_screen:
   
 device_tracker.phone_oksana:
   friendly_name: Телефон Оксаны
-device_tracker.phone_andrey:
+device_tracker.phone_andrew:
   friendly_name: Телефон Андрея
 
 binary_sensor.livingroom_motion:
