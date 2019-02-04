@@ -4,6 +4,10 @@ sensor.br_bedroom_humidity:
   friendly_name: Влажность
 sensor.br_livingroom_temperature:
   friendly_name: Температура
+sensor.kitchen_temperature:
+  friendly_name: Температура
+sensor.kitchen_humidity:
+  friendly_name: Влажность
 
 light.livingroom:
   friendly_name: Зал
@@ -28,17 +32,18 @@ light.hall:
   
 switch.projector_screen:
   friendly_name: Экран
-  
+
+binary_sensor.livingroom_motion:
+  friendly_name: Зал движение
+binary_sensor.livingroom_window:
+  friendly_name: Зал окно
+binary_sensor.livingroom_balcony:
+  friendly_name: Зал балкон
+
 device_tracker.phone_oksana:
   friendly_name: Телефон Оксаны
 device_tracker.phone_andrew:
   friendly_name: Телефон Андрея
-device_tracker.livingroom_motion:
-  friendly_name: Зал движение
-device_tracker.livingroom_window:
-  friendly_name: Зал окно
-device_tracker.livingroom_balcony:
-  friendly_name: Зал балкон
 device_tracker.router_main:
   friendly_name: Прихожая роутер
 device_tracker.router_kitchen:
@@ -75,6 +80,8 @@ device_tracker.iot_powb1_wc:
   friendly_name: Туалет PowB1
 device_tracker.iot_mc1_bedroom:
   friendly_name: Спальня ночник
+device_tracker.iot_th10_kitchen:
+  friendly_name: Кухня реле
 device_tracker.media_mibox_livingroom:
   friendly_name: Зал MiBox
 device_tracker.media_ghmini_bedroom:

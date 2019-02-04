@@ -96,7 +96,21 @@ views:
           - type: section
             label: Зал
           - sensor.br_livingroom_temperature
-        show_header_toggle: false
+          - type: section
+            label: Кухня
+          - sensor.kitchen_temperature
+          - sensor.kitchen_humidity
+      - type: history-graph
+        title: Температура
+        entities:
+          - sensor.br_livingroom_temperature
+          - sensor.br_bedroom_temperature
+          - sensor.kitchen_temperature
+      - type: history-graph
+        title: Влажность
+        entities:
+          - sensor.br_bedroom_humidity
+          - sensor.kitchen_humidity
       - type: iframe
         url: >-
           https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
@@ -149,3 +163,4 @@ views:
           - device_tracker.iot_bridge_hall
           - device_tracker.iot_powb1_wc
           - device_tracker.iot_mc1_bedroom
+          - device_tracker.iot_th10_kitchen
