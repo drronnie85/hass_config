@@ -1,0 +1,15 @@
+- id: oksana come home notify
+  alias: 'Оксана пришла домой'
+  initial_state: 'on'
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_oksana
+     from: 'not_home'
+     to: 'home'
+  action:
+    service: notify.telegram
+    data_template:
+      message: Оксана вернулась домой.
+      title: Оксана
+

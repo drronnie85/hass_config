@@ -105,11 +105,8 @@ views:
     title: Устройства
     icon: mdi:tablet-cellphone
     badges:
-      - binary_sensor.router_main
-      - binary_sensor.router_kitchen
-      - binary_sensor.router_livingroom
-      - binary_sensor.media_mibox_livingroom
-      - binary_sensor.media_ghmini_bedroom
+      - device_tracker.phone_oksana
+      - device_tracker.phone_andrey
     cards:
       - type: glance
         title: Люди
@@ -127,7 +124,7 @@ views:
           - binary_sensor.media_mibox_livingroom
           - binary_sensor.media_ghmini_bedroom
       - type: glance
-        title: Камреы
+        title: Камеры
         show_state: false
         entities:
           - entity: binary_sensor.camera_loft
