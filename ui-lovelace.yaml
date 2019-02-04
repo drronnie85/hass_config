@@ -112,40 +112,40 @@ views:
         title: Медиа
         show_state: false
         entities:
-          - binary_sensor.router_main
-          - binary_sensor.router_kitchen
-          - binary_sensor.router_livingroom
-          - binary_sensor.media_mibox_livingroom
-          - binary_sensor.media_ghmini_bedroom
+          - device_tracker.router_main
+          - device_tracker.router_kitchen
+          - device_tracker.router_livingroom
+          - device_tracker.media_mibox_livingroom
+          - device_tracker.media_ghmini_bedroom
       - type: glance
         title: Камеры
         show_state: false
         entities:
-          - entity: binary_sensor.camera_loft
+          - entity: device_tracker.camera_loft
             name:   Чердак
-          - entity: binary_sensor.camera_entrance
+          - entity: device_tracker.camera_entrance
             name:   Подъезд
-          - entity: binary_sensor.camera_tambour
+          - entity: device_tracker.camera_tambour
             name:   Тамбур
-          - entity: binary_sensor.camera_livingroom
+          - entity: device_tracker.camera_livingroom
             name:   Зал
-          - entity: binary_sensor.camera_bedroom
+          - entity: device_tracker.camera_bedroom
             name:   Спальня
-          - entity: binary_sensor.camera_cristoph
+          - entity: device_tracker.camera_cristoph
             name:   Кристоф
-          - entity: binary_sensor.camera_kitchen
+          - entity: device_tracker.camera_kitchen
             name:   Кухня
-          - entity: binary_sensor.camera_hall
+          - entity: device_tracker.camera_hall
             name:   Прихожая
-          - entity: binary_sensor.camera_mobile
+          - entity: device_tracker.camera_mobile
             name:   Переносная
       - type: glance
         title: IoT
         show_state: false
         entities:
-          - binary_sensor.iot_rmpro_livingroom
-          - binary_sensor.iot_a1_bedroom
-          - binary_sensor.iot_mp1_kitchen
-          - binary_sensor.iot_bridge_hall
-          - binary_sensor.iot_powb1_wc
-          - binary_sensor.iot_mc1_bedroom
+          - device_tracker.iot_rmpro_livingroom
+          - device_tracker.iot_a1_bedroom
+          - device_tracker.iot_mp1_kitchen
+          - device_tracker.iot_bridge_hall
+          - device_tracker.iot_powb1_wc
+          - device_tracker.iot_mc1_bedroom

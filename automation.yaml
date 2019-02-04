@@ -12,7 +12,7 @@
     data_template:
       message: Оксана вернулась домой
 - id: oksana left home notify
-  alias: 'Оксана ушла домой'
+  alias: 'Оксана вышла из домой'
   initial_state: 'on'
   trigger:
    - platform: state
@@ -23,4 +23,4 @@
   action:
     service: notify.telegram
     data_template:
-      message: Оксана ушла из дома
+      message: Оксана вышла из дома
