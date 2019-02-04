@@ -2,9 +2,19 @@ title: Andrew and Oksana's home
 resources:
   - type: module
     url: /local/custom_ui/weather-card.js?v=0.24
-  - type: js
-    url: /local/custom_ui/slider-entity-row.js?v=0.3
 views:
+  - id: info
+    title: Информация
+    icon: mdi:information
+    cards:
+      - type: entity-filter
+        entities:
+          - device_tracker.phone_oksana
+          - device_tracker.phone_andrey
+        state_filter:
+          - home
+        card: 
+          type: glance
   - id: camera
     title: Камеры
     icon: mdi:camera
@@ -21,6 +31,17 @@ views:
           - light.bedroom
           - light.bedroom_back
         camera_image: camera.spalnia
+      - type: picture-glance
+        title: Кухня
+        entities:
+          - light.kitchen
+          - light.kitchen_back
+        camera_image: camera.kukhnia
+      - type: picture-glance
+        title: Прихожая
+        entities:
+          - light.hall
+        camera_image: camera.prikhozhaia
   - id: home
     title: Дом
     icon: 'mdi:home-assistant'
@@ -39,40 +60,30 @@ views:
         entities:
           - toggle: true
             entity: light.livingroom
-            type: 'custom:slider-entity-row'
           - toggle: true
             entity: light.livingroom_back
-            type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
             entity: light.bedroom
-            type: 'custom:slider-entity-row'
           - toggle: true
             entity: light.bedroom_back
-            type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
             entity: light.kitchen
-            type: 'custom:slider-entity-row'
           - toggle: true
             entity: light.kitchen_back
-            type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
             entity: light.wc
-            type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
             entity: light.corridor
-            type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
             entity: light.bathroom
-            type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
             entity: light.hall
-            type: 'custom:slider-entity-row'
   - id: weather
     title: Погода
     icon: 'mdi:weather-cloudy'
