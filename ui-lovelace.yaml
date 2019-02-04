@@ -6,6 +6,12 @@ views:
   - id: info
     title: Информация
     icon: mdi:information
+    badges:
+      - device_tracker.router_main
+      - device_tracker.router_kitchen
+      - device_tracker.router_livingroom
+      - device_tracker.media_mibox_livingroom
+      - device_tracker.media_ghomemini_bedroom
     cards:
       - type: entity-filter
         entities:
