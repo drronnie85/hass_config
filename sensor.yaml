@@ -18,3 +18,7 @@
     mac: 'B4:43:0D:EE:EF:E7'
     monitored_conditions:
       - temperature
+  - name: voltage
+    platform: mqtt
+    state_topic: boiler/voltage
+    unit_of_measurement: V

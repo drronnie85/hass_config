@@ -18,3 +18,12 @@
     command_topic: "bridge/rfout/set"
     payload_on: "C001015A18000BDAA8"
     payload_off: "C001015A18000BDAA2"
+  - platform: mqtt
+    name: wc_boiler
+    state_topic: boiler/relay/0
+    command_topic: boiler/relay/0/set
+    payload_on: 1
+    payload_off: 0
+    availability_topic: boiler/status
+    payload_available: 1
+    payload_not_available: 0
