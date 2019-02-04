@@ -34,7 +34,7 @@ device_tracker.phone_oksana:
 device_tracker.phone_andrey:
   friendly_name: Телефон Андрея
 
-  binary_sensor.livingroom_motion:
+binary_sensor.livingroom_motion:
   friendly_name: Зал движение
 binary_sensor.livingroom_window:
   friendly_name: Зал окно
