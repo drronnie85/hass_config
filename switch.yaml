@@ -7,6 +7,11 @@
       projector_screen:
         command_on: 'eACuAAoeHwoeCgofCh4fCR8KHwkLHgoeCx4eCgofCgABOAoeHwoKHh8KHgofCh4KCx4KHh8KHgoKHx4KHwkLHgoeHwofCR8KCh4LHgoeHwoKHgoAATkKHh8JCx4eCh8KHwkfCgoeCx4eCh8KCh4fCh4KCx4KHh8JHwofCgoeCh4LHh8JCx4KAAE4Cx4eCgsdHwofCR8KHwoKHgoeHwofCQseHwkfCgoeCx4eCh8KBAAF3AAAAAAAAAAAAAA='
         command_off: 'eAC4AB4LHQsJIAkfHgsdCx4LCR8eCwkfCR8KHwkAAToJHx0LCSAdCx4LHQseCwkfCh8dCx4LCR8dDB0LCSAJHx4LHQseCwkfHQwJHwkfCh8JAAE5Ch8dCwkfHgsdDB0LHgsJHwkfHgseCgofHgoeCwkfCh8dCx4LHQsKHx0LCh8JHwofCQABOQoeHgsJIB0LHgoeCx4LCR8JHx4LHgsJHx0LHgsJIAggHQseCx0LCh8dCwofCR8JHwoABdw='
+- platform: broadlink
+    host: 192.168.1.60
+    mac: '34:EA:34:BD:B5:B3'
+    type:  sp2
+    friendly_name: 'Salt_Lamp'
   - platform: mqtt
     name: wc_fan
     command_topic: "bridge/rfout/set"
