@@ -11,6 +11,8 @@ light.livingroom_back:
   friendly_name: Зал ночник
 light.bedroom:
   friendly_name: Спальня
+light.bedroom_back:
+  friendly_name: Спальня ночник
 light.kitchen:
   friendly_name: Кухня
 light.kitchen_back:

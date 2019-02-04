@@ -43,3 +43,6 @@
     command_topic: "bridge/rfout/set"
     payload_on: "C00101631800F94168"
     payload_off: "C00101621800F94162"
+  - platform: switch
+    name: bedroom_back
+    entity_id: switch.salt_lamp

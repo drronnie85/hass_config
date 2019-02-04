@@ -5,16 +5,26 @@ resources:
   - type: js
     url: /local/custom_ui/slider-entity-row.js?v=0.3
 views:
+  - id: camera
+    title: Камеры
+    icon: mdi:camera
+    cards:
+      - type: picture-glance
+        title: Зал
+        entities:
+          - light.livingroom
+          - light.livingroom_back
+        camera_image: camera.zal
+      - type: picture-glance
+        title: Спальня
+        entities:
+          - light.bedroom
+          - light.bedroom_back
+        camera_image: camera.spalnia
   - id: home
     title: Дом
     icon: 'mdi:home-assistant'
     cards:
-      - type: picture-glance
-        title: Living room
-        entities:
-          - light.livingroom
-          - light.livingroom_back
-        camera_image:  camera.zal
       - type: entities
         title: Датчики
         entities:
