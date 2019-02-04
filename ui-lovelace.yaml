@@ -37,8 +37,6 @@ views:
       - type: entities
         title: Освещение
         entities:
-          - entity: switch.projector_screen
-          - type: divider
           - toggle: true
             entity: light.livingroom
             type: 'custom:slider-entity-row'
@@ -48,6 +46,9 @@ views:
           - type: divider
           - toggle: true
             entity: light.bedroom
+            type: 'custom:slider-entity-row'
+          - toggle: true
+            entity: light.bedroom_back
             type: 'custom:slider-entity-row'
           - type: divider
           - toggle: true
