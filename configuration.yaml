@@ -27,7 +27,6 @@ config:
 
 http:
   base_url: nas.drronniesoft.info:8123
-  api_password: !secret api_password
 
 # Checks for available updates
 # Note: This component will send some information about your system to
