@@ -27,7 +27,7 @@ views:
       - type: entities
         title: Освещение
         entities:
-          - entity: switch.livingroom_screen
+          - entity: switch.projector_screen
           - type: divider
           - toggle: true
             entity: light.livingroom

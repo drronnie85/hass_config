@@ -24,7 +24,7 @@ light.bathroom:
 light.hall:
   friendly_name: Прихожая
   
-switch.livingroom_screen:
+switch.projector_screen:
   friendly_name: Экран
   
 binary_sensor.livingroom_motion:
@@ -33,3 +33,53 @@ binary_sensor.livingroom_window:
   friendly_name: Зал окно
 binary_sensor.livingroom_balcony:
   friendly_name: Зал балкон
+  
+binary_sensor.phone_oksana:
+  friendly_name: Оксана
+binary_sensor.phone_andrey:
+  friendly_name: Андрей
+  
+device_tracker.phone_oksana:
+  friendly_name: Телефон Оксаны
+device_tracker.phone_andrey:
+  friendly_name: Телефон Андрея
+device_tracker.router_main:
+  friendly_name: Прихожая роутер
+device_tracker.router_kitchen:
+  friendly_name: Кухня роутер
+device_tracker.router_livingroom:
+  friendly_name: Зал роутер 
+device_tracker.camera_livingroom:
+  friendly_name: Зал камера 
+device_tracker.camera_tambour:
+  friendly_name: Тамбур камера 
+device_tracker.camera_loft:
+  friendly_name: Чердак камера 
+device_tracker.camera_entrance:
+  friendly_name: Подъезд камера 
+device_tracker.camera_kitchen:
+  friendly_name: Кухня камера 
+device_tracker.camera_cristoph:
+  friendly_name: Кристоф камера 
+device_tracker.camera_hall:
+  friendly_name: Прихожая камера 
+device_tracker.camera_bedroom:
+  friendly_name: Спальня камера 
+device_tracker.camera_mobile:
+  friendly_name: Переносная камера 
+device_tracker.iot_rmpro_livingroom:
+  friendly_name: Зал RM2Pro
+device_tracker.iot_a1_bedroom:
+  friendly_name: Спальня A1
+device_tracker.iot_mp1_kitchen:
+  friendly_name: Кухня MP1
+device_tracker.iot_bridge_hall:
+  friendly_name: Прихожая RFBridge
+device_tracker.iot_powb1_wc:
+  friendly_name: Туалет PowB1
+device_tracker.iot_mc1_bedroom:
+  friendly_name: Спальня ночник
+device_tracker.media_mibox_livingroom:
+  friendly_name: Зал MiBox
+device_tracker.media_ghomemini_bedroom:
+  friendly_name: Спальня Google Home mini
