@@ -1,24 +1,4 @@
   - platform: ping
     hosts:
-      phone_oksana:            192.168.1.21
-      phone_andrey:            192.168.1.23
-      router_main:             192.168.1.1
-      router_kitchen:          192.168.1.253
-      router_livingroom:       192.168.1.254
-      camera_livingroom:       192.168.1.41
-      camera_tambour:          192.168.1.42
-      camera_loft:             192.168.1.43
-      camera_entrance:         192.168.1.44
-      camera_kitchen:          192.168.1.45
-      camera_cristoph:         192.168.1.46
-      camera_hall:             192.168.1.47
-      camera_bedroom:          192.168.1.48
-      camera_mobile:           192.168.1.49
-      iot_rmpro_livingroom:    192.168.1.51
-      iot_a1_bedroom:          192.168.1.52
-      iot_mp1_kitchen:         192.168.1.53
-      iot_bridge_hall:         192.168.1.56
-      iot_powb1_wc:            192.168.1.57
-      iot_mc1_bedroom:         192.168.1.60
-      media_mibox_livingroom:  192.168.1.91
-      media_ghmini_bedroom:    192.168.1.92
+      phone_oksana: 192.168.1.21
+      phone_andrey: 192.168.1.23

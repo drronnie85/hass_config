@@ -26,32 +26,32 @@ views:
       - type: glance
         title: Медиа
         entities:
-          - device_tracker.router_main
-          - device_tracker.router_kitchen
-          - device_tracker.router_livingroom
-          - device_tracker.media_mibox_livingroom
-          - device_tracker.media_ghmini_bedroom
+          - binary_sensor.router_main
+          - binary_sensor.router_kitchen
+          - binary_sensor.router_livingroom
+          - binary_sensor.media_mibox_livingroom
+          - binary_sensor.media_ghmini_bedroom
       - type: glance
         title: Камреы
         entities:
-          - device_tracker.camera_loft
-          - device_tracker.camera_entrance
-          - device_tracker.camera_tambour
-          - device_tracker.camera_livingroom
-          - device_tracker.camera_bedroom
-          - device_tracker.camera_cristoph
-          - device_tracker.camera_kitchen
-          - device_tracker.camera_hall
-          - device_tracker.camera_mobile
+          - binary_sensor.camera_loft
+          - binary_sensor.camera_entrance
+          - binary_sensor.camera_tambour
+          - binary_sensor.camera_livingroom
+          - binary_sensor.camera_bedroom
+          - binary_sensor.camera_cristoph
+          - binary_sensor.camera_kitchen
+          - binary_sensor.camera_hall
+          - binary_sensor.camera_mobile
       - type: glance
         title: IoT
         entities:
-          - device_tracker.iot_rmpro_livingroom
-          - device_tracker.iot_a1_bedroom
-          - device_tracker.iot_mp1_kitchen
-          - device_tracker.iot_bridge_hall
-          - device_tracker.iot_powb1_wc
-          - device_tracker.iot_mc1_bedroom
+          - binary_sensor.iot_rmpro_livingroom
+          - binary_sensor.iot_a1_bedroom
+          - binary_sensor.iot_mp1_kitchen
+          - binary_sensor.iot_bridge_hall
+          - binary_sensor.iot_powb1_wc
+          - binary_sensor.iot_mc1_bedroom
   - id: camera
     title: Камеры
     icon: mdi:camera
