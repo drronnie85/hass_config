@@ -72,7 +72,18 @@ tts:
 # Cloud
 cloud:
 
+telegram_bot:
+  platform: polling
+  api_key: !secret telegram_key
+  allowed_chat_ids:
+    - !secret telegram_chatid_andrey
+    - !secret telegram_chatid_oksana
 
+notify:
+  - name: telegram
+    platform: telegram
+    api_key: !secret telegram_key
+    chat_id: !secret telegram_chatid_andrey
 
 group: !include groups.yaml
 automation: !include automations.yaml
