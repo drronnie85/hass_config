@@ -81,3 +81,5 @@ sensor: !include sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml
 binary_sensor: !include binary_sensor.yaml
+camera: !include camera.yaml
+device_tracker: !include device_tracker.yaml

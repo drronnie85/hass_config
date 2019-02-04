@@ -9,6 +9,12 @@ views:
     title: Дом
     icon: 'mdi:home-assistant'
     cards:
+      - type: picture-glance
+        title: Living room
+        entities:
+          - light.livingroom
+          - light.livingroom_back
+        camera_image:  camera.zal
       - type: entities
         title: Датчики
         entities:
