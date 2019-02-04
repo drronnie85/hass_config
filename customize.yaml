@@ -83,5 +83,5 @@ device_tracker.iot_mc1_bedroom:
   friendly_name: Спальня ночник
 device_tracker.media_mibox_livingroom:
   friendly_name: Зал MiBox
-device_tracker.media_ghomemini_bedroom:
+device_tracker.media_ghmini_bedroom:
   friendly_name: Спальня Google Home mini

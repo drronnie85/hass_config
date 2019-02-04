@@ -21,4 +21,4 @@
       iot_powb1_wc:            192.168.1.57
       iot_mc1_bedroom:         192.168.1.60
       media_mibox_livingroom:  192.168.1.91
-      media_ghomemini_bedroom: 192.168.1.92
+      media_ghmini_bedroom:    192.168.1.92

@@ -11,7 +11,7 @@ views:
       - device_tracker.router_kitchen
       - device_tracker.router_livingroom
       - device_tracker.media_mibox_livingroom
-      - device_tracker.media_ghomemini_bedroom
+      - device_tracker.media_ghmini_bedroom
     cards:
       - type: entity-filter
         entities:
@@ -29,7 +29,7 @@ views:
           - device_tracker.router_kitchen
           - device_tracker.router_livingroom
           - device_tracker.media_mibox_livingroom
-          - device_tracker.media_ghomemini_bedroom
+          - device_tracker.media_ghmini_bedroom
       - type: glance
         title: Камреы
         entities:
