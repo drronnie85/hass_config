@@ -29,10 +29,10 @@ light.hall:
 switch.projector_screen:
   friendly_name: Экран
   
-device_tracker.phone_oksana:
-  friendly_name: Телефон Оксаны
-device_tracker.phone_andrew:
-  friendly_name: Телефон Андрея
+#device_tracker.phone_oksana:
+#  friendly_name: Телефон Оксаны
+#device_tracker.phone_andrew:
+#  friendly_name: Телефон Андрея
 
 binary_sensor.livingroom_motion:
   friendly_name: Зал движение
