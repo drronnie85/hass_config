@@ -15,6 +15,36 @@ views:
           - home
         card: 
           type: glance
+          title: Кто дома
+      - type: glance
+        title: Медиа
+        entities:
+          - device_tracker.router_main
+          - device_tracker.router_kitchen
+          - device_tracker.router_livingroom
+          - device_tracker.media_mibox_livingroom
+          - device_tracker.media_ghomemini_bedroom
+      - type: glance
+        title: Камреы
+        entities:
+          - device_tracker.camera_loft
+          - device_tracker.camera_entrance
+          - device_tracker.camera_tambour
+          - device_tracker.camera_livingroom
+          - device_tracker.camera_bedroom
+          - device_tracker.camera_cristoph
+          - device_tracker.camera_kitchen
+          - device_tracker.camera_hall
+          - device_tracker.camera_mobile
+      - type: glance
+        title: IoT
+        entities:
+          - device_trackeriot_rmpro_livingroom
+          - device_trackeriot_a1_bedroom
+          - device_trackeriot_mp1_kitchen
+          - device_trackeriot_bridge_hall
+          - device_trackeriot_powb1_wc
+          - device_trackeriot_mc1_bedroom
   - id: camera
     title: Камеры
     icon: mdi:camera
