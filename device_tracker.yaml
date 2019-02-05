@@ -15,6 +15,7 @@
       camera_cristoph:        192.168.1.46
       camera_hall:            192.168.1.47
       camera_bedroom:         192.168.1.48
+#      camera_mobile:          192.168.1.46
       camera_mobile:          192.168.1.49
       iot_rmpro_livingroom:   192.168.1.51
       iot_a1_bedroom:         192.168.1.52
