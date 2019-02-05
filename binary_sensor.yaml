@@ -1,15 +1,21 @@
   - platform: mqtt
     name: livingroom_motion
     state_topic: 'bridge/rfin'
-    payload_on: 'C001019A1800A0EC86'
+    payload_on: '800A0EC86'
+    device_class: motion
+    value_template: '{{value[9:]}}'
     off_delay: 15
   - platform: mqtt
     name: livingroom_window
     state_topic: 'bridge/rfin'
-    payload_on: 'C00101421800B777A9'
+    payload_on: '800B777A9'
+    value_template: '{{value[9:]}}'
+    device_class: window
     off_delay: 15
   - platform: mqtt
     name: livingroom_balcony
     state_topic: 'bridge/rfin'
-    payload_on: 'C001014318007AEA59'
+    payload_on: '8007AEA59'
+    value_template: '{{value[9:]}}'
+    device_class: door
     off_delay: 15
