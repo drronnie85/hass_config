@@ -1,3 +1,10 @@
+  - platform: darksky
+    api_key: !secret darksky_key
+    monitored_conditions:
+      - temperature
+      - humidity
+    update_interval:
+      minutes: 1
   - platform: moon
   - platform: yr
   - platform: broadlink
@@ -29,4 +36,4 @@
   - name: kitchen_humidity
     platform: mqtt
     state_topic: kitchen_th10/humidity
-    unit_of_measurement: %
+    unit_of_measurement: '%'

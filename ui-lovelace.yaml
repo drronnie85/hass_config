@@ -90,6 +90,10 @@ views:
       - type: entities
         entities:
           - type: section
+            label: Улица
+          - sensor.darksky_temperature
+          - sensor.darksky_humidity
+          - type: section
             label: Спальня
           - sensor.br_bedroom_temperature
           - sensor.br_bedroom_humidity
@@ -103,14 +107,23 @@ views:
       - type: history-graph
         title: Температура
         entities:
-          - sensor.br_livingroom_temperature
-          - sensor.br_bedroom_temperature
-          - sensor.kitchen_temperature
+          - entity: sensor.darksky_temperature
+            name: Улица
+          - entity: sensor.br_livingroom_temperature
+            name: Зал
+          - entity: sensor.br_bedroom_temperature
+            name: Спальня
+          - entity: sensor.kitchen_temperature
+            name: Кухня
       - type: history-graph
         title: Влажность
         entities:
-          - sensor.br_bedroom_humidity
-          - sensor.kitchen_humidity
+          - entity: sensor.darksky_humidity
+            name: Улица
+          - entity: sensor.br_bedroom_humidity
+            name: Спальня
+          - entity: sensor.kitchen_humidity
+            name: Кухня
       - type: iframe
         url: >-
           https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
