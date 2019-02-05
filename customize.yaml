@@ -4,6 +4,8 @@ sensor.br_bedroom_humidity:
   friendly_name: Влажность
 sensor.br_livingroom_temperature:
   friendly_name: Температура
+sensor.br_livingroom_humidity:
+  friendly_name: Влажность
 sensor.kitchen_temperature:
   friendly_name: Температура
 sensor.kitchen_humidity:

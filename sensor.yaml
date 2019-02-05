@@ -21,10 +21,14 @@
   - platform: broadlink
     name: br_livingroom
     update_interval: 60
-    host: 192.168.1.51
-    mac: 'B4:43:0D:EE:EF:E7'
+    host: 192.168.1.61
+    mac: '34:ea:34:b2:a8:26'
     monitored_conditions:
       - temperature
+      - humidity
+      - air_quality
+      - light
+      - noise
   - name: voltage
     platform: mqtt
     state_topic: boiler/voltage

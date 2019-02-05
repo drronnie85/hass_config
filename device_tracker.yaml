@@ -22,8 +22,9 @@
       iot_mp1_kitchen:        192.168.1.53
       iot_bridge_hall:        192.168.1.56
       iot_powb1_wc:           192.168.1.57
-      iot_mc1_bedroom:        192.168.1.60
       iot_th10_kitchen:       192.168.1.58
+      iot_mc1_bedroom:        192.168.1.60
+      iot_a1_livingroom:      192.168.1.61
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
-#  - platform: bluetooth_tracker
+  - platform: bluetooth_tracker

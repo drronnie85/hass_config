@@ -104,6 +104,7 @@ views:
           - type: section
             label: Зал
           - sensor.br_livingroom_temperature
+          - sensor.br_livingroom_humidity
           - type: section
             label: Кухня
           - sensor.kitchen_temperature
@@ -124,6 +125,8 @@ views:
         entities:
           - entity: sensor.dark_sky_humidity
             name: Улица
+          - entity: sensor.br_livingroom_humidity
+            name: Зал
           - entity: sensor.br_bedroom_humidity
             name: Спальня
           - entity: sensor.kitchen_humidity
@@ -185,3 +188,4 @@ views:
           - device_tracker.iot_powb1_wc
           - device_tracker.iot_mc1_bedroom
           - device_tracker.iot_th10_kitchen
+          - device_tracker.iot_a1_livingroom
