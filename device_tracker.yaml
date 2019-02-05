@@ -26,4 +26,4 @@
       iot_th10_kitchen:       192.168.1.58
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
-  - platform: bluetooth_tracker
+#  - platform: bluetooth_tracker

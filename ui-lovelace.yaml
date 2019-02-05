@@ -135,6 +135,10 @@ views:
       - device_tracker.phone_oksana
       - device_tracker.phone_andrew
     cards:
+      - type: gauge
+        entity: sensor.voltage
+        min: 180
+        max: 250
       - type: glance
         title: Медиа
         show_state: false
