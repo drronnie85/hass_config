@@ -1,4 +1,6 @@
   - platform: ping
+    interval_seconds: 10
+    consider_home: 180
     hosts:
       phone_oksana:           192.168.1.21
       phone_andrew:           192.168.1.23
