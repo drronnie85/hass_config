@@ -83,6 +83,10 @@ notify:
     platform: telegram
     api_key: !secret telegram_key
     chat_id: !secret telegram_chatid_andrey
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet_key
+    
 
 group: !include groups.yaml
 automation: !include automation.yaml
