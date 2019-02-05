@@ -91,8 +91,8 @@ views:
         entities:
           - type: section
             label: Улица
-          - sensor.darksky_temperature
-          - sensor.darksky_humidity
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_humidity
           - type: section
             label: Спальня
           - sensor.br_bedroom_temperature
@@ -107,7 +107,7 @@ views:
       - type: history-graph
         title: Температура
         entities:
-          - entity: sensor.darksky_temperature
+          - entity: sensor.dark_sky_temperature
             name: Улица
           - entity: sensor.br_livingroom_temperature
             name: Зал
@@ -118,7 +118,7 @@ views:
       - type: history-graph
         title: Влажность
         entities:
-          - entity: sensor.darksky_humidity
+          - entity: sensor.dark_sky_humidity
             name: Улица
           - entity: sensor.br_bedroom_humidity
             name: Спальня

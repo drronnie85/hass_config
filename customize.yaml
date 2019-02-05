@@ -8,6 +8,11 @@ sensor.kitchen_temperature:
   friendly_name: Температура
 sensor.kitchen_humidity:
   friendly_name: Влажность
+sensor.dark_sky_temperature:
+  friendly_name: Температура
+sensor.dark_sky_humidity:
+  friendly_name: Влажность
+  
 
 light.livingroom:
   friendly_name: Зал
