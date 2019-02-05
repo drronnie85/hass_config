@@ -44,7 +44,11 @@ binary_sensor.livingroom_window:
   friendly_name: Зал окно
 binary_sensor.livingroom_balcony:
   friendly_name: Зал балкон
-
+binary_sensor.hall_motion:
+  friendly_name: Прихожая движение
+binary_sensor.hall_entrance:
+  friendly_name: Прихожая вход
+  
 device_tracker.phone_oksana:
   friendly_name: Телефон Оксаны
 device_tracker.phone_andrew:

@@ -52,6 +52,10 @@ views:
             entity: binary_sensor.livingroom_window          
           - type: state-icon
             entity: binary_sensor.livingroom_balcony
+          - type: state-icon
+            entity: binary_sensor.hall_motion
+          - type: state-icon
+            entity: binary_sensor.hall_entrance
       - type: entities
         title: Освещение
         entities:

@@ -19,3 +19,17 @@
     value_template: '{{value[9:]}}'
     device_class: door
     off_delay: 15
+  - platform: mqtt
+    name: hall_motion
+    state_topic: 'bridge/rfin'
+    payload_on: '8005F9E26'
+    value_template: '{{value[9:]}}'
+    device_class: motion
+    off_delay: 15
+  - platform: mqtt
+    name: hall_entrance
+    state_topic: 'bridge/rfin'
+    payload_on: '8004BB90E'
+    value_template: '{{value[9:]}}'
+    device_class: door
+    off_delay: 15
