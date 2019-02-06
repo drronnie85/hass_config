@@ -4,7 +4,7 @@
       - temperature
       - humidity
     update_interval:
-      minutes: 1
+      minutes: 20
   - platform: moon
   - platform: yr
   - platform: broadlink

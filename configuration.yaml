@@ -26,7 +26,7 @@ frontend:
 config:
 
 zigbee:
-  device: /dev/ttyACM1
+  device: /dev/ttyACM0
   baud: 115200
   
 http:
