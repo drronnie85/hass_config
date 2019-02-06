@@ -4,46 +4,53 @@
     payload_on: '800A0EC86'
     device_class: motion
     value_template: '{{value[9:]}}'
-    off_delay: 15
-  - platform: mqtt
-    name: livingroom_window
-    state_topic: 'bridge/rfin'
-    payload_on: '800B777A9'
-    value_template: '{{value[9:]}}'
-    device_class: window
-    off_delay: 15
-  - platform: mqtt
-    name: livingroom_balcony
-    state_topic: 'bridge/rfin'
-    payload_on: '8007AEA59'
-    value_template: '{{value[9:]}}'
-    device_class: door
-    off_delay: 15
+    off_delay: !secret sensor_delay_motion
   - platform: mqtt
     name: hall_motion
     state_topic: 'bridge/rfin'
     payload_on: '8005F9E26'
     value_template: '{{value[9:]}}'
     device_class: motion
-    off_delay: 15
+    off_delay: !secret sensor_delay_motion
   - platform: mqtt
-    name: hall_entrance
+    name: bedroom_motion
     state_topic: 'bridge/rfin'
-    payload_on: '8004BB90E'
+    payload_on: '800111111'
     value_template: '{{value[9:]}}'
-    device_class: door
-    off_delay: 15
+    device_class: motion
+    off_delay: !secret sensor_delay_motion
+  - platform: mqtt
+    name: livingroom_window
+    state_topic: 'bridge/rfin'
+    payload_on: '800B777A9'
+    value_template: '{{value[9:]}}'
+    device_class: window
+    off_delay: !secret sensor_delay_window
   - platform: mqtt
     name: kitchen_window
     state_topic: 'bridge/rfin'
     payload_on: '8004FEF99'
     value_template: '{{value[9:]}}'
     device_class: window
-    off_delay: 15
+    off_delay: !secret sensor_delay_window
   - platform: mqtt
     name: bedroom_window
     state_topic: 'bridge/rfin'
     payload_on: '800FE3259'
     value_template: '{{value[9:]}}'
     device_class: window
-    off_delay: 15
+    off_delay: !secret sensor_delay_window
+  - platform: mqtt
+    name: livingroom_balcony
+    state_topic: 'bridge/rfin'
+    payload_on: '8007AEA59'
+    value_template: '{{value[9:]}}'
+    device_class: door
+    off_delay: !secret door_sensor_delay_doordelay
+  - platform: mqtt
+    name: hall_entrance
+    state_topic: 'bridge/rfin'
+    payload_on: '8004BB90E'
+    value_template: '{{value[9:]}}'
+    device_class: door
+    off_delay: !secret sensor_delay_door

@@ -45,6 +45,7 @@ views:
     cards:
       - type: entities
         title: Датчики
+        show_header_toggle: false
         entities:
           - type: state-icon
             entity: binary_sensor.livingroom_motion
@@ -59,13 +60,15 @@ views:
           - type: state-icon
             entity: binary_sensor.kitchen_window          
           - type: state-icon
-            entity: binary_sensor.bedroom_window          
+            entity: binary_sensor.bedroom_window
+          - type: state-icon
+            entity: binary_sensor.bedroom_motion
       - type: entities
         title: Освещение
         entities:
-          - toggle: true
+          - toggle: false
             entity: light.livingroom
-          - toggle: true
+          - toggle: false
             entity: light.livingroom_back
           - type: divider
           - toggle: true
