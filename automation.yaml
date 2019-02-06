@@ -1,5 +1,4 @@
 - id: oksana come home notify
-  alias: 'Оксана пришла домой'
   initial_state: 'on'
   trigger:
    - platform: state
@@ -12,7 +11,6 @@
     data_template:
       message: Оксана вернулась домой
 - id: oksana left home notify
-  alias: 'Оксана вышла из домой'
   initial_state: 'on'
   trigger:
    - platform: state
@@ -24,3 +22,29 @@
     service: notify.telegram
     data_template:
       message: Оксана вышла из дома
+
+- id: andrew come home notify
+  initial_state: 'on'
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_andrew
+     from: 'not_home'
+     to: 'home'
+  action:
+    service: notify.telegram
+    data_template:
+      message: Андрей вернулся домой
+- id: andrew left home notify
+  initial_state: 'on'
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_andrew
+     from: 'home'
+     to: 'not_home'
+  action:
+    service: notify.telegram
+    data_template:
+      message: Андрей вышел из дома
+  
