@@ -47,18 +47,26 @@ views:
         title: Датчики
         show_header_toggle: false
         entities:
+          - type: section
+            label: Зал
           - type: state-icon
             entity: binary_sensor.livingroom_motion
           - type: state-icon
             entity: binary_sensor.livingroom_window          
           - type: state-icon
             entity: binary_sensor.livingroom_balcony
+          - type: section
+            label: Прихожая
           - type: state-icon
             entity: binary_sensor.hall_motion
           - type: state-icon
             entity: binary_sensor.hall_entrance
+          - type: section
+            label: Кухня
           - type: state-icon
             entity: binary_sensor.kitchen_window          
+          - type: section
+            label: Спальня
           - type: state-icon
             entity: binary_sensor.bedroom_window
           - type: state-icon
@@ -66,32 +74,22 @@ views:
       - type: entities
         title: Освещение
         entities:
-          - toggle: false
-            entity: light.livingroom
-          - toggle: false
-            entity: light.livingroom_back
+          - light.livingroom
+          - light.livingroom_back
           - type: divider
-          - toggle: true
-            entity: light.bedroom
-          - toggle: true
-            entity: light.bedroom_back
+          - light.bedroom
+          - light.bedroom_back
           - type: divider
-          - toggle: true
-            entity: light.kitchen
-          - toggle: true
-            entity: light.kitchen_back
+          - light.kitchen
+          - light.kitchen_back
           - type: divider
-          - toggle: true
-            entity: light.wc
+          - light.wc
           - type: divider
-          - toggle: true
-            entity: light.corridor
+          - light.corridor
           - type: divider
-          - toggle: true
-            entity: light.bathroom
+          - light.bathroom
           - type: divider
-          - toggle: true
-            entity: light.hall
+          - light.hall
   - id: weather
     title: Погода
     icon: 'mdi:weather-cloudy'
