@@ -56,6 +56,10 @@ views:
             entity: binary_sensor.hall_motion
           - type: state-icon
             entity: binary_sensor.hall_entrance
+          - type: state-icon
+            entity: binary_sensor.kitchen_window          
+          - type: state-icon
+            entity: binary_sensor.bedroom_window          
       - type: entities
         title: Освещение
         entities:

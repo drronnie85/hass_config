@@ -50,6 +50,10 @@ binary_sensor.hall_motion:
   friendly_name: Прихожая движение
 binary_sensor.hall_entrance:
   friendly_name: Прихожая вход
+binary_sensor.kitchen_window:
+  friendly_name: Кухня окно
+binary_sensor.bedroom_window:
+  friendly_name: Спальня окно
   
 device_tracker.phone_oksana:
   friendly_name: Телефон Оксаны

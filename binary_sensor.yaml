@@ -33,3 +33,17 @@
     value_template: '{{value[9:]}}'
     device_class: door
     off_delay: 15
+  - platform: mqtt
+    name: kitchen_window
+    state_topic: 'bridge/rfin'
+    payload_on: '8004FEF99'
+    value_template: '{{value[9:]}}'
+    device_class: window
+    off_delay: 15
+  - platform: mqtt
+    name: bedroom_window
+    state_topic: 'bridge/rfin'
+    payload_on: '800FE3259'
+    value_template: '{{value[9:]}}'
+    device_class: window
+    off_delay: 15
