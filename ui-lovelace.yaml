@@ -44,7 +44,9 @@ views:
     icon: 'mdi:home-assistant'
     cards:
       - type: thermostat
-        entity: climate.nest
+        entity: climate.livingroom
+      - type: thermostat
+        entity: climate.bedroom
       - type: entities
         title: Освещение
         entities:

@@ -5,3 +5,8 @@ home-assistant.log
 home-assistant_v2.db
 secrets.yaml
 3rdparty/
+.HA_VERSION
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
+known_devices.yaml
+tts/
