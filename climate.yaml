@@ -3,7 +3,7 @@
     mac: 'B4:43:0D:EE:EF:E7'
     name: livingroom
     ircodes_ini: 'custom_data/broadlink_climate_codes/neoclima.ini'
-    min_temp: 18
+    min_temp: 17
     max_temp: 30
     target_temp: 20
     target_temp_step: 1

@@ -60,13 +60,6 @@ map:
 sun:
 
 zone:
-  name: Дом
-  latitude: !secret latitude_home
-  longitude: !secret longitude_home
-  radius: 50
-  icon: mdi:home
-
-zone 2:
   name: Работа
   latitude: !secret latitude_work
   longitude: !secret longitude_work
@@ -104,11 +97,6 @@ notify:
   - name: pushbullet
     platform: pushbullet
     api_key: !secret pushbullet_key
-
-asuswrt:
-  host: 192.168.1.1
-  username: !secret asuswrt_password
-    
 
 group: !include groups.yaml
 automation: !include automation.yaml
