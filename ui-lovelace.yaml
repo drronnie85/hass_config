@@ -43,10 +43,6 @@ views:
     title: Дом
     icon: 'mdi:home-assistant'
     cards:
-      - type: thermostat
-        entity: climate.livingroom
-      - type: thermostat
-        entity: climate.bedroom
       - type: entities
         title: Освещение
         entities:
@@ -66,12 +62,6 @@ views:
           - light.bathroom
           - type: divider
           - light.hall
-      - type: entities
-        title: Датчики (тест)
-        show_header_toggle: false
-        entities:
-          - type: state-icon
-            entity: camera.zal_motion
       - type: entities
         title: Датчики
         show_header_toggle: false
@@ -100,9 +90,9 @@ views:
             entity: binary_sensor.bedroom_window
           - type: state-icon
             entity: binary_sensor.bedroom_motion
-  - id: weather
+  - id: Климат
     title: Погода
-    icon: 'mdi:weather-cloudy'
+    icon: 'mdi:air-conditioner'
     cards:
       - entity: weather.dark_sky
         type: 'custom:weather-card'
@@ -142,18 +132,22 @@ views:
             name: Спальня
           - entity: sensor.kitchen_humidity
             name: Кухня
-      - type: history-graph
-        title: Температура на улице
-        entities:
-          - sensor.dark_sky_temperature
-      - type: history-graph
-        title: Влажность на улице
-        entities:
-          -sensor.dark_sky_humidity
-      - type: iframe
-        url: >-
-          https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
-        aspect_ratio: 90%
+      - type: thermostat
+        entity: climate.livingroom
+      - type: thermostat
+        entity: climate.bedroom
+      # - type: history-graph
+      #   title: Температура на улице
+      #   entities:
+      #     - sensor.dark_sky_temperature
+      # - type: history-graph
+      #   title: Влажность на улице
+      #   entities:
+      #     -sensor.dark_sky_humidity
+      #- type: iframe
+      #  url: >-
+      #    https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
+      #  aspect_ratio: 90%
   - id: devices
     title: Устройства
     icon: mdi:tablet-cellphone
