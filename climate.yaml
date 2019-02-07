@@ -1,0 +1,44 @@
+  - platform: broadlink
+    host: 192.168.1.51
+    mac: 'B4:43:0D:EE:EF:E7'
+    name: livingroom
+    ircodes_ini: 'custom_data/broadlink_climate_codes/neoclima.ini'
+    min_temp: 18
+    max_temp: 30
+    target_temp: 20
+    target_temp_step: 1
+    temp_sensor: sensor.br_livingroom_temperature
+    default_operation: 'off'
+    default_fan_mode: mid
+    customize:
+      operations:
+        - 'off'
+        - cool
+        - heat
+      fan_modes:
+        - low
+        - mid
+        - high
+        - auto
+  - platform: broadlink
+    host: 192.168.1.51
+    mac: 'B4:43:0D:EE:EF:E7'
+    name: bedroom
+    ircodes_ini: 'custom_data/broadlink_climate_codes/leberg.ini'
+    min_temp: 18
+    max_temp: 30
+    target_temp: 20
+    target_temp_step: 1
+    temp_sensor: sensor.br_bedroom_temperature
+    default_operation: 'off'
+    default_fan_mode: mid
+    customize:
+      operations:
+        - 'off'
+        - cool
+        - heat
+      fan_modes:
+        - low
+        - mid
+        - high
+        - auto

@@ -115,3 +115,4 @@ light: !include light.yaml
 binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
+climate: !include climate.yaml
