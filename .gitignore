@@ -4,3 +4,4 @@ configurator.py
 home-assistant.log
 home-assistant_v2.db
 secrets.yaml
+3rdparty/
