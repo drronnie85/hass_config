@@ -40,6 +40,11 @@ light.hall:
 switch.projector_screen:
   friendly_name: Экран
 
+climate.livingroom:
+  friendly_name: Зал
+climate.bedroom:
+  friendly_name: Спальня
+
 binary_sensor.livingroom_motion:
   friendly_name: Движение
 binary_sensor.hall_motion:

@@ -43,12 +43,33 @@ views:
     title: Дом
     icon: 'mdi:home-assistant'
     cards:
+      - type: thermostat
+        entity: climate.nest
+      - type: entities
+        title: Освещение
+        entities:
+          - light.livingroom
+          - light.livingroom_back
+          - type: divider
+          - light.bedroom
+          - light.bedroom_back
+          - type: divider
+          - light.kitchen
+          - light.kitchen_back
+          - type: divider
+          - light.wc
+          - type: divider
+          - light.corridor
+          - type: divider
+          - light.bathroom
+          - type: divider
+          - light.hall
       - type: entities
         title: Датчики (тест)
         show_header_toggle: false
         entities:
           - type: state-icon
-            entity: sensor.camera_zal_motion
+            entity: camera.zal_motion
       - type: entities
         title: Датчики
         show_header_toggle: false
@@ -77,25 +98,6 @@ views:
             entity: binary_sensor.bedroom_window
           - type: state-icon
             entity: binary_sensor.bedroom_motion
-      - type: entities
-        title: Освещение
-        entities:
-          - light.livingroom
-          - light.livingroom_back
-          - type: divider
-          - light.bedroom
-          - light.bedroom_back
-          - type: divider
-          - light.kitchen
-          - light.kitchen_back
-          - type: divider
-          - light.wc
-          - type: divider
-          - light.corridor
-          - type: divider
-          - light.bathroom
-          - type: divider
-          - light.hall
   - id: weather
     title: Погода
     icon: 'mdi:weather-cloudy'
