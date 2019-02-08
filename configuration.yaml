@@ -59,6 +59,9 @@ map:
 # Track the sun
 sun:
 
+logger:
+  default: debug
+
 zone:
   name: Работа
   latitude: !secret latitude_work
