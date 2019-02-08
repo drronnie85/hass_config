@@ -24,8 +24,8 @@
         - high
         - auto
   - platform: broadlink
-    host: 192.168.1.51
-    mac: 'B4:43:0D:EE:EF:E7'
+    host: 192.168.1.62
+    mac: '78:0F:77:00:D7:1B'
     name: bedroom
     ircodes_ini: 'custom_data/broadlink_climate_codes/leberg.ini'
     min_temp: 16
