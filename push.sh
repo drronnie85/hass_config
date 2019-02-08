@@ -1,7 +1,7 @@
 cp -r ./3rdparty/homeassistant-custom-components/custom_components/ ./custom_components/
-cp -r ./3rdparty/homeassistant-custom-components/broadlink_climate_codes/ ./custom_data/broadlink_climate_codes/
-cp -r ./3rdparty/homeassistant-custom-components/broadlink_fan_codes/ ./custom_data/broadlink_fan_codes/
-cp -r ./3rdparty/homeassistant-custom-components/broadlink_media_codes/ ./custom_data/broadlink_media_codes/
+cp -r ./3rdparty/homeassistant-custom-components/broadlink_climate_codes/* ./custom_data/broadlink_climate_codes/
+cp -r ./3rdparty/homeassistant-custom-components/broadlink_fan_codes/* ./custom_data/broadlink_fan_codes/
+cp -r ./3rdparty/homeassistant-custom-components/broadlink_media_codes/* ./custom_data/broadlink_media_codes/
 git add .
 git commit -m "fix"
 git push
