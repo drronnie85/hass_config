@@ -59,8 +59,8 @@ map:
 # Track the sun
 sun:
 
-logger:
-  default: debug
+#logger:
+#  default: debug
 
 zone:
   name: Работа

@@ -15,6 +15,9 @@
         - 'off'
         - cool
         - heat
+        - dry
+        - fan
+        - auto
       fan_modes:
         - low
         - mid
@@ -25,8 +28,8 @@
     mac: 'B4:43:0D:EE:EF:E7'
     name: bedroom
     ircodes_ini: 'custom_data/broadlink_climate_codes/leberg.ini'
-    min_temp: 18
-    max_temp: 30
+    min_temp: 16
+    max_temp: 31
     target_temp: 20
     target_temp_step: 1
     temp_sensor: sensor.br_bedroom_temperature
@@ -37,6 +40,9 @@
         - 'off'
         - cool
         - heat
+        - dry
+        - fan
+        - feel
       fan_modes:
         - low
         - mid
