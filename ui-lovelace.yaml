@@ -13,12 +13,11 @@ views:
       - type: custom:weather-card
         entity: weather.dark_sky        
       - type: alarm-panel
-        entity: alarm_control_panel.abode_alarm
+        entity: alarm_control_panel.mqtt_alarm
         name: Abode
         states:
           - arm_home
           - arm_away
-
   - id: camera
     title: Камеры
     icon: mdi:camera
