@@ -17,7 +17,7 @@
 #     - service: mqtt.publish
 #       data_template:
 #         topic: home/alarm
-#         payload_template: disarmed
+#         payload: disarmed
 
 # drronnie rc
 - alias: security_armed_away_drronnie
@@ -29,7 +29,7 @@
     - service: mqtt.publish
       data_template:
         topic: "home/alarm/set"
-        payload_template: ARM_AWAY
+        payload: ARM_AWAY
 - alias: security_armed_home_drronnie
   trigger:
     - platform: mqtt
@@ -39,7 +39,7 @@
     - service: mqtt.publish
       data_template:
         topic: "home/alarm"
-        payload_template: ARM_HOME
+        payload: ARM_HOME
 - alias: security_disarmed_drronnie
   trigger:
     - platform: mqtt
@@ -49,7 +49,7 @@
     - service: mqtt.publish
       data_template:
         topic: "home/alarm"
-        payload_template: DISARM
+        payload: DISARM
 # - alias: security_triggered_drronnie
 #   trigger:
 #     - platform: mqtt
@@ -59,7 +59,7 @@
 #     - service: mqtt.publish
 #       data_template:
 #         topic: home/alarm
-#         payload_template: triggered
+#         payload: triggered
 # # oksana rc
 # - alias: security_armed_away_oksana
 #   trigger:
@@ -70,7 +70,7 @@
 #     - service: mqtt.publish
 #       data_template:
 #         topic: "home/alarm"
-#         payload_template: ARM_AWAY
+#         payload: ARM_AWAY
 # - alias: security_armed_home_oksana
 #   trigger:
 #     - platform: mqtt
@@ -80,7 +80,7 @@
 #     - service: mqtt.publish
 #       data_template:
 #         topic: "home/alarm"
-#         payload_template: ARM_HOME
+#         payload: ARM_HOME
 # - alias: security_disarmed_oksana
 #   trigger:
 #     - platform: mqtt
@@ -90,7 +90,7 @@
 #     - service: mqtt.publish
 #       data_template:
 #         topic: "home/alarm"
-#         payload_template: DISARM
+#         payload: DISARM
 # # - alias: security_triggered_oksana
 # #   trigger:
 # #     - platform: mqtt
@@ -100,7 +100,7 @@
 # #     - service: mqtt.publish
 # #       data_template:
 # #         topic: home/alarm
-# #         payload_template: triggered
+# #         payload: triggered
 
 - alias: oksana_come
   initial_state: "not_home"
