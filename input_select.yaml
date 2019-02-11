@@ -1,0 +1,9 @@
+  security_status:
+    name: Состояние 
+    options:
+      - armed_away
+      - armed_home
+      - disarmed
+      - panic
+    initial: disarmed
+    icon: mdi:security

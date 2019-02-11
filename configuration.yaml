@@ -117,3 +117,4 @@ camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
 climate: !include climate.yaml
 fan: !include fan.yaml
+input_select: !include input_select.yaml
