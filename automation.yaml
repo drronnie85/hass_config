@@ -9,16 +9,16 @@
         payload_template: "{{trigger.payload[9:]}}"
 
 # drronnie rc
-- alias: security_armed_away_drronnie
-  trigger:
-    - platform: mqtt
-      topic: bridge/rfin_sensor
-      payload: "8005444C0"
-  action:
-    - service: mqtt.publish
-      data_template:
-        topic: home/alarm/set
-        payload: ARM_AWAY
+# - alias: security_armed_away_drronnie
+#   trigger:
+#     - platform: mqtt
+#       topic: bridge/rfin_sensor
+#       payload: "8005444C0"
+#   action:
+#     - service: mqtt.publish
+#       data_template:
+#         topic: home/alarm/set
+#         payload: ARM_AWAY
 # - alias: security_armed_home_drronnie
 #   trigger:
 #     - platform: mqtt
