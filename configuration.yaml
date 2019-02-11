@@ -87,8 +87,12 @@ mqtt:
 tts:
   - platform: google
 
-# Cloud
-cloud:
+#cloud:
+
+alarm_control_panel:
+  - platform: mqtt
+    state_topic: "home/alarm"
+    command_topic: "home/alarm/set"
 
 telegram_bot:
   platform: polling

@@ -11,11 +11,11 @@
 - id: security_panel
   trigger:
     - platform: mqtt
-      topic: "security/status/set"
+      topic: "home/alarm/set"
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: '{{trigger.payload}}'
 
 # drronnie's rc
@@ -27,7 +27,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "armed_away"
 - id: security_armed_home_drronnie
   trigger:
@@ -37,7 +37,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "armed_home"
 - id: security_disarmed_drronnie
   trigger:
@@ -47,7 +47,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "disarmed"
 - id: security_triggered_drronnie
   trigger:
@@ -57,7 +57,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "triggered"
 # oksana's rc
 - id: security_armed_away_oksana
@@ -68,7 +68,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "armed_away"
 - id: security_armed_home_oksana
   trigger:
@@ -78,7 +78,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "armed_home"
 - id: security_disarmed_oksana
   trigger:
@@ -88,7 +88,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "disarmed"
 - id: security_triggered_oksana
   trigger:
@@ -98,7 +98,7 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "security/status"
+        topic: "home/alarm"
         payload_template: "triggered"
 
 - id: oksana_come
