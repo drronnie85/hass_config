@@ -62,6 +62,11 @@ sun:
 #logger:
 #  default: debug
 
+upnp:
+  port_mapping: true
+  ports:
+    hass: 8123
+
 zone:
   name: Работа
   latitude: !secret latitude_work
