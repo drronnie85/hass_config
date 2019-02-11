@@ -8,7 +8,7 @@
         topic: bridge/rfin_sensor
         payload_template: "{{trigger.payload[9:]}}"
 
-# - id: security_panel
+# - alias: security_panel
 #   trigger:
 #     - platform: mqtt
 #       topic: home/alarm/set
@@ -20,48 +20,48 @@
 #         payload_template: disarmed
 
 # drronnie rc
-# - id: security_armed_away_drronnie
+- alias: security_armed_away_drronnie
+  trigger:
+    - platform: mqtt
+      topic: "bridge/rfin_sensor"
+      payload: "8005444C0"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "home/alarm/set"
+        payload_template: ARM_AWAY
+- alias: security_armed_home_drronnie
+  trigger:
+    - platform: mqtt
+      topic: "bridge/rfin_sensor"
+      payload: "800544403"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "home/alarm"
+        payload_template: ARM_HOME
+- alias: security_disarmed_drronnie
+  trigger:
+    - platform: mqtt
+      topic: "bridge/rfin_sensor"
+      payload: "80054440C"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "home/alarm"
+        payload_template: DISARM
+# - alias: security_triggered_drronnie
 #   trigger:
 #     - platform: mqtt
-#       topic: "bridge/rfin_sensor"
-#       payload: "8005444C0"
+#       topic: bridge/rfin_sensor
+#       payload: "800544430"
 #   action:
 #     - service: mqtt.publish
 #       data_template:
-#         topic: "home/alarm/set"
-#         payload_template: ARM_AWAY
-# - id: security_armed_home_drronnie
-#   trigger:
-#     - platform: mqtt
-#       topic: "bridge/rfin_sensor"
-#       payload: "800544403"
-#   action:
-#     - service: mqtt.publish
-#       data_template:
-#         topic: "home/alarm"
-#         payload_template: ARM_HOME
-# - id: security_disarmed_drronnie
-#   trigger:
-#     - platform: mqtt
-#       topic: "bridge/rfin_sensor"
-#       payload: "80054440C"
-#   action:
-#     - service: mqtt.publish
-#       data_template:
-#         topic: "home/alarm"
-#         payload_template: DISARM
-# # - id: security_triggered_drronnie
-# #   trigger:
-# #     - platform: mqtt
-# #       topic: bridge/rfin_sensor
-# #       payload: "800544430"
-# #   action:
-# #     - service: mqtt.publish
-# #       data_template:
-# #         topic: home/alarm
-# #         payload_template: triggered
+#         topic: home/alarm
+#         payload_template: triggered
 # # oksana rc
-# - id: security_armed_away_oksana
+# - alias: security_armed_away_oksana
 #   trigger:
 #     - platform: mqtt
 #       topic: "bridge/rfin_sensor"
@@ -71,7 +71,7 @@
 #       data_template:
 #         topic: "home/alarm"
 #         payload_template: ARM_AWAY
-# - id: security_armed_home_oksana
+# - alias: security_armed_home_oksana
 #   trigger:
 #     - platform: mqtt
 #       topic: "bridge/rfin_sensor"
@@ -81,7 +81,7 @@
 #       data_template:
 #         topic: "home/alarm"
 #         payload_template: ARM_HOME
-# - id: security_disarmed_oksana
+# - alias: security_disarmed_oksana
 #   trigger:
 #     - platform: mqtt
 #       topic: "bridge/rfin_sensor"
@@ -91,7 +91,7 @@
 #       data_template:
 #         topic: "home/alarm"
 #         payload_template: DISARM
-# # - id: security_triggered_oksana
+# # - alias: security_triggered_oksana
 # #   trigger:
 # #     - platform: mqtt
 # #       topic: bridge/rfin_sensor
@@ -102,27 +102,27 @@
 # #         topic: home/alarm
 # #         payload_template: triggered
 
-# - id: oksana_come
-#   initial_state: "not_home"
-#   trigger:
-#    - platform: state
-#      entity_id:
-#        - device_tracker.phone_oksana
-#      from: "not_home"
-#      to: "home"
-#   action:
-#     service: notify.telegram
-#     data_template:
-#       message: Оксана вернулась домой
-# - id: oksana_left
-#   initial_state: "not_home"
-#   trigger:
-#    - platform: state
-#      entity_id:
-#        - device_tracker.phone_oksana
-#      from: "home"
-#      to: "not_home"
-#   action:
-#     service: notify.telegram
-#     data_template:
-#       message: Оксана вышла из дома
+- alias: oksana_come
+  initial_state: "not_home"
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_oksana
+     from: "not_home"
+     to: "home"
+  action:
+    service: notify.telegram
+    data_template:
+      message: Оксана вернулась домой
+- alias: oksana_left
+  initial_state: "not_home"
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_oksana
+     from: "home"
+     to: "not_home"
+  action:
+    service: notify.telegram
+    data_template:
+      message: Оксана вышла из дома
