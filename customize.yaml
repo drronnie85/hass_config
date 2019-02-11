@@ -110,3 +110,5 @@ device_tracker.media_ghmini_bedroom:
   friendly_name: Спальня Google Home mini
 device_tracker.iot_a1_livingroom:
   friendly_name: Зал A1
+device_tracker.iot_rmpro_bedroom:
+  friendly_name: Спальня RM2Pro

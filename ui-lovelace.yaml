@@ -14,9 +14,8 @@ views:
         entity: weather.dark_sky        
       - type: alarm-panel
         entity: alarm_control_panel.ha_alarm
-        name: Abode
+        name: Охрана
         states:
-          - arm_home
           - arm_away
   - id: camera
     title: Камеры

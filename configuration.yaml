@@ -94,7 +94,7 @@ alarm_control_panel:
     # code: !secret alarm_code
     state_topic: home/alarm
     command_topic: home/alarm/set
-    pending_time: 30
+    pending_time: 20
     delay_time: 20
     trigger_time: 4
     disarmed:
