@@ -141,17 +141,17 @@ views:
         show_header_toggle: false
         entities:
           - script.humidifier_bedroom_onoff
-          - script.humidifier_bedroom_night
+          # - script.humidifier_bedroom_night
           - script.humidifier_bedroom_auto
-          - script.humidifier_bedroom_kids
-          - script.humidifier_bedroom_heart
-          - script.humidifier_bedroom_touch
+          # - script.humidifier_bedroom_kids
+          # - script.humidifier_bedroom_heart
+          # - script.humidifier_bedroom_touch
           - script.humidifier_bedroom_light
-          - script.humidifier_bedroom_time
+          # - script.humidifier_bedroom_time
           - script.humidifier_bedroom_heat
           - script.humidifier_bedroom_uv
           - script.humidifier_bedroom_ion
-          - script.humidifier_bedroom_plusminus
+          # - script.humidifier_bedroom_plusminus
       # - type: history-graph
       #   title: Температура на улице
       #   entities:
@@ -218,3 +218,4 @@ views:
           - device_tracker.iot_mc1_bedroom
           - device_tracker.iot_th10_kitchen
           - device_tracker.iot_a1_livingroom
+          - device_tracker.iot_rmpro_bedroom

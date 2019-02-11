@@ -2,10 +2,11 @@
   alias: Pulsante Marty ramen
   trigger:
     - platform: mqtt
-      topic: "bridge/rfin_9"
+      topic: "bridge/rfin"
   action:
     - service: mqtt.publish
-      data_template:     
+      data_template:
+        topic: "bridge/rfin_9"
         payload_template: '{{trigger.payload[9:]}}'
 - id: oksana_come
   initial_state: 'off'
