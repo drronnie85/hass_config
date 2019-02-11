@@ -28,6 +28,6 @@
       iot_rmpro_bedroom:      192.168.1.62
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
-  - platform: bluetooth_tracker
-  - platform: googlehome
-    host: 192.168.1.92
+  # - platform: bluetooth_tracker
+  # - platform: googlehome
+  #   host: 192.168.1.92
