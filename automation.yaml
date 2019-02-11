@@ -6,7 +6,8 @@
     - service: mqtt.publish
       data_template:
         topic: "bridge/rfin_sensor"
-        payload_template: "{{trigger.payload[9:]}}"
+        payload: "ololo"
+#        payload_template: "{{trigger.payload[9:]}}"
 
 # - id: security_panel
 #   trigger:
