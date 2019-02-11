@@ -63,9 +63,9 @@ binary_sensor.hall_entrance:
   friendly_name: Вход
   
 device_tracker.phone_oksana:
-  friendly_name: Телефон Оксаны
-device_tracker.phone_andrew:
-  friendly_name: Телефон Андрея
+  friendly_name: Оксана
+device_tracker.phone_drronnie:
+  friendly_name: Андрей
 device_tracker.router_main:
   friendly_name: Прихожая роутер
 device_tracker.router_kitchen:
