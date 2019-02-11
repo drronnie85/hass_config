@@ -23,11 +23,6 @@
     timeout: 15
     friendly_name: 'salt_lamp'
   - platform: mqtt
-    name: wc_fan
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001015A18000BDAA8"
-    payload_off: "C001015A18000BDAA2"
-  - platform: mqtt
     name: wc_boiler
     state_topic: boiler/relay/0
     command_topic: boiler/relay/0/set

@@ -1,4 +1,13 @@
-- id: oksana come home notify
+- id: mqtt_sensor_redirect
+  alias: Pulsante Marty ramen
+  trigger:
+    - platform: mqtt
+      topic: "bridge/rfin_9"
+  action:
+    - service: mqtt.publish
+      data_template:     
+        payload_template: '{{trigger.payload[9:]}}'
+- id: oksana_come
   initial_state: 'off'
   trigger:
    - platform: state
@@ -10,7 +19,7 @@
     service: notify.telegram
     data_template:
       message: Оксана вернулась домой
-- id: oksana left home notify
+- id: oksana_left
   initial_state: 'off'
   trigger:
    - platform: state
@@ -22,28 +31,3 @@
     service: notify.telegram
     data_template:
       message: Оксана вышла из дома
-- id: andrew come home notify
-  initial_state: 'off'
-  trigger:
-   - platform: state
-     entity_id:
-       - device_tracker.phone_andrew
-     from: 'not_home'
-     to: 'home'
-  action:
-    service: notify.telegram
-    data_template:
-      message: Андрей вернулся домой
-- id: andrew left home notify
-  initial_state: 'off'
-  trigger:
-   - platform: state
-     entity_id:
-       - device_tracker.phone_andrew
-     from: 'home'
-     to: 'not_home'
-  action:
-    service: notify.telegram
-    data_template:
-      message: Андрей вышел из дома
-  
