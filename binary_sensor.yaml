@@ -1,48 +1,48 @@
   - platform: mqtt
     name: livingroom_motion
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '800A0EC86'
+    state_topic: bridge/rfin_sensor
+    payload_on: "800A0EC86"
     device_class: motion
     off_delay: !secret sensor_delay_motion
   - platform: mqtt
     name: hall_motion
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '8005F9E26'
+    state_topic: bridge/rfin_sensor
+    payload_on: "8005F9E26"
     device_class: motion
     off_delay: !secret sensor_delay_motion
   - platform: mqtt
     name: bedroom_motion
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '800111111'
+    state_topic: bridge/rfin_sensor
+    payload_on: "800111111"
     device_class: motion
     off_delay: !secret sensor_delay_motion
   - platform: mqtt
     name: livingroom_window
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '800B777A9'
+    state_topic: bridge/rfin_sensor
+    payload_on: "800B777A9"
     device_class: window
     off_delay: !secret sensor_delay_window
   - platform: mqtt
     name: kitchen_window
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '8004FEF99'
+    state_topic: bridge/rfin_sensor
+    payload_on: "8004FEF99"
     device_class: window
     off_delay: !secret sensor_delay_window
   - platform: mqtt
     name: bedroom_window
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '800FE3259'
+    state_topic: bridge/rfin_sensor
+    payload_on: "800FE3259"
     device_class: window
     off_delay: !secret sensor_delay_window
   - platform: mqtt
     name: livingroom_balcony
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '8007AEA59'
+    state_topic: bridge/rfin_sensor
+    payload_on: "8007AEA59"
     device_class: door
     off_delay: !secret sensor_delay_door
   - platform: mqtt
     name: hall_entrance
-    state_topic: 'bridge/rfin_sensor'
-    payload_on: '8004BB90E'
+    state_topic: bridge/rfin_sensor
+    payload_on: "8004BB90E"
     device_class: door
     off_delay: !secret sensor_delay_door

@@ -91,7 +91,7 @@ tts:
 
 alarm_control_panel:
   - platform: manual_mqtt
-    code: !secret alarm_code
+    # code: !secret alarm_code
     state_topic: home/alarm
     command_topic: home/alarm/set
     pending_time: 30
