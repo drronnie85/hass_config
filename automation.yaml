@@ -17,6 +17,9 @@
     - platform: mqtt
       topic: bridge/rfin_sensor
       payload: "8000CFBA8"
+    - platform: mqtt
+      topic: bridge/rfin_sensor
+      payload: "8005D7DC0"
   action:
     - service: mqtt.publish
       data_template:
@@ -30,6 +33,9 @@
     - platform: mqtt
       topic: bridge/rfin_sensor
       payload: "8000CFBA1"
+    - platform: mqtt
+      topic: bridge/rfin_sensor
+      payload: "8005D7D03"
   action:
     - service: mqtt.publish
       data_template:
@@ -43,6 +49,9 @@
     - platform: mqtt
       topic: bridge/rfin_sensor
       payload: "8000CFBA4"
+    - platform: mqtt
+      topic: bridge/rfin_sensor
+      payload: "8005D7D0C"
   action:
     - service: mqtt.publish
       data_template:
@@ -57,6 +66,9 @@
 #     - platform: mqtt
 #       topic: bridge/rfin_sensor
 #       payload: "8000CFBA2"
+#     - platform: mqtt
+#       topic: bridge/rfin_sensor
+#       payload: "8005D7D30"
 #   action:
 #     - service: mqtt.publish
 #       data_template:
