@@ -3,6 +3,57 @@ resources:
   - type: module
     url: /local/custom_ui/weather-card.js?v=0.24
 views:
+  - id: climate
+    title: Климат
+    icon: mdi:weather-cloudy
+    cards:
+      - entity: weather.dark_sky
+        type: custom:weather-card
+      - type: iframe
+        url: >-
+          https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
+        aspect_ratio: 90%
+      - type: entities
+        entities:
+          - type: section
+            label: Улица
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_pressure
+          - type: section
+            label: Спальня
+          - sensor.br_bedroom_temperature
+          - sensor.br_bedroom_humidity
+          - type: section
+            label: Зал
+          - sensor.br_livingroom_temperature
+          - sensor.br_livingroom_humidity
+          - type: section
+            label: Кухня
+          - sensor.kitchen_temperature
+          - sensor.kitchen_humidity
+      - type: history-graph
+        title: Температура
+        entities:
+          - entity: sensor.br_livingroom_temperature
+            name: Зал
+          - entity: sensor.br_bedroom_temperature
+            name: Спальня
+          - entity: sensor.kitchen_temperature
+            name: Кухня
+          - entity: sensor.dark_sky_temperature
+            name: Улица
+      - type: history-graph
+        title: Влажность в квартире
+        entities:
+          - entity: sensor.br_livingroom_humidity
+            name: Зал
+          - entity: sensor.br_bedroom_humidity
+            name: Спальня
+          - entity: sensor.kitchen_humidity
+            name: Кухня
+          - entity: sensor.dark_sky_humidity
+            name: Улица
   - id: info
     title: Информация
     icon: mdi:information
@@ -107,6 +158,7 @@ views:
             label: Улица
           - sensor.dark_sky_temperature
           - sensor.dark_sky_humidity
+          - sensor.dark_sky_pressure
           - type: section
             label: Спальня
           - sensor.br_bedroom_temperature
