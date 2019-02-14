@@ -3,6 +3,7 @@
     monitored_conditions:
       - temperature
       - humidity
+      - pressure
     update_interval:
       minutes: 20
   - platform: moon
