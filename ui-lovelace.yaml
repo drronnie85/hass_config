@@ -218,16 +218,17 @@ views:
     cards:
       - type: picture-elements
         image: /local/floorplan/main.png
-        aspect_ratio: 90%
+        #aspect_ratio: 90%
         elements:
           # living room
-          - type: state-icon
+          - type: icon
+            icon: mdi:cctv
             entity: camera.zal
             tap_action:
               action: more-info
             style:
-              left: 3%
-              top: 30%
+              left: 6%
+              top: 35%
           - type: state-label
             entity: sensor.br_livingroom_temperature
             style:
@@ -253,6 +254,22 @@ views:
               left: 22.5%
               top: 62%
           # bedroom
+          - type: icon
+            icon: mdi:cctv
+            entity: camera.spalnia
+            tap_action:
+              action: more-info
+            style:
+              left: 63%
+              top: 10%
+          - type: icon
+            icon: mdi:cctv
+            entity: camera.kristof
+            tap_action:
+              action: more-info
+            style:
+              left: 37%
+              top: 20%
           - type: state-label
             entity: sensor.br_bedroom_temperature
             style:
@@ -276,8 +293,16 @@ views:
               action: toggle
             style:
               left: 63%
-              top: 10%
+              top: 18%
           # kitchen
+          - type: icon
+            icon: mdi:cctv
+            entity: camera.kukhnia
+            tap_action:
+              action: more-info
+            style:
+              left: 49%
+              top: 46%
           - type: state-label
             entity: sensor.kitchen_temperature
             style:
@@ -303,6 +328,14 @@ views:
               left: 94%
               top: 46%
           # hall
+          - type: icon
+            icon: mdi:cctv
+            entity: camera.prikhozhaia
+            tap_action:
+              action: more-info
+            style:
+              left: 42%
+              top: 85%
           - type: state-icon
             entity: light.hall
             tap_action:
