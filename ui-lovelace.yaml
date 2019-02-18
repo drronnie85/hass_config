@@ -52,7 +52,7 @@ views:
             name: Кухня
   - id: security
     title: Информация
-    icon: mdi:shield-home
+    icon: mdi:shield
     badges:
       - device_tracker.phone_oksana
       - device_tracker.phone_drronnie
