@@ -227,8 +227,8 @@ views:
             tap_action:
               action: more-info
             style:
-              left: 6%
-              top: 35%
+              left: 7%
+              top: 34%
           - type: state-label
             entity: sensor.br_livingroom_temperature
             style:
@@ -268,8 +268,8 @@ views:
             tap_action:
               action: more-info
             style:
-              left: 37%
-              top: 20%
+              left: 39%
+              top: 22%
           - type: state-label
             entity: sensor.br_bedroom_temperature
             style:
@@ -301,7 +301,7 @@ views:
             tap_action:
               action: more-info
             style:
-              left: 49%
+              left: 74%
               top: 46%
           - type: state-label
             entity: sensor.kitchen_temperature
@@ -334,7 +334,7 @@ views:
             tap_action:
               action: more-info
             style:
-              left: 42%
+              left: 41%
               top: 85%
           - type: state-icon
             entity: light.hall
