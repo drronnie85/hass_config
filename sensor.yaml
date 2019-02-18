@@ -4,6 +4,7 @@
       - temperature
       - humidity
       - pressure
+      - precip_intensity
     update_interval:
       minutes: 20
   - platform: moon
@@ -12,7 +13,7 @@
     name: br_bedroom
     update_interval: 60
     host: 192.168.1.52
-    mac: 'b4:43:0d:d1:18:d2'
+    mac: "b4:43:0d:d1:18:d2"
     monitored_conditions:
       - temperature
       - humidity
@@ -23,7 +24,7 @@
     name: br_livingroom
     update_interval: 60
     host: 192.168.1.61
-    mac: '34:ea:34:b2:a8:26'
+    mac: "34:ea:34:b2:a8:26"
     monitored_conditions:
       - temperature
       - humidity
@@ -41,4 +42,4 @@
   - name: kitchen_humidity
     platform: mqtt
     state_topic: kitchen_th10/humidity
-    unit_of_measurement: '%'
+    unit_of_measurement: "%"
