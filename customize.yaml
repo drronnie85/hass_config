@@ -107,35 +107,45 @@ device_tracker.camera_mobile:
   friendly_name: Переносная
   icon: mdi:cctv
 device_tracker.iot_rmpro_livingroom:
-  friendly_name: Зал RM
+  friendly_name: Зал
   icon: mdi:remote
 device_tracker.iot_a1_bedroom:
-  friendly_name: Спальня A1
+  friendly_name: Спальня
   icon: mdi:thermometer
 device_tracker.iot_mp1_kitchen:
   friendly_name: Кухня MP1
   icon: mdi:power-socket-eu
 device_tracker.iot_bridge_hall:
-  friendly_name: Прихожая RFBridge
+  friendly_name: Прихожая
   icon: mdi:remote
 device_tracker.iot_powb1_wc:
-  friendly_name: Туалет PowB1
+  friendly_name: Туалет
   icon: mdi:power-socket-eu
 device_tracker.iot_mc1_bedroom:
-  friendly_name: Спальня ночник
+  friendly_name: Спальня
   icon: mdi:lightbulb
 device_tracker.iot_th10_kitchen:
-  friendly_name: Кухня TH10
-  icon: mdi:power-socket-eu
+  friendly_name: Кухня
+  icon: mdi:thermometer
 device_tracker.media_mibox_livingroom:
-  friendly_name: Зал MiBox
+  friendly_name: Зал
   icon: mdi:television
 device_tracker.media_ghmini_bedroom:
-  friendly_name: Спальня GHM
+  friendly_name: Спальня
   icon: mdi:google-home
 device_tracker.iot_a1_livingroom:
-  friendly_name: Зал A1
+  friendly_name: Зал
   icon: mdi:thermometer
 device_tracker.iot_rmpro_bedroom:
-  friendly_name: Спальня RM
+  friendly_name: Спальня
   icon: mdi:remote
+
+device_tracker.srv_esxi:
+  friendly_name: ESXi
+  icon: mdi:server
+device_tracker.srv_nas:
+  friendly_name: NAS
+  icon: mdi:server
+device_tracker.srv_db1:
+  friendly_name: DB1
+  icon: mdi:server

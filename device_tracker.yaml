@@ -16,7 +16,6 @@
       camera_hall:            192.168.1.47
       camera_bedroom:         192.168.1.48
       camera_mobile:          192.168.1.49
-#      camera_mobile:          192.168.1.46
       iot_rmpro_livingroom:   192.168.1.51
       iot_a1_bedroom:         192.168.1.52
       iot_mp1_kitchen:        192.168.1.53
@@ -28,6 +27,10 @@
       iot_rmpro_bedroom:      192.168.1.62
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
+      media_ghmini_bedroom:   192.168.1.92
+      srv_esxi:               192.168.1.2
+      srv_nas:                192.168.1.4
+      srv_db1:                192.168.1.6
   # - platform: bluetooth_tracker
   # - platform: googlehome
   #   host: 192.168.1.92
