@@ -219,28 +219,38 @@ views:
         image: /local/floorplan/main.png
         aspect_ratio: 90%
         elements:
-          - type: state-badge
+          - type: image
+            entity: camera.zal
+#            image: /local/icons/camera_porch_streaming.png
+#            state_image:
+#              'recording': /local/icons/camera_porch_recording.png
+            style:
+              left: 5%
+              top: 40%
+              transform: none
+
+          - type: state-label
             entity: sensor.br_livingroom_temperature
             style:
               left: 12%
-              top: 37%
-          - type: state-badge
+              top: 45%
+          - type: state-label
             entity: sensor.br_livingroom_humidity
             style:
-              left: 24%
-              top: 37%
+              left: 26%
+              top: 45%
           - type: state-icon
             entity: light.livingroom
             tap_action:
               action: toggle
             style:
-              left: 14%
-              top: 60%
+              left: 18%
+              top: 62%
           - type: state-icon
             entity: light.livingroom_back
             tap_action:
               action: toggle
             style:
               left: 22%
-              top: 60%
+              top: 62%
 
