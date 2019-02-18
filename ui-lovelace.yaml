@@ -214,11 +214,11 @@ views:
   - id: floorplan
     title: План
     icon: mdi:floor-plan
-    #panel: true
+    panel: true
     cards:
       - type: picture-elements
         image: /local/floorplan/main.png
-        #aspect_ratio: 90%
+        aspect_ratio: 75%
         elements:
           # living room
           - type: icon
@@ -244,14 +244,14 @@ views:
             tap_action:
               action: toggle
             style:
-              left: 17.5%
+              left: 15%
               top: 62%
           - type: state-icon
             entity: light.livingroom_back
             tap_action:
               action: toggle
             style:
-              left: 22.5%
+              left: 25%
               top: 62%
           # bedroom
           - type: icon
@@ -293,7 +293,7 @@ views:
               action: toggle
             style:
               left: 63%
-              top: 18%
+              top: 22%
           # kitchen
           - type: icon
             icon: mdi:cctv
@@ -301,7 +301,7 @@ views:
             tap_action:
               action: more-info
             style:
-              left: 74%
+              left: 72%
               top: 46%
           - type: state-label
             entity: sensor.kitchen_temperature
