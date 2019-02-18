@@ -2,6 +2,8 @@ title: Дом Андрея и Оксаны
 resources:
   - type: module
     url: /local/custom_ui/weather-card.js?v=0.24
+  - type: module
+    url: /local/custom_ui/thermostat-card.js?v=1.3
 views:
   - id: climate
     title: Климат
@@ -211,3 +213,49 @@ views:
           - device_tracker.srv_esxi
           - device_tracker.srv_nas
           - device_tracker.srv_db1
+  - id: floorplan
+    title: План
+    icon: mdi:floor-plan
+    cards:
+      - type: picture-elements
+        image: /local/floorplan/main.png
+        elements:
+          - type: image
+            entity: light.livingroom
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            image: /local/icons/light_bulb_off.png
+            state_image:
+              "on": /local/icons/light_bulb_on.png
+            style:
+              top: 164px
+              left: 126px
+              width: 36px
+              height: 36px
+          - type: image
+            entity: light.livingroom_back
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            image: /local/icons/light_bulb_off.png
+            state_image:
+              "on": /local/icons/light_bulb_on.png
+            style:
+              top: 164px
+              left: 180px
+              width: 48px
+              height: 48px
+          - type: custom:thermostat-card
+            entity: climate.livingroom
+            no_card: true
+            hvac:
+              attribute: operation
+            style:
+              top: 210px
+              left: 126px
+              width: 50px
+              height: 50px
+
