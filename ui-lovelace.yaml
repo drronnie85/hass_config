@@ -214,11 +214,11 @@ views:
   - id: floorplan
     title: План
     icon: mdi:floor-plan
-    panel: true
+    #panel: true
     cards:
       - type: picture-elements
         image: /local/floorplan/main.png
-        aspect_ratio: 75%
+        #aspect_ratio: 75%
         elements:
           # living room
           - type: icon
