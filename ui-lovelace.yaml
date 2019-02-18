@@ -227,14 +227,14 @@ views:
           - type: state-badge
             entity: sensor.br_livingroom_humidity
             style:
-              left: 22%
+              left: 24%
               top: 37%
           - type: state-icon
             entity: light.livingroom
             tap_action:
               action: toggle
             style:
-              left: 12%
+              left: 14%
               top: 60%
           - type: state-icon
             entity: light.livingroom_back
