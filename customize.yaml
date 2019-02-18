@@ -66,51 +66,76 @@ binary_sensor.hall_entrance:
   
 device_tracker.phone_oksana:
   friendly_name: Оксана
+  icon: mdi:cellphone-android
 device_tracker.phone_drronnie:
   friendly_name: Андрей
+  icon: mdi:cellphone-android
 device_tracker.router_main:
-  friendly_name: Прихожая роутер
+  friendly_name: Прихожая
+  icon: mdi:router-wireless
 device_tracker.router_kitchen:
-  friendly_name: Кухня роутер
+  friendly_name: Кухня
+  icon: mdi:router-wireless
 device_tracker.router_livingroom:
-  friendly_name: Зал роутер 
+  friendly_name: Зал
+  icon: mdi:router-wireless
 device_tracker.camera_livingroom:
-  friendly_name: Зал камера 
+  friendly_name: Зал
+  icon: mdi:cctv
 device_tracker.camera_tambour:
-  friendly_name: Тамбур камера 
+  friendly_name: Тамбур
+  icon: mdi:cctv
 device_tracker.camera_loft:
-  friendly_name: Чердак камера 
+  friendly_name: Чердак
+  icon: mdi:cctv
 device_tracker.camera_entrance:
-  friendly_name: Подъезд камера 
+  friendly_name: Подъезд
+  icon: mdi:cctv
 device_tracker.camera_kitchen:
-  friendly_name: Кухня камера 
+  friendly_name: Кухня
+  icon: mdi:cctv
 device_tracker.camera_cristoph:
-  friendly_name: Кристоф камера 
+  friendly_name: Кристоф
+  icon: mdi:cctv
 device_tracker.camera_hall:
-  friendly_name: Прихожая камера 
+  friendly_name: Прихожая
+  icon: mdi:cctv
 device_tracker.camera_bedroom:
-  friendly_name: Спальня камера 
+  friendly_name: Спальня
+  icon: mdi:cctv
 device_tracker.camera_mobile:
-  friendly_name: Переносная камера 
+  friendly_name: Переносная
+  icon: mdi:cctv
 device_tracker.iot_rmpro_livingroom:
-  friendly_name: Зал RM2Pro
+  friendly_name: Зал RM
+  icon: mdi:remote
 device_tracker.iot_a1_bedroom:
   friendly_name: Спальня A1
+  icon: mdi:thermometer
 device_tracker.iot_mp1_kitchen:
   friendly_name: Кухня MP1
+  icon: mdi:power-socket-eu
 device_tracker.iot_bridge_hall:
   friendly_name: Прихожая RFBridge
+  icon: mdi:remote
 device_tracker.iot_powb1_wc:
   friendly_name: Туалет PowB1
+  icon: mdi:power-socket-eu
 device_tracker.iot_mc1_bedroom:
   friendly_name: Спальня ночник
+  icon: mdi:lightbulb
 device_tracker.iot_th10_kitchen:
-  friendly_name: Кухня реле
+  friendly_name: Кухня TH10
+  icon: mdi:power-socket-eu
 device_tracker.media_mibox_livingroom:
   friendly_name: Зал MiBox
+  icon: mdi:television
 device_tracker.media_ghmini_bedroom:
-  friendly_name: Спальня Google Home mini
+  friendly_name: Спальня GHM
+  icon: mdi:google-home
 device_tracker.iot_a1_livingroom:
   friendly_name: Зал A1
+  icon: mdi:thermometer
 device_tracker.iot_rmpro_bedroom:
-  friendly_name: Спальня RM2Pro
+  friendly_name: Спальня RM
+  icon: mdi:remote
