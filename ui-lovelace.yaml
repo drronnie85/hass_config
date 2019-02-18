@@ -275,25 +275,25 @@ views:
             entity: sensor.kitchen_temperature
             style:
               left: 83%
-              top: 18%
+              top: 16%
           - type: state-label
             entity: sensor.kitchen_humidity
             style:
               left: 83%
-              top: 23%
+              top: 21%
           - type: state-icon
             entity: light.kitchen
             tap_action:
               action: toggle
             style:
-              left: 85%
-              top: 37%
+              left: 83%
+              top: 34%
           - type: state-icon
             entity: light.kitchen_back
             tap_action:
               action: toggle
             style:
-              left: 93%
+              left: 94%
               top: 46%
           # hall
           - type: state-icon
@@ -310,7 +310,7 @@ views:
               action: toggle
             style:
               left: 77%
-              top: 74%
+              top: 73%
           # bathroom
           - type: state-icon
             entity: light.bathroom
@@ -318,7 +318,7 @@ views:
               action: toggle
             style:
               left: 85%
-              top: 85%
+              top: 84%
           # wc
           - type: state-icon
             entity: light.wc
@@ -326,11 +326,11 @@ views:
               action: toggle
             style:
               left: 84%
-              top: 60%
+              top: 59%
           - type: state-icon
             entity: fan.wc_fan
             tap_action:
               action: toggle
             style:
               left: 94%
-              top: 60%
+              top: 59%
