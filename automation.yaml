@@ -166,6 +166,7 @@
     service: notify.telegram
     data_template:
       message: "{{ trigger.entity_id.split('.')[1] }} дома"
+
 - alias: Somebody Left
   initial_state: false
   trigger:
@@ -179,23 +180,21 @@
     service: notify.telegram
     data_template:
       message: "{{ trigger.entity_id.split('.')[1] }} не дома"
-
-
-  - alias: Начался дождь
-    trigger:
-      - platform: state
-        entity_id: sensor.precip_intensity
-        to: "rain"
-    action:
-      service: notify.telegram
-      data_template:
-        message: "Начался дождь"
-  - alias: Закончился дождь 
-    trigger:
-      - platform: state
-        entity_id: sensor.precip_intensity
-        to: "None"
-    action:
-      service: notify.telegram
-      data_template:
-        message: "Закончился дождь"
+- alias: Начался дождь
+  trigger:
+    - platform: state
+      entity_id: sensor.precip_intensity
+      to: "rain"
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Начался дождь"
+- alias: Закончился дождь 
+  trigger:
+    - platform: state
+      entity_id: sensor.precip_intensity
+      to: "None"
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Закончился дождь"
