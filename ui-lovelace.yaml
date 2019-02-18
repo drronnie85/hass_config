@@ -62,6 +62,7 @@ views:
         name: Охрана
         states:
           - arm_away
+          - arm_home
       - type: entities
         title: Датчики
         show_header_toggle: false
@@ -87,9 +88,9 @@ views:
           - type: section
             label: Спальня
           - type: state-icon
-            entity: binary_sensor.bedroom_window
-          - type: state-icon
             entity: binary_sensor.bedroom_motion
+          - type: state-icon
+            entity: binary_sensor.bedroom_window
   - id: camera
     title: Камеры
     icon: mdi:camera
