@@ -249,19 +249,19 @@ views:
           - type: state-label
             entity: sensor.br_bedroom_temperature
             style:
-              left: 53%
+              left: 52%
               top: 23%
           - type: state-label
             entity: sensor.br_bedroom_humidity
             style:
-              left: 53%
+              left: 52%
               top: 28%
           - type: state-icon
             entity: light.bedroom
             tap_action:
               action: toggle
             style:
-              left: 43%
+              left: 52%
               top: 42%
           - type: state-icon
             entity: light.bedroom_back
@@ -274,20 +274,20 @@ views:
           - type: state-label
             entity: sensor.kitchen_temperature
             style:
-              left: 85%
-              top: 15%
+              left: 83%
+              top: 18%
           - type: state-label
             entity: sensor.kitchen_humidity
             style:
-              left: 85%
-              top: 20%
+              left: 83%
+              top: 23%
           - type: state-icon
             entity: light.kitchen
             tap_action:
               action: toggle
             style:
               left: 85%
-              top: 34%
+              top: 37%
           - type: state-icon
             entity: light.kitchen_back
             tap_action:
@@ -301,7 +301,7 @@ views:
             tap_action:
               action: toggle
             style:
-              left: 53%
+              left: 52%
               top: 85%
           # corridor
           - type: state-icon
@@ -309,8 +309,8 @@ views:
             tap_action:
               action: toggle
             style:
-              left: 80%
-              top: 75%
+              left: 77%
+              top: 74%
           # bathroom
           - type: state-icon
             entity: light.bathroom
@@ -325,12 +325,12 @@ views:
             tap_action:
               action: toggle
             style:
-              left: 85%
-              top: 70%
+              left: 84%
+              top: 60%
           - type: state-icon
             entity: fan.wc_fan
             tap_action:
               action: toggle
             style:
-              left: 95%
-              top: 70%
+              left: 94%
+              top: 60%
