@@ -214,12 +214,13 @@ views:
   - id: floorplan
     title: План
     icon: mdi:floor-plan
+    panel: true
     cards:
       - type: picture-elements
         image: /local/floorplan/main.png
         aspect_ratio: 90%
         elements:
-          # Living room
+          # living room
           - type: state-label
             entity: sensor.br_livingroom_temperature
             style:
@@ -244,29 +245,85 @@ views:
             style:
               left: 22.5%
               top: 62%
-          #Bedroom
+          # bedroom
           - type: state-label
             entity: sensor.br_bedroom_temperature
             style:
-              left: 60%
-              top: 33%
+              left: 50%
+              top: 23%
           - type: state-label
             entity: sensor.br_bedroom_humidity
             style:
-              left: 60%
-              top: 38%
+              left: 50%
+              top: 28%
           - type: state-icon
             entity: light.bedroom
             tap_action:
               action: toggle
             style:
-              left: 60%
+              left: 50%
               top: 50%
           - type: state-icon
             entity: light.bedroom_back
             tap_action:
               action: toggle
             style:
-              left: 70%
+              left: 63%
               top: 10%
-
+          # kitchen
+          - type: state-label
+            entity: sensor.kitchen_temperature
+            style:
+              left: 80%
+              top: 13%
+          - type: state-label
+            entity: sensor.kitchen_humidity
+            style:
+              left: 80%
+              top: 18%
+          - type: state-icon
+            entity: light.kitchen
+            tap_action:
+              action: toggle
+            style:
+              left: 80%
+              top: 30%
+          - type: state-icon
+            entity: light.kitchen_back
+            tap_action:
+              action: toggle
+            style:
+              left: 90%
+              top: 45%
+          # hall
+          - type: state-icon
+            entity: light.hall
+            tap_action:
+              action: toggle
+            style:
+              left: 50%
+              top: 90%
+          # corridor
+          - type: state-icon
+            entity: light.corridor
+            tap_action:
+              action: toggle
+            style:
+              left: 70%
+              top: 80%
+          # bathroom
+          - type: state-icon
+            entity: light.bathroom
+            tap_action:
+              action: toggle
+            style:
+              left: 90%
+              top: 90%
+          # wc
+          - type: state-icon
+            entity: light.wc
+            tap_action:
+              action: toggle
+            style:
+              left: 90%
+              top: 70%
