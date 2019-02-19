@@ -273,19 +273,19 @@ views:
           - type: state-label
             entity: sensor.br_bedroom_temperature
             style:
-              left: 52%
+              left: 51%
               top: 23%
           - type: state-label
             entity: sensor.br_bedroom_humidity
             style:
-              left: 52%
+              left: 51%
               top: 28%
           - type: state-icon
             entity: light.bedroom
             tap_action:
               action: toggle
             style:
-              left: 52%
+              left: 51%
               top: 42%
           - type: state-icon
             entity: light.bedroom_back
@@ -301,7 +301,7 @@ views:
             tap_action:
               action: more-info
             style:
-              left: 72%
+              left: 71%
               top: 46%
           - type: state-label
             entity: sensor.kitchen_temperature
@@ -325,7 +325,7 @@ views:
             tap_action:
               action: toggle
             style:
-              left: 94%
+              left: 95%
               top: 46%
           # hall
           - type: icon
@@ -341,7 +341,7 @@ views:
             tap_action:
               action: toggle
             style:
-              left: 52%
+              left: 51%
               top: 85%
           # corridor
           - type: state-icon
@@ -350,7 +350,7 @@ views:
               action: toggle
             style:
               left: 77%
-              top: 73%
+              top: 72%
           # bathroom
           - type: state-icon
             entity: light.bathroom
