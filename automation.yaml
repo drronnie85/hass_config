@@ -162,8 +162,7 @@
   action:
     service: notify.telegram
     data_template:
-      message: >
-       {{ trigger.entity_id }} дома
+      message: "Кто-то дома"
 - alias: Someone Left Home
   trigger:
     platform: zone
@@ -173,7 +172,7 @@
   action:
     service: notify.telegram
     data_template:
-      message: "{{ trigger.to_state.attributes.friendly_name }} ушел из дома"
+      message: "Кто-то ушел из дома"
 - alias: Someone Came Work
   trigger:
     platform: zone
@@ -183,7 +182,7 @@
   action:
     service: notify.telegram
     data_template:
-      message: "{{ trigger.to_state.attributes.friendly_name }} на работе"
+      message: "Кто-то на работе"
 - alias: Someone Left Work
   trigger:
     platform: zone
@@ -193,7 +192,7 @@
   action:
     service: notify.telegram
     data_template:
-      message: "{{ trigger.to_state.attributes.friendly_name }} ушел с работы"
+      message: "Кто-то ушел с работы"
 - alias: Someone Came Motherinlaw
   trigger:
     platform: zone
@@ -203,11 +202,11 @@
   action:
     service: notify.telegram
     data_template:
-      message: "{{ trigger.to_state.attributes.friendly_name }} у тёщи"
+      message: "Кто-то у тёщи"
 
 
 # weather notification
-- alias: Начался дождь
+- alias: Rain is Started
   trigger:
     - platform: state
       entity_id: sensor.precip_intensity
@@ -216,7 +215,7 @@
     service: notify.telegram
     data_template:
       message: "Начался дождь"
-- alias: Закончился дождь 
+- alias: "Rain is Over"
   trigger:
     - platform: state
       entity_id: sensor.precip_intensity
