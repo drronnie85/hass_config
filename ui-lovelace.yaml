@@ -170,8 +170,8 @@ views:
         min: 180
         max: 250
         severity:
-          green: 180
-          yellow: 210
+          yellow: 180
+          green: 210
           red: 230
       - type: entities
         title: Медиа
