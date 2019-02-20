@@ -169,7 +169,11 @@ views:
         entity: sensor.voltage
         min: 180
         max: 250
-      - type: glance
+        severity:
+          green: 180
+          yellow: 210
+          red: 230
+      - type: entities
         title: Медиа
         show_state: false
         entities:
@@ -178,7 +182,7 @@ views:
           - device_tracker.router_livingroom
           - device_tracker.media_mibox_livingroom
           - device_tracker.media_ghmini_bedroom
-      - type: glance
+      - type: entities
         title: Камеры
         show_state: false
         entities:
@@ -191,7 +195,7 @@ views:
           - device_tracker.camera_kitchen
           - device_tracker.camera_hall
           - device_tracker.camera_mobile
-      - type: glance
+      - type: entities
         title: IoT
         show_state: false
         entities:
@@ -204,7 +208,7 @@ views:
           - device_tracker.iot_th10_kitchen
           - device_tracker.iot_a1_livingroom
           - device_tracker.iot_rmpro_bedroom
-      - type: glance
+      - type: entities
         title: Серверы
         show_state: false
         entities:
