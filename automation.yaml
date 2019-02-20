@@ -162,7 +162,8 @@
   action:
     service: notify.telegram
     data_template:
-      message: "{{ trigger.to_state.attributes.friendly_name }} дома"
+      message: >
+       {{ trigger.entity_id }} дома
 - alias: Someone Left Home
   trigger:
     platform: zone
