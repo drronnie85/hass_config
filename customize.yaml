@@ -149,3 +149,6 @@ device_tracker.srv_nas:
 device_tracker.srv_db1:
   friendly_name: DB1
   icon: mdi:server
+
+device_tracker.google_maps_105861814760109955404:
+  friendly_name: Андрей
