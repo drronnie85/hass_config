@@ -154,55 +154,55 @@
 
 # Geolocation triggers
 - alias: Someone Came Home
-   trigger:
-     platform: zone
-     event: enter
-     zone: zone.home
-     entity_id: device_tracker.google_maps_105861814760109955404
-   action:
-     service: notify.telegram
-     data_template:
-       message: "{{ trigger.to_state.attributes.friendly_name }} дома"
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.home
+    entity_id: device_tracker.google_maps_105861814760109955404
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ trigger.to_state.attributes.friendly_name }} дома"
 - alias: Someone Left Home
-   trigger:
-     platform: zone
-     event: leave
-     zone: zone.home
-     entity_id: device_tracker.google_maps_105861814760109955404
-   action:
-     service: notify.telegram
-     data_template:
-       message: "{{ trigger.to_state.attributes.friendly_name }} ушел из дома"
+  trigger:
+    platform: zone
+    event: leave
+    zone: zone.home
+    entity_id: device_tracker.google_maps_105861814760109955404
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ trigger.to_state.attributes.friendly_name }} ушел из дома"
 - alias: Someone Came Work
-   trigger:
-     platform: zone
-     event: enter
-     zone: zone.work
-     entity_id: device_tracker.google_maps_105861814760109955404
-   action:
-     service: notify.telegram
-     data_template:
-       message: "{{ trigger.to_state.attributes.friendly_name }} на работе"
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.work
+    entity_id: device_tracker.google_maps_105861814760109955404
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ trigger.to_state.attributes.friendly_name }} на работе"
 - alias: Someone Left Work
-   trigger:
-     platform: zone
-     event: leave
-     zone: zone.work
-     entity_id: device_tracker.google_maps_105861814760109955404
-   action:
-     service: notify.telegram
-     data_template:
-       message: "{{ trigger.to_state.attributes.friendly_name }} ушел с работы"
+  trigger:
+    platform: zone
+    event: leave
+    zone: zone.work
+    entity_id: device_tracker.google_maps_105861814760109955404
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ trigger.to_state.attributes.friendly_name }} ушел с работы"
 - alias: Someone Came Motherinlaw
-   trigger:
-     platform: zone
-     event: enter
-     zone: zone.motherinlaw
-     entity_id: device_tracker.google_maps_105861814760109955404
-   action:
-     service: notify.telegram
-     data_template:
-       message: "{{ trigger.to_state.attributes.friendly_name }} у тёщи"
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.motherinlaw
+    entity_id: device_tracker.google_maps_105861814760109955404
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ trigger.to_state.attributes.friendly_name }} у тёщи"
 
 
 # weather notification
