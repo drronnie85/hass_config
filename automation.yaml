@@ -152,27 +152,63 @@
     service: homeassistant.turn_off
     entity_id: light.corridor
 
+#ping
+- alias: Somebody Came Home Ping
+  initial_state: true
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_oksana
+       - device_tracker.phone_drronnie
+     from: not_home
+     to: home
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Кто-то дома (ping)"
+- alias: Somebody Left Home Ping
+  initial_state: false
+  trigger:
+   - platform: state
+     entity_id:
+       - device_tracker.phone_oksana
+       - device_tracker.phone_drronnie
+     from: home
+     to: not_home
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Кто-то ушел из дома (Ping)"
+
 # Geolocation triggers
-- alias: Someone Came Home
+- alias: Someone Came Home Google
   trigger:
-    platform: zone
-    event: enter
-    zone: zone.home
-    entity_id: device_tracker.google_maps_105861814760109955404, device_tracker.google_maps_104258330239786803059
+   - platform: state
+     entity_id:
+       - device_tracker.google_maps_105861814760109955404
+       - device_tracker.google_maps_104258330239786803059
+     from: not_home
+     to: home
+     for:
+       minutes: 10
   action:
     service: notify.telegram
     data_template:
-      message: "Кто-то дома"
-- alias: Someone Left Home
+      message: "Кто-то дома (Google)"
+- alias: Someone Left Home Google
   trigger:
-    platform: zone
-    event: leave
-    zone: zone.home
-    entity_id: device_tracker.google_maps_105861814760109955404, device_tracker.google_maps_104258330239786803059
+   - platform: state
+     entity_id:
+       - device_tracker.google_maps_105861814760109955404
+       - device_tracker.google_maps_104258330239786803059
+     from: home
+     to: not_home
+     for:
+       minutes: 10
   action:
     service: notify.telegram
     data_template:
-      message: "Кто-то ушел из дома"
+      message: "Кто-то ушел из дома (Google)"
 - alias: Someone Came Motherinlaw
   trigger:
     platform: zone
