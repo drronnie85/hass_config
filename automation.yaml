@@ -158,7 +158,7 @@
     platform: zone
     event: enter
     zone: zone.home
-    entity_id: device_tracker.google_maps_105861814760109955404
+    entity_id: device_tracker.google_maps_105861814760109955404, device_tracker.google_maps_104258330239786803059
   action:
     service: notify.telegram
     data_template:
@@ -168,11 +168,21 @@
     platform: zone
     event: leave
     zone: zone.home
-    entity_id: device_tracker.google_maps_105861814760109955404
+    entity_id: device_tracker.google_maps_105861814760109955404, device_tracker.google_maps_104258330239786803059
   action:
     service: notify.telegram
     data_template:
       message: "Кто-то ушел из дома"
+- alias: Someone Came Motherinlaw
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.motherinlaw
+    entity_id: device_tracker.google_maps_105861814760109955404, device_tracker.google_maps_104258330239786803059
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Кто-то у тёщи"
 - alias: Someone Came Work
   trigger:
     platform: zone
@@ -193,17 +203,6 @@
     service: notify.telegram
     data_template:
       message: "Кто-то ушел с работы"
-- alias: Someone Came Motherinlaw
-  trigger:
-    platform: zone
-    event: enter
-    zone: zone.motherinlaw
-    entity_id: device_tracker.google_maps_105861814760109955404
-  action:
-    service: notify.telegram
-    data_template:
-      message: "Кто-то у тёщи"
-
 
 # weather notification
 - alias: Rain is Started

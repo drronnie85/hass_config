@@ -152,7 +152,9 @@ device_tracker.srv_db1:
 
 device_tracker.google_maps_105861814760109955404:
   friendly_name: Андрей
-
+device_tracker.google_maps_104258330239786803059:
+  friendly_name: Оксана
+  
 zone.work:
   friendly_name: Работа
 zone.motherinlaw:
