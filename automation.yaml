@@ -8,7 +8,7 @@
         topic: bridge/rfin_sensor
         payload_template: "{{trigger.payload[9:]}}"
 
-# RCs
+# security alarm
 - alias: Security ARM_AWAY
   trigger:
     - platform: mqtt
@@ -75,47 +75,6 @@
 #         topic: home/alarm
 #         payload_template: triggered
 
-- alias: Turn on corridor light when disarmed
-  trigger:
-    - platform: state
-      entity_id: alarm_control_panel.ha_alarm
-      state: disarmed
-  condition:
-    - condition: time
-      after: "17:00:00"
-      before: "07:00:00"
-  action:
-    - service: homeassistant.turn_on
-      entity_id: light.corridor
-
-- alias: Turn on corridor light when there is movement
-  trigger:
-    platform: state
-    entity_id: binary_sensor.hall_motion
-    to: "on"
-  condition:
-    - condition: time
-      after: "23:00:00"
-      before: "06:00:00"
-  action:
-    service: homeassistant.turn_on
-    entity_id: light.corridor
-
-- alias: Turn off corridor light 10 minutes after last movement
-  trigger:
-    platform: state
-    entity_id: binary_sensor.hall_motion
-    to: "off"
-    for:
-      minutes: 10
-  condition:
-    - condition: time
-      after: "23:00:00"
-      before: "06:00:00"
-  action:
-    service: homeassistant.turn_off
-    entity_id: light.corridor
-
 - alias: Trigger alarm armed away
   trigger:
     - platform: state
@@ -153,33 +112,100 @@
       data_template:
         message: Нарушение периметра
 
-- alias: Somebody Come
-  initial_state: true
+# Lights automation
+- alias: Turn on corridor light when disarmed
   trigger:
-   - platform: state
-     entity_id:
-       - device_tracker.phone_oksana
-       - device_tracker.phone_drronnie
-     from: not_home
-     to: home
+    - platform: state
+      entity_id: alarm_control_panel.ha_alarm
+      state: disarmed
+  condition:
+    - condition: time
+      after: "17:00:00"
+      before: "07:00:00"
   action:
-    service: notify.telegram
-    data_template:
-      message: "{{ trigger.entity_id.split('.')[1] }} дома"
+    - service: homeassistant.turn_on
+      entity_id: light.corridor
+- alias: Turn on corridor light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.hall_motion
+    to: "on"
+  condition:
+    - condition: time
+      after: "23:00:00"
+      before: "06:00:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.corridor
+- alias: Turn off corridor light 10 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.hall_motion
+    to: "off"
+    for:
+      minutes: 10
+  condition:
+    - condition: time
+      after: "23:00:00"
+      before: "06:00:00"
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.corridor
 
-- alias: Somebody Left
-  initial_state: false
-  trigger:
-   - platform: state
-     entity_id:
-       - device_tracker.phone_oksana
-       - device_tracker.phone_drronnie
-     from: home
-     to: not_home
-  action:
-    service: notify.telegram
-    data_template:
-      message: "{{ trigger.entity_id.split('.')[1] }} не дома"
+# Geolocation triggers
+- alias: Someone Came Home
+   trigger:
+     platform: zone
+     event: enter
+     zone: zone.home
+     entity_id: device_tracker.google_maps_105861814760109955404
+   action:
+     service: notify.telegram
+     data_template:
+       message: "{{ trigger.to_state.attributes.friendly_name }} дома"
+- alias: Someone Left Home
+   trigger:
+     platform: zone
+     event: leave
+     zone: zone.home
+     entity_id: device_tracker.google_maps_105861814760109955404
+   action:
+     service: notify.telegram
+     data_template:
+       message: "{{ trigger.to_state.attributes.friendly_name }} ушел из дома"
+- alias: Someone Came Work
+   trigger:
+     platform: zone
+     event: enter
+     zone: zone.work
+     entity_id: device_tracker.google_maps_105861814760109955404
+   action:
+     service: notify.telegram
+     data_template:
+       message: "{{ trigger.to_state.attributes.friendly_name }} на работе"
+- alias: Someone Left Work
+   trigger:
+     platform: zone
+     event: leave
+     zone: zone.work
+     entity_id: device_tracker.google_maps_105861814760109955404
+   action:
+     service: notify.telegram
+     data_template:
+       message: "{{ trigger.to_state.attributes.friendly_name }} ушел с работы"
+- alias: Someone Came Motherinlaw
+   trigger:
+     platform: zone
+     event: enter
+     zone: zone.motherinlaw
+     entity_id: device_tracker.google_maps_105861814760109955404
+   action:
+     service: notify.telegram
+     data_template:
+       message: "{{ trigger.to_state.attributes.friendly_name }} у тёщи"
+
+
+# weather notification
 - alias: Начался дождь
   trigger:
     - platform: state
