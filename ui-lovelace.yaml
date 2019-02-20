@@ -374,3 +374,14 @@ views:
             style:
               left: 94%
               top: 59%
+  - id: map
+    title: Карта
+    icon: mdi:map
+    panel: true
+    cards:
+      - type: map
+        default_zoom: 8
+        entities:
+          - device_tracker.google_maps_105861814760109955404
+          - zone.home
+          - zone.rabota
