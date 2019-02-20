@@ -31,6 +31,9 @@
       srv_esxi:               192.168.1.2
       srv_nas:                192.168.1.4
       srv_db1:                192.168.1.6
+  - platform: google_maps
+    username: drronnie85.smarthome@gmail.com
+    password: !secret google_pass
   # - platform: bluetooth_tracker
   # - platform: googlehome
   #   host: 192.168.1.92
