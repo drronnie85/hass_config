@@ -68,6 +68,11 @@ upnp:
     hass: 8123
 
 zone:
+  - name: home
+    latitude: !secret lat_home
+    longitude: !secret lon_home
+    radius: 50
+    icon: mdi:account-multiple
   - name: work
     latitude: !secret lat_work
     longitude: !secret lon_work
