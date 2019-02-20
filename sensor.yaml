@@ -44,7 +44,7 @@
     state_topic: kitchen_th10/humidity
     unit_of_measurement: "%"
   - platform: synologydsm
-    url: !secret syno_addr
+    host: !secret syno_host
     username: !secret syno_user
     password: !secret syno_pass
     monitored_conditions:
