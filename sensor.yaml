@@ -54,6 +54,6 @@
       - memory_real_usage
       - network_up
       - network_down
-      - volume_percentage_used
-      - volume_disk_temp_avg
-      - volume_disk_temp_max
+#      - volume_percentage_used
+#      - volume_disk_temp_avg
+#      - volume_disk_temp_max
