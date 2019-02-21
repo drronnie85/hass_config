@@ -32,6 +32,7 @@ zigbee:
 http:
   base_url: nas.drronniesoft.info:8123
 
+dialogflow:
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
