@@ -27,7 +27,6 @@
       iot_rmpro_bedroom:      192.168.1.62
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
-      media_ghmini_bedroom:   192.168.1.92
       srv_esxi:               192.168.1.2
       srv_nas:                192.168.1.4
       srv_db1:                192.168.1.6
