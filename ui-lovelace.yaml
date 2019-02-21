@@ -196,48 +196,52 @@ views:
           yellow: 180
           green: 210
           red: 230
-      - type: entities
-        title: Медиа
-        show_state: false
-        entities:
-          - device_tracker.router_main
-          - device_tracker.router_kitchen
-          - device_tracker.router_livingroom
-          - device_tracker.media_mibox_livingroom
-          - device_tracker.media_ghmini_bedroom
-      - type: entities
-        title: Камеры
-        show_state: false
-        entities:
-          - device_tracker.camera_loft
-          - device_tracker.camera_entrance
-          - device_tracker.camera_tambour
-          - device_tracker.camera_livingroom
-          - device_tracker.camera_bedroom
-          - device_tracker.camera_cristoph
-          - device_tracker.camera_kitchen
-          - device_tracker.camera_hall
-          - device_tracker.camera_mobile
-      - type: entities
-        title: IoT
-        show_state: false
-        entities:
-          - device_tracker.iot_rmpro_livingroom
-          - device_tracker.iot_a1_bedroom
-          - device_tracker.iot_mp1_kitchen
-          - device_tracker.iot_bridge_hall
-          - device_tracker.iot_powb1_wc
-          - device_tracker.iot_mc1_bedroom
-          - device_tracker.iot_th10_kitchen
-          - device_tracker.iot_a1_livingroom
-          - device_tracker.iot_rmpro_bedroom
-      - type: entities
-        title: Серверы
-        show_state: false
-        entities:
-          - device_tracker.srv_esxi
-          - device_tracker.srv_nas
-          - device_tracker.srv_db1
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            title: Медиа
+            show_header_toggle: false
+            entities:
+              - device_tracker.router_main
+              - device_tracker.router_kitchen
+              - device_tracker.router_livingroom
+              - device_tracker.media_mibox_livingroom
+              - device_tracker.media_ghmini_bedroom
+          - type: entities
+            title: Серверы
+            show_header_toggle: false
+            entities:
+              - device_tracker.srv_esxi
+              - device_tracker.srv_nas
+              - device_tracker.srv_db1
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            title: Камеры
+            show_header_toggle: false
+            entities:
+              - device_tracker.camera_loft
+              - device_tracker.camera_entrance
+              - device_tracker.camera_tambour
+              - device_tracker.camera_livingroom
+              - device_tracker.camera_bedroom
+              - device_tracker.camera_cristoph
+              - device_tracker.camera_kitchen
+              - device_tracker.camera_hall
+              - device_tracker.camera_mobile
+          - type: entities
+            title: IoT
+            show_header_toggle: false
+            entities:
+              - device_tracker.iot_rmpro_livingroom
+              - device_tracker.iot_a1_bedroom
+              - device_tracker.iot_mp1_kitchen
+              - device_tracker.iot_bridge_hall
+              - device_tracker.iot_powb1_wc
+              - device_tracker.iot_mc1_bedroom
+              - device_tracker.iot_th10_kitchen
+              - device_tracker.iot_a1_livingroom
+              - device_tracker.iot_rmpro_bedroom
   - id: floorplan
     title: План
     icon: mdi:floor-plan
@@ -245,7 +249,6 @@ views:
     cards:
       - type: picture-elements
         image: /local/floorplan/main.png
-        #aspect_ratio: 75%
         elements:
           # living room
           - type: icon
