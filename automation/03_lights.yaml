@@ -1,15 +1,26 @@
 - alias: Turn on corridor light when disarmed
   trigger:
     platform: state
-    entity_id: alarm_control_panel.ha_alarm
-    state: disarmed
+    entity_id: binary_sensor.hall_motion
+    to: "on"
   condition:
     - condition: time
-      after: "17:00:00"
-      before: "07:00:00"
+      after: "23:00:00"
+      before: "06:00:00"
   action:
-    - service: homeassistant.turn_on
-      entity_id: light.corridor
+    service: homeassistant.turn_on
+    entity_id: light.corridor
+
+    # platform: state
+    # entity_id: alarm_control_panel.ha_alarm
+    # state: disarmed
+  # condition:
+  #   - condition: time
+  #     after: "17:00:00"
+  #     before: "07:00:00"
+  # action:
+  #   - service: homeassistant.turn_on
+  #     entity_id: light.corridor
 
 - alias: Turn on corridor light when there is movement
   trigger:
