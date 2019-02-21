@@ -73,63 +73,39 @@ device_tracker.phone_drronnie:
 device_tracker.router_main:
   friendly_name: Прихожая
   icon: mdi:router-wireless
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.router_kitchen:
   friendly_name: Кухня
   icon: mdi:router-wireless
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.router_livingroom:
   friendly_name: Зал
   icon: mdi:router-wireless
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_livingroom:
   friendly_name: Зал
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_tambour:
   friendly_name: Тамбур
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_loft:
   friendly_name: Чердак
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_entrance:
   friendly_name: Подъезд
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_kitchen:
   friendly_name: Кухня
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_cristoph:
   friendly_name: Кристоф
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_hall:
   friendly_name: Прихожая
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_bedroom:
   friendly_name: Спальня
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.camera_mobile:
   friendly_name: Переносная
   icon: mdi:cctv
-  templates:
-    rgb_color: "if (state === 'home') return [0, 255, 0]; else return [255, 0, 0];"
 device_tracker.iot_rmpro_livingroom:
   friendly_name: Зал
   icon: mdi:remote
