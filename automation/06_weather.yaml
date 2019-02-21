@@ -1,0 +1,19 @@
+- alias: Rain is Started
+  trigger:
+    - platform: state
+      entity_id: sensor.precip_intensity
+      to: "rain"
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Начался дождь"
+
+- alias: "Rain is Over"
+  trigger:
+    - platform: state
+      entity_id: sensor.precip_intensity
+      to: "None"
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Закончился дождь"
