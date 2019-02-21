@@ -38,7 +38,7 @@
   - name: kitchen_temperature
     platform: mqtt
     state_topic: kitchen_th10/temperature
-    unit_of_measurement: C
+    unit_of_measurement: °C
   - name: kitchen_humidity
     platform: mqtt
     state_topic: kitchen_th10/humidity

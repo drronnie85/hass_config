@@ -1,22 +1,30 @@
 sensor.br_bedroom_temperature:
   friendly_name: Температура
+  icon: mdi:thermometer
 sensor.br_bedroom_humidity:
   friendly_name: Влажность
+  icon: mdi:water-percent
 sensor.br_livingroom_temperature:
   friendly_name: Температура
+  icon: mdi:thermometer
 sensor.br_livingroom_humidity:
   friendly_name: Влажность
+  icon: mdi:water-percent
 sensor.kitchen_temperature:
   friendly_name: Температура
+  icon: mdi:thermometer
 sensor.kitchen_humidity:
   friendly_name: Влажность
+  icon: mdi:water-percent
 sensor.dark_sky_temperature:
   friendly_name: Температура
+  icon: mdi:thermometer
 sensor.dark_sky_humidity:
   friendly_name: Влажность
+  icon: mdi:water-percent
 sensor.dark_sky_pressure:
   friendly_name: Давление
-  
+  icon: mdi:gauge  
 
 light.livingroom:
   friendly_name: Зал
