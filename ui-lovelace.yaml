@@ -42,43 +42,38 @@ views:
           entities:
             - sensor.kitchen_temperature
             - sensor.kitchen_humidity
-      # - type: entities
-      #   entities:
-      #     - type: section
-      #       label: Улица
-      #     - sensor.dark_sky_temperature
-      #     - sensor.dark_sky_humidity
-      #     - sensor.dark_sky_pressure
-      #     - type: section
-      #       label: Спальня
-      #     - sensor.br_bedroom_temperature
-      #     - sensor.br_bedroom_humidity
-      #     - type: section
-      #       label: Зал
-      #     - sensor.br_livingroom_temperature
-      #     - sensor.br_livingroom_humidity
-      #     - type: section
-      #       label: Кухня
-      #     - sensor.kitchen_temperature
-      #     - sensor.kitchen_humidity
-      - type: history-graph
-        title: Температура
-        entities:
-          - entity: sensor.br_livingroom_temperature
-            name: Зал
-          - entity: sensor.br_bedroom_temperature
-            name: Спальня
-          - entity: sensor.kitchen_temperature
-            name: Кухня
-      - type: history-graph
-        title: Влажность
-        entities:
-          - entity: sensor.br_livingroom_humidity
-            name: Зал
-          - entity: sensor.br_bedroom_humidity
-            name: Спальня
-          - entity: sensor.kitchen_humidity
-            name: Кухня
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            title: Температура в квартире
+            entities:
+              - entity: sensor.br_livingroom_temperature
+                name: Зал
+              - entity: sensor.br_bedroom_temperature
+                name: Спальня
+              - entity: sensor.kitchen_temperature
+                name: Кухня
+          - type: history-graph
+            title: Температура на улице
+            entities:
+              - entity: sensor.dark_sky_temperature
+                name: Улица
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            title: Влажность в квартире
+            entities:
+              - entity: sensor.br_livingroom_humidity
+                name: Зал
+              - entity: sensor.br_bedroom_humidity
+                name: Спальня
+              - entity: sensor.kitchen_humidity
+                name: Кухня
+          - type: history-graph
+            title: Влажность на улице
+            entities:
+              - entity: sensor.dark_sky_humidity
+                name: Улица
   - id: security
     title: Информация
     icon: mdi:shield
