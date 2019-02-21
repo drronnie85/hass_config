@@ -13,25 +13,49 @@ views:
         url: >-
           https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates
         aspect_ratio: 90%
-      - type: entities
+      - type: glance
+        title: Улица
+        show_name: false
         entities:
-          - type: section
-            label: Улица
           - sensor.dark_sky_temperature
           - sensor.dark_sky_humidity
           - sensor.dark_sky_pressure
-          - type: section
-            label: Спальня
-          - sensor.br_bedroom_temperature
-          - sensor.br_bedroom_humidity
-          - type: section
-            label: Зал
+      - type: glance
+        title: Зал
+        show_name: false
+        entities:
           - sensor.br_livingroom_temperature
           - sensor.br_livingroom_humidity
-          - type: section
-            label: Кухня
+      - type: glance
+        title: Спальня
+        show_name: false
+        entities:
+          - sensor.br_bedroom_temperature
+          - sensor.br_bedroom_humidity
+      - type: glance
+        title: Кухня
+        show_name: false
           - sensor.kitchen_temperature
           - sensor.kitchen_humidity
+      # - type: entities
+      #   entities:
+      #     - type: section
+      #       label: Улица
+      #     - sensor.dark_sky_temperature
+      #     - sensor.dark_sky_humidity
+      #     - sensor.dark_sky_pressure
+      #     - type: section
+      #       label: Спальня
+      #     - sensor.br_bedroom_temperature
+      #     - sensor.br_bedroom_humidity
+      #     - type: section
+      #       label: Зал
+      #     - sensor.br_livingroom_temperature
+      #     - sensor.br_livingroom_humidity
+      #     - type: section
+      #       label: Кухня
+      #     - sensor.kitchen_temperature
+      #     - sensor.kitchen_humidity
       - type: history-graph
         title: Температура
         entities:
