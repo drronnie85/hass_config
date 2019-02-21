@@ -52,11 +52,6 @@ views:
               - entity: sensor.kitchen_temperature
                 name: Кухня
           - type: history-graph
-            title: Температура на улице
-            entities:
-              - entity: sensor.dark_sky_temperature
-                name: Улица
-          - type: history-graph
             title: Влажность в квартире
             entities:
               - entity: sensor.br_livingroom_humidity
@@ -65,6 +60,11 @@ views:
                 name: Спальня
               - entity: sensor.kitchen_humidity
                 name: Кухня
+          - type: history-graph
+            title: Температура на улице
+            entities:
+              - entity: sensor.dark_sky_temperature
+                name: Улица
           - type: history-graph
             title: Влажность на улице
             entities:
