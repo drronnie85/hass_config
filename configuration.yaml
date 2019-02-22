@@ -106,11 +106,10 @@ alarm_control_panel:
     # code: !secret alarm_code
     state_topic: home/alarm
     command_topic: home/alarm/set
-    pending_time: 20
+    pending_time: 0
     delay_time: 20
     trigger_time: 4
     disarmed:
-      pending_time: 0
       trigger_time: 0
     armed_home:
       pending_time: 0
