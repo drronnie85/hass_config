@@ -110,6 +110,7 @@ alarm_control_panel:
     delay_time: 20
     trigger_time: 4
     disarmed:
+      pending_time: 0
       trigger_time: 0
     armed_home:
       pending_time: 0
