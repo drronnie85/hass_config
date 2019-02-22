@@ -172,8 +172,8 @@ views:
         entity: climate.bedroom
       - type: glance
         title: Увлажнитель спальня
-        show_name: false
-        #show_state: false
+        #show_name: false
+        show_state: false
         entities:
           - script.humidifier_bedroom_onoff
           - script.humidifier_bedroom_auto

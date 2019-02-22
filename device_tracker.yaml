@@ -33,6 +33,6 @@
   - platform: google_maps
     username: drronnie85.smarthome@gmail.com
     password: !secret google_pass
-  # - platform: bluetooth_tracker
+  - platform: bluetooth_tracker
   # - platform: googlehome
   #   host: 192.168.1.92
