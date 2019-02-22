@@ -154,15 +154,16 @@ views:
           - light.hall
   - id: climate-management
     title: Климат
-    icon: mdi:air-conditioner
+    icon: mdi:fan
     cards:
       - type: thermostat
         entity: climate.livingroom
       - type: thermostat
         entity: climate.bedroom
-      - type: entities
+      - type: glance
         title: Увлажнитель спальня
-        show_header_toggle: false
+        show_name: false
+        show_state: false
         entities:
           - script.humidifier_bedroom_onoff
           - script.humidifier_bedroom_auto

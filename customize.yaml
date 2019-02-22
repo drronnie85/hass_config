@@ -167,3 +167,28 @@ zone.work:
   friendly_name: Работа
 zone.motherinlaw:
   friendly_name: Тёща
+
+script.humidifier_bedroom_onoff:
+  icon: mdi:toggle-switch
+script.humidifier_bedroom_night:
+  icon: mdi:weather-night
+script.humidifier_bedroom_auto:
+  icon: mdi:auto-fix
+script.humidifier_bedroom_kids:
+  icon: mdi:baby-buggy
+script.humidifier_bedroom_heart:
+  icon: mdi:heart-pulse
+script.humidifier_bedroom_touch:
+  icon: mdi:fingerprint
+script.humidifier_bedroom_light:
+  icon: mdi:lightbulb-on
+script.humidifier_bedroom_time:
+  icon: mdi:timer
+script.humidifier_bedroom_heat:
+  icon: mdi:radiator
+script.humidifier_bedroom_uv:
+  icon: mdiweather-sunny
+script.humidifier_bedroom_ion:
+  icon: mdi:creation
+script.humidifier_bedroom_plusminus:
+  icon: mdi:plus-minus
