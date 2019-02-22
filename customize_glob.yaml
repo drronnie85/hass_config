@@ -1,0 +1,19 @@
+"device_tracker.router_*_state":
+  templates:
+    icon: >
+    rgb_color: "if (state === 'on') return [251, 210, 41]; else return [54, 95, 140];"
+
+"device_tracker.camera_*_state":
+  templates:
+    icon: >
+    rgb_color: "if (state === 'on') return [251, 210, 41]; else return [54, 95, 140];"
+
+"device_tracker.iot_*_state":
+  templates:
+    icon: >
+    rgb_color: "if (state === 'on') return [251, 210, 41]; else return [54, 95, 140];"
+
+"device_tracker.srv_*_state":
+  templates:
+    icon: >
+    rgb_color: "if (state === 'on') return [251, 210, 41]; else return [54, 95, 140];"
