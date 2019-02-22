@@ -152,6 +152,16 @@ views:
           - light.bathroom
           - type: divider
           - light.hall
+      - type: glance
+        title: Пылесос
+        #show_name: false
+        show_state: false
+        entities:
+          - script.mamibot_off
+          - script.mamibot_on
+          - script.mamibot_charge
+          - script.mamibot_clean
+          - script.mamibot_clean_border
   - id: climate-management
     title: Климат
     icon: mdi:fan
@@ -163,23 +173,13 @@ views:
       - type: glance
         title: Увлажнитель спальня
         show_name: false
-        show_state: false
+        #show_state: false
         entities:
           - script.humidifier_bedroom_onoff
           - script.humidifier_bedroom_auto
           - script.humidifier_bedroom_light
           - script.humidifier_bedroom_uv
           - script.humidifier_bedroom_ion
-      - type: glance
-        title: Пылесос
-        show_name: false
-        show_state: false
-        entities:
-          - script.mamibot_off
-          - script.mamibot_on
-          - script.mamibot_charge
-          - script.mamibot_clean
-          - script.mamibot_clean_border
   - id: devices
     title: Устройства
     icon: mdi:tablet-cellphone
