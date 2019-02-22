@@ -1,4 +1,8 @@
 "device_tracker.*_state":
   templates:
-    icon: >
-      rgb_color: "if (state === 'on') return [0, 255, 0]; else return [255, 0, 0];"
+    theme: >
+      if (state === 'home') return 'green';
+      return 'red';
+    _stateDisplay: >
+      if (state === 'home') return 'Онлайн';
+      return 'Офлайн';
