@@ -170,6 +170,16 @@ views:
           - script.humidifier_bedroom_light
           - script.humidifier_bedroom_uv
           - script.humidifier_bedroom_ion
+      - type: glance
+        title: Пылесос
+        show_name: false
+        show_state: false
+        entities:
+          - script.mamibot_off
+          - script.mamibot_on
+          - script.mamibot_charge
+          - script.mamibot_clean
+          - script.mamibot_clean_border
   - id: devices
     title: Устройства
     icon: mdi:tablet-cellphone

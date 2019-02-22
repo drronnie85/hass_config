@@ -192,3 +192,14 @@ script.humidifier_bedroom_ion:
   icon: mdi:creation
 script.humidifier_bedroom_plusminus:
   icon: mdi:plus-minus
+
+script.mamibot_off:
+  icon: mdi:power-off
+script.mamibot_on:
+  icon: mdi:power
+script.mamibot_charge:
+  icon: mdi:battery-charging-80
+script.mamibot_clean:
+  icon: mdi:border-all
+script.mamibot_clean_border:
+  icon: mdi:border-outside
