@@ -169,7 +169,7 @@ zone.motherinlaw:
   friendly_name: Тёща
 
 script.humidifier_bedroom_onoff:
-  icon: mdi:toggle-switch
+  icon: mdi:power
 script.humidifier_bedroom_night:
   icon: mdi:weather-night
 script.humidifier_bedroom_auto:
@@ -187,7 +187,7 @@ script.humidifier_bedroom_time:
 script.humidifier_bedroom_heat:
   icon: mdi:radiator
 script.humidifier_bedroom_uv:
-  icon: mdiweather-sunny
+  icon: mdi:weather-sunny
 script.humidifier_bedroom_ion:
   icon: mdi:creation
 script.humidifier_bedroom_plusminus:
