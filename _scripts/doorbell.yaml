@@ -1,6 +1,6 @@
-doorbell_ring:
-  sequence:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C1777777777
+  doorbell_ring:
+    sequence:
+      - service: mqtt.publish
+        data_template:
+          topic: bridge/rfout/set
+          payload: C001016C1777777777
