@@ -131,7 +131,7 @@ notify:
 
 group: !include groups.yaml
 automation: !include_dir_merge_list _automation/
-script: !dir_merge_named _scripts/
+script: !include_dir_merge_named _scripts/
 sensor: !include sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml
