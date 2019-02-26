@@ -179,10 +179,13 @@ script.humidifier_bedroom_auto:
   friendly_name: Авто
 script.humidifier_bedroom_kids:
   icon: mdi:baby-buggy
+  friendly_name: Дети
 script.humidifier_bedroom_heart:
   icon: mdi:heart-pulse
+  friendly_name: Сердце
 script.humidifier_bedroom_touch:
   icon: mdi:fingerprint
+  friendly_name: Тач
 script.humidifier_bedroom_light:
   icon: mdi:lightbulb-on
   friendly_name: Свет
@@ -191,6 +194,7 @@ script.humidifier_bedroom_time:
   friendly_name: Таймер
 script.humidifier_bedroom_heat:
   icon: mdi:radiator
+  friendly_name: Нагрев
 script.humidifier_bedroom_uv:
   icon: mdi:weather-sunny
   friendly_name: Ультафиолет
@@ -216,3 +220,7 @@ script.mamibot_clean:
 script.mamibot_clean_border:
   icon: mdi:border-outside
   friendly_name: Очистка краёв
+
+script.doorbell_ring:
+  icon: mdi:bell
+  friendly_name: Звонок

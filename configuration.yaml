@@ -130,8 +130,8 @@ notify:
     api_key: !secret pushbullet_key
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automation/
-script: !include scripts.yaml
+automation: !include_dir_merge_list _automation/
+script: !include_dir_merge_list _scripts/
 sensor: !include sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml

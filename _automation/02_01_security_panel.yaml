@@ -74,37 +74,25 @@
     entity_id: alarm_control_panel.ha_alarm
     to: armed_away
   action:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C18000CEBA8
+    - service: script.external_armaway
 - alias:  Security ARM_HOME to External
   trigger:
     platform: state
     entity_id: alarm_control_panel.ha_alarm
     to: armed_home
   action:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C18000CEBA2
+    - service: script.external_armhome
 - alias:  Security DISARM to External
   trigger:
     platform: state
     entity_id: alarm_control_panel.ha_alarm
     to: disarmed
   action:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C18000CEBA4
+    - service: script.external_disarm
 # - alias:  Security PANIC to External
 #   trigger:
 #     platform: state
 #     entity_id: alarm_control_panel.ha_alarm
 #     to: disarmed
 #   action:
-#     - service: mqtt.publish
-#       data_template:
-#         topic: bridge/rfout/set
-#         payload: C001016B18000CEBA1
+#     - service: script.external_panic
