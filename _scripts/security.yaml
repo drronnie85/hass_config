@@ -1,24 +1,24 @@
-external_armaway:
-  sequence:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C18000CEBA8
-external_armhome:
-  sequence:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C18000CEBA2
-external_disarm:
-  sequence:
-    - service: mqtt.publish
-      data_template:
-        topic: bridge/rfout/set
-        payload: C001016C18000CEBA4
-# external_panic:
-#   sequence:
-#     - service: mqtt.publish
-#       data_template:
-#         topic: bridge/rfout/set
-#         payload: C001016B18000CEBA1
+  external_armaway:
+    sequence:
+      - service: mqtt.publish
+        data_template:
+          topic: bridge/rfout/set
+          payload: C001016C18000CEBA8
+  external_armhome:
+    sequence:
+      - service: mqtt.publish
+        data_template:
+          topic: bridge/rfout/set
+          payload: C001016C18000CEBA2
+  external_disarm:
+    sequence:
+      - service: mqtt.publish
+        data_template:
+          topic: bridge/rfout/set
+          payload: C001016C18000CEBA4
+  # external_panic:
+  #   sequence:
+  #     - service: mqtt.publish
+  #       data_template:
+  #         topic: bridge/rfout/set
+  #         payload: C001016B18000CEBA1
