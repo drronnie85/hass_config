@@ -118,12 +118,13 @@ telegram_bot:
   allowed_chat_ids:
     - !secret telegram_chatid_andrey
     - !secret telegram_chatid_oksana
+    - !secret telegram_chatid_group
 
 notify:
   - name: telegram
     platform: telegram
     api_key: !secret telegram_key
-    chat_id: !secret telegram_chatid_andrey
+    chat_id: !secret telegram_chatid_group
   - name: pushbullet
     platform: pushbullet
     api_key: !secret pushbullet_key
