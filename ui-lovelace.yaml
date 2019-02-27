@@ -80,28 +80,27 @@ views:
         entities:
           - type: section
             label: Зал
-          - type: state-icon
-            entity: binary_sensor.livingroom_motion
-          - type: state-icon
-            entity: binary_sensor.livingroom_window          
-          - type: state-icon
-            entity: binary_sensor.livingroom_balcony
+          - binary_sensor.livingroom_motion
+          - binary_sensor.livingroom_motion_camera
+          - binary_sensor.livingroom_window          
+          - binary_sensor.livingroom_balcony
           - type: section
             label: Прихожая
-          - type: state-icon
-            entity: binary_sensor.hall_motion
-          - type: state-icon
-            entity: binary_sensor.hall_entrance
+          - binary_sensor.hall_motion
+          - binary_sensor.hall_motion_camera
+          - binary_sensor.hall_entrance
           - type: section
             label: Кухня
-          - type: state-icon
-            entity: binary_sensor.kitchen_window          
+          - binary_sensor.kitchen_window
+          - binary_sensor.kitchen_motion_camera
           - type: section
             label: Спальня
-          - type: state-icon
-            entity: binary_sensor.bedroom_motion
-          - type: state-icon
-            entity: binary_sensor.bedroom_window
+          - binary_sensor.bedroom_motion
+          - binary_sensor.bedroom_motion_camera
+          - binary_sensor.bedroom_window
+          - type: section
+            label: Вне квартиры
+          - binary_sensor.tambour_motion_camera
   - id: camera
     title: Камеры
     icon: mdi:camera
