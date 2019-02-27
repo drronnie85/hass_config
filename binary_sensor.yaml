@@ -1,7 +1,7 @@
   - platform: template
     sensors:
       livingroom_motion_camera:
-        value_template: "{{ is_state ( 'camera.zal', 'recording' ) }}"
+        value_template: "{{ is_state ( 'camera.zal', 'streaming' ) }}"
         device_class: motion
       bedroom_motion_camera:
         value_template: "{{ is_state ( 'camera.spalnia', 'recording' ) }}"
