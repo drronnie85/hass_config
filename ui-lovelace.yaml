@@ -91,8 +91,8 @@ views:
           - binary_sensor.hall_entrance
           - type: section
             label: Кухня
-          - binary_sensor.kitchen_window
           - binary_sensor.kitchen_motion_camera
+          - binary_sensor.kitchen_window
           - type: section
             label: Спальня
           - binary_sensor.bedroom_motion

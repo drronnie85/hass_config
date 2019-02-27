@@ -57,10 +57,20 @@ climate.bedroom:
 
 binary_sensor.livingroom_motion:
   friendly_name: Движение
+binary_sensor.livingroom_motion_camera:
+  friendly_name: Движение (камера)
 binary_sensor.hall_motion:
   friendly_name: Движение
+binary_sensor.hall_motion_camera:
+  friendly_name: Движение (камера)
 binary_sensor.bedroom_motion:
   friendly_name: Движение
+binary_sensor.bedroom_motion_camera:
+  friendly_name: Движение (камера)
+binary_sensor.kitchen_motion_camera:
+  friendly_name: Движение (камера)
+binary_sensor.tambour_motion_camera:
+  friendly_name: Движение (камера)
 binary_sensor.livingroom_window:
   friendly_name: Окно
 binary_sensor.kitchen_window:
