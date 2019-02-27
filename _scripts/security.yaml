@@ -22,3 +22,14 @@ external_disarm:
 #       data_template:
 #         topic: bridge/rfout/set
 #         payload: C001016B18000CEBA1
+
+alarm_telegram:
+  sequence:
+    - service: notify.telegram
+      data_template:
+        message: "{{ message }}"
+        photo:
+          - url: http://192.168.1.8:8123/api/camera_proxy_stream/camera.zal?token=2a2ca50c46d320d6609857cf53197916b2ea83bc8c6bbe1d72d9d42cbb005eff
+          - url: http://192.168.1.8:8123/api/camera_proxy_stream/camera.kukhnia?token=678e3afb7fafe1baa049c26d20a0d85c4c0dc62fca0627ddfa3ecc1863171a4d
+          - url: http://192.168.1.8:8123/api/camera_proxy_stream/camera.spalnia?token=a3eba0afdf093e76c2923b2353ae8d75f607e82da0a8e8f278b7876bd6760246
+          - url: http://192.168.1.8:8123/api/camera_proxy_stream/camera.prikhozhaia?token=6ebbf0692274a59c94576712d2cc3a441f2c606bd7bd9136a3ecc1d943f2d185

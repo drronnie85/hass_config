@@ -1,14 +1,28 @@
 - alias: Trigger alarm armed away
   trigger:
     - platform: state
-      entity_id: binary_sensor.livingroom_motion,
-                 binary_sensor.livingroom_window, 
-                 binary_sensor.livingroom_balcony,
-                 binary_sensor.hall_motion,
-                 binary_sensor.hall_entrance,
-                 binary_sensor.kitchen_window,
-                 binary_sensor.bedroom_window,
-                 binary_sensor.bedroom_motion
+      entity_id: binary_sensor.livingroom_motion
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.livingroom_window
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.livingroom_balcony
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.hall_motion
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.hall_entrance
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.kitchen_window
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.bedroom_window
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion
       to: "on"
   condition:
     - condition: state
@@ -19,8 +33,26 @@
       entity_id: alarm_control_panel.ha_alarm
     - service: notify.telegram
       data_template:
-        message: >-
-          Нарушение периметра.
-          {%- for state in states.sensor if state.entity_id == trigger.entity_id -%}
-            {{ state.attributes.friendly_name }} сработал.
-          {%- endfor -%}
+        message: Нарушение периметра
+
+- alias: Trigger alarm armed away 2
+  trigger:
+    - platform: state
+      entity_id: 
+        binary_sensor.livingroom_motion, 
+        binary_sensor.livingroom_window,
+        binary_sensor.livingroom_balcony,
+        binary_sensor.hall_motion,
+        binary_sensor.hall_entrance,
+        binary_sensor.kitchen_window,
+        binary_sensor.bedroom_window,
+        binary_sensor.bedroom_motion
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.ha_alarm
+      state: armed_away
+  action:
+    - service: script.alarm_telegram
+      data:
+        message: Нарушение периметра 2
