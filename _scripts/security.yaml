@@ -28,6 +28,8 @@ alarm_telegram:
     - service: notify.telegram
       data_template:
         message: "{{ message }}"
+    - service: notify.telegram
+      data:
         photo:
           - url: http://192.168.1.8:8123/api/camera_proxy_stream/camera.zal?token=2a2ca50c46d320d6609857cf53197916b2ea83bc8c6bbe1d72d9d42cbb005eff
           - url: http://192.168.1.8:8123/api/camera_proxy_stream/camera.kukhnia?token=678e3afb7fafe1baa049c26d20a0d85c4c0dc62fca0627ddfa3ecc1863171a4d
