@@ -27,6 +27,7 @@ zigbee:
   
 http:
   base_url: nas.drronniesoft.info:8123
+  api_password: !secret darksky_key
 
 dialogflow:
 # Checks for available updates

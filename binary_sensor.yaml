@@ -1,3 +1,21 @@
+  - platform: template
+    sensors:
+      livingroom_motion_camera:
+        value_template: "{{ is_state ( 'camera.zal', 'recording' ) }}"
+        device_class: motion
+      bedroom_motion_camera:
+        value_template: "{{ is_state ( 'camera.spalnia', 'recording' ) }}"
+        device_class: motion
+      hall_motion_camera:
+        value_template: "{{ is_state ( 'camera.prikhozhaia', 'recording' ) }}"
+        device_class: motion
+      kitchen_motion_camera:
+        value_template: "{{ is_state ( 'camera.kukhnia', 'recording' ) }}"
+        device_class: motion
+      tambour_motion_camera:
+        value_template: "{{ is_state ( 'camera.tambur', 'recording' ) }}"
+        device_class: motion
+
   - platform: mqtt
     name: livingroom_motion
     state_topic: bridge/rfin_sensor
@@ -42,7 +60,6 @@
     payload_on: "8004BB90E"
     device_class: door
     off_delay: !secret sensor_delay_door
-
 
   - platform: mqtt
     name: kitchen_window
