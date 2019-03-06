@@ -30,6 +30,7 @@ alarm_telegram:
         message: "{{ message }}"
     - service: telegram_bot.send_photo
       data:
+        message: "Камеры"
         photo:
           - url: http://192.168.1.8:8123/api/camera_proxy/camera.zal?api_password=80c0587b93750a246a22166bc0e9b6df
           - url: http://192.168.1.8:8123/api/camera_proxy/camera.kukhnia?api_password=80c0587b93750a246a22166bc0e9b6df

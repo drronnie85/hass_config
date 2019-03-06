@@ -8,8 +8,18 @@
       after: "17:00:00"
       before: "07:00:00"
   action:
-    service: homeassistant.turn_on
-    entity_id: light.corridor
+    - service: homeassistant.turn_on
+      entity_id: light.corridor
+
+- alias: Turn off all when armed
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    to: armed_away
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.all_lights
+
 - alias: Turn on corridor light when there is movement
   trigger:
     platform: state
