@@ -62,6 +62,12 @@
     off_delay: !secret sensor_delay_door
 
   - platform: mqtt
+    name: kitchen_motion
+    state_topic: bridge/rfin_sensor
+    payload_on: "800111111"
+    device_class: motion
+    off_delay: !secret sensor_delay_motion
+  - platform: mqtt
     name: kitchen_window
     state_topic: bridge/rfin_sensor
     payload_on: "8004FEF99"

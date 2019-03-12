@@ -1,30 +1,30 @@
-- alias: Oksana Came Home
-  trigger:
-   platform: state
-   entity_id: device_tracker.phone_oksana
-   to: home
-  condition:
-    condition: state
-    entity_id: device_tracker.google_maps_104258330239786803059
-    state: home
-  action:
-    service: notify.telegram
-    data_template:
-      message: "Оксана вернулась домой"
+# - alias: Oksana Came Home
+#   trigger:
+#    platform: state
+#    entity_id: device_tracker.phone_oksana
+#    to: home
+#   condition:
+#     condition: state
+#     entity_id: device_tracker.google_maps_104258330239786803059
+#     state: home
+#   action:
+#     service: notify.telegram
+#     data_template:
+#       message: "Оксана вернулась домой"
 
-- alias: Andrew Came Home
-  trigger:
-    platform: state
-    entity_id: device_tracker.phone_drronnie
-    to: home
-  condition:
-    condition: state
-    entity_id: device_tracker.google_maps_105861814760109955404
-    state: home
-  action:
-    service: notify.telegram
-    data_template:
-      message: "Андрей вернулся домой"
+# - alias: Andrew Came Home
+#   trigger:
+#     platform: state
+#     entity_id: device_tracker.phone_drronnie
+#     to: home
+#   condition:
+#     condition: state
+#     entity_id: device_tracker.google_maps_105861814760109955404
+#     state: home
+#   action:
+#     service: notify.telegram
+#     data_template:
+#       message: "Андрей вернулся домой"
 
 - alias: Oksana Left Home
   trigger:
