@@ -4,8 +4,13 @@
       - temperature
       - humidity
       - pressure
+      - cloud_cover
+      - precip_type
+      - precip_probability
       - precip_intensity
-    update_interval:
+      - wind_speed
+      - wind_bearing
+      update_interval:
       minutes: 20
   - platform: moon
   - platform: yr
