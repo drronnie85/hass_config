@@ -48,7 +48,7 @@
     platform: mqtt
     state_topic: kitchen_th10/humidity
     unit_of_measurement: "%"
-- name: CPU Temperature
+- name: hass_temperature
   platform: command_line
   command: "cat /sys/class/thermal/thermal_zone0/temp"
   value_template: "{{ value | multiply(0.001) | round(1) }}"
