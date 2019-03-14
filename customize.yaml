@@ -25,6 +25,9 @@ sensor.dark_sky_humidity:
 sensor.dark_sky_pressure:
   friendly_name: Давление
   icon: mdi:gauge  
+sensor.hass_temperature:
+  friendly_name: Температура
+  icon: mdi:thermometer
 
 light.livingroom:
   friendly_name: Зал
@@ -67,6 +70,8 @@ binary_sensor.bedroom_motion:
   friendly_name: Движение
 binary_sensor.bedroom_motion_camera:
   friendly_name: Движение (камера)
+binary_sensor.kitchen_motion:
+  friendly_name: Движение
 binary_sensor.kitchen_motion_camera:
   friendly_name: Движение (камера)
 binary_sensor.tambour_motion_camera:
