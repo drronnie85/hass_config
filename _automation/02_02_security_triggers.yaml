@@ -55,17 +55,13 @@
     - platform: state
       entity_id: 
         binary_sensor.livingroom_motion, 
-#        binary_sensor.livingroom_motion_camera, 
         binary_sensor.livingroom_window,
         binary_sensor.livingroom_balcony,
         binary_sensor.hall_motion,
-#        binary_sensor.hall_motion_camera,
         binary_sensor.hall_entrance,
         binary_sensor.kitchen_motion,
-#        binary_sensor.kitchen_motion_camera,
         binary_sensor.kitchen_window,
         binary_sensor.bedroom_motion,
- #       binary_sensor.bedroom_motion_camera,
         binary_sensor.bedroom_window        
       to: "on"
   condition:

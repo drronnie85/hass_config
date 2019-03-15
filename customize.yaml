@@ -92,7 +92,9 @@ binary_sensor.wc_waterleak:
   friendly_name: Утечка воды
 binary_sensor.bathroom_waterleak:
   friendly_name: Утечка воды
-  
+binary_sensor.door_bell:
+  friendly_name: Утечка воды
+
 device_tracker.phone_oksana:
   friendly_name: Оксана
   icon: mdi:cellphone-android
@@ -242,6 +244,6 @@ script.mamibot_clean_border:
   icon: mdi:border-outside
   friendly_name: Очистка краёв
 
-script.doorbell_ring:
+script.door_bell:
   icon: mdi:bell
   friendly_name: Звонок
