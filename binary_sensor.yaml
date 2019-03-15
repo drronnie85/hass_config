@@ -1,18 +1,23 @@
   - platform: template
     sensors:
       livingroom_motion_camera:
+        entity_id: camera.zal
         value_template: "{{ is_state ( 'camera.zal', 'recording' ) }}"
         device_class: motion
       bedroom_motion_camera:
+        entity_id: camera.spalnia
         value_template: "{{ is_state ( 'camera.spalnia', 'recording' ) }}"
         device_class: motion
       hall_motion_camera:
+        entity_id: camera.prikhozhaia
         value_template: "{{ is_state ( 'camera.prikhozhaia', 'recording' ) }}"
         device_class: motion
       kitchen_motion_camera:
+        entity_id: camera.kukhnia
         value_template: "{{ is_state ( 'camera.kukhnia', 'recording' ) }}"
         device_class: motion
       tambour_motion_camera:
+        entity_id: camera.tambur
         value_template: "{{ is_state ( 'camera.tambur', 'recording' ) }}"
         device_class: motion
 
