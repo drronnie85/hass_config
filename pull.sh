@@ -1,6 +1,6 @@
 date
 git pull
-systemctl restart home-assistant@homeassistant.service
+hassio homeassistant restart
 
 echo "Waiting home-assistant to launch on 8123..."
 date
