@@ -73,3 +73,10 @@
     payload_on: "8004FEF99"
     device_class: window
     off_delay: !secret sensor_delay_window
+
+  - platform: mqtt
+    name: door_bell
+    state_topic: bridge/rfin_sensor
+    payload_on: "80057F505"
+    device_class: sound
+    off_delay: !secret sensor_delay_window

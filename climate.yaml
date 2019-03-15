@@ -1,50 +1,50 @@
-  - platform: broadlink
-    host: 192.168.1.51
-    mac: 'B4:43:0D:EE:EF:E7'
-    name: livingroom
-    ircodes_ini: 'custom_data/broadlink_climate_codes/neoclima.ini'
-    min_temp: 17
-    max_temp: 30
-    target_temp: 20
-    target_temp_step: 1
-    temp_sensor: sensor.br_livingroom_temperature
-    default_operation: 'off'
-    default_fan_mode: mid
-    customize:
-      operations:
-        - 'off'
-        - cool
-        - heat
-        - dry
-        - fan
-        - auto
-      fan_modes:
-        - low
-        - mid
-        - high
-        - auto
-  - platform: broadlink
-    host: 192.168.1.62
-    mac: '78:0F:77:00:D7:1B'
-    name: bedroom
-    ircodes_ini: 'custom_data/broadlink_climate_codes/leberg.ini'
-    min_temp: 16
-    max_temp: 31
-    target_temp: 20
-    target_temp_step: 1
-    temp_sensor: sensor.br_bedroom_temperature
-    default_operation: 'off'
-    default_fan_mode: mid
-    customize:
-      operations:
-        - 'off'
-        - cool
-        - heat
-        - dry
-        - fan
-        - feel
-      fan_modes:
-        - low
-        - mid
-        - high
-        - auto
+  # - platform: broadlink
+  #   host: 192.168.1.51
+  #   mac: 'B4:43:0D:EE:EF:E7'
+  #   name: livingroom
+  #   ircodes_ini: 'custom_data/broadlink_climate_codes/neoclima.ini'
+  #   min_temp: 17
+  #   max_temp: 30
+  #   target_temp: 20
+  #   target_temp_step: 1
+  #   temp_sensor: sensor.br_livingroom_temperature
+  #   default_operation: 'off'
+  #   default_fan_mode: mid
+  #   customize:
+  #     operations:
+  #       - 'off'
+  #       - cool
+  #       - heat
+  #       - dry
+  #       - fan
+  #       - auto
+  #     fan_modes:
+  #       - low
+  #       - mid
+  #       - high
+  #       - auto
+  # - platform: broadlink
+  #   host: 192.168.1.62
+  #   mac: '78:0F:77:00:D7:1B'
+  #   name: bedroom
+  #   ircodes_ini: 'custom_data/broadlink_climate_codes/leberg.ini'
+  #   min_temp: 16
+  #   max_temp: 31
+  #   target_temp: 20
+  #   target_temp_step: 1
+  #   temp_sensor: sensor.br_bedroom_temperature
+  #   default_operation: 'off'
+  #   default_fan_mode: mid
+  #   customize:
+  #     operations:
+  #       - 'off'
+  #       - cool
+  #       - heat
+  #       - dry
+  #       - fan
+  #       - feel
+  #     fan_modes:
+  #       - low
+  #       - mid
+  #       - high
+  #       - auto

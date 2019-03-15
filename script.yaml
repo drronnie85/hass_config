@@ -144,9 +144,9 @@ external_disarm:
 #       data_template:
 #         topic: bridge/rfout/set
 #         payload: C001016B18000CEBA1
-doorbell_ring:
+door_bell:
   sequence:
     - service: mqtt.publish
       data_template:
         topic: bridge/rfout/set
-        payload: C001016C1777777777
+        payload: C001008E180057F505

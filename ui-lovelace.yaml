@@ -165,10 +165,10 @@ views:
     title: Климат
     icon: mdi:fan
     cards:
-      - type: thermostat
-        entity: climate.livingroom
-      - type: thermostat
-        entity: climate.bedroom
+      # - type: thermostat
+      #   entity: climate.livingroom
+      # - type: thermostat
+      #   entity: climate.bedroom
       - type: glance
         title: Увлажнитель спальня
         #show_name: false
@@ -212,6 +212,7 @@ views:
               - device_tracker.srv_esxi
               - device_tracker.srv_nas
               - device_tracker.srv_db1
+              - sensor.hass_temperature
       - type: horizontal-stack
         cards:
           - type: entities

@@ -21,9 +21,9 @@ frontend:
 # Enables configuration UI
 config:
 
-zigbee:
-  device: /dev/ttyACM0
-  baud: 115200
+# zigbee:
+#   device: /dev/ttyACM0
+#   baud: 115200
   
 http:
   base_url: nas.drronniesoft.info:8123

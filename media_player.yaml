@@ -1,2 +1,3 @@
-  - platform: itunes
-    host: 192.168.1.93
+  # - platform: xiaomi_tv
+  #   host: 192.168.1.93
+  #   name: itunes
