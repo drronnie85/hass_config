@@ -62,6 +62,8 @@ sun:
 
 hassio:
 
+smartir:
+
 upnp:
   port_mapping: true
   ports:
@@ -99,6 +101,7 @@ tts:
   - platform: google
 
 #cloud:
+system_health:
 
 alarm_control_panel:
   - platform: manual_mqtt
