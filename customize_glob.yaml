@@ -6,3 +6,4 @@
     _stateDisplay: >
       if (state === 'home') return 'Онлайн';
       return 'Офлайн';
+      
