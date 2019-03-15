@@ -76,3 +76,16 @@
     - service: script.alarm_telegram
       data:
         message: Нарушение периметра 2
+
+- alias: Trigger alarm waterleak
+  trigger:
+    - platform: state
+      entity_id: 
+        binary_sensor.kitchen_waterleak,
+        binary_sensor.wc_waterleak,
+        binary_sensor.bathroom_waterleak
+      to: "on"
+  action:
+    - service: script.alarm_telegram
+      data:
+        message: Утечка воды

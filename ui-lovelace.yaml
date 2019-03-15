@@ -93,11 +93,18 @@ views:
             label: Кухня
           - binary_sensor.kitchen_motion_camera
           - binary_sensor.kitchen_window
+          - binary_sensor.kitchen_waterleak
           - type: section
             label: Спальня
           - binary_sensor.bedroom_motion
           - binary_sensor.bedroom_motion_camera
           - binary_sensor.bedroom_window
+          - type: section
+            label: Туалет
+          - binary_sensor.wc_waterleak
+          - type: section
+            label: Ванная
+          - binary_sensor.bathroom_waterleak
           - type: section
             label: Вне квартиры
           - binary_sensor.tambour_motion_camera
