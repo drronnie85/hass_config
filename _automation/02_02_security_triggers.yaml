@@ -3,9 +3,9 @@
     - platform: state
       entity_id: binary_sensor.livingroom_motion
       to: "on"
-    - platform: state
-      entity_id: binary_sensor.livingroom_motion_camera
-      to: "on"
+    # - platform: state
+    #   entity_id: binary_sensor.livingroom_motion_camera
+    #   to: "on"
     - platform: state
       entity_id: binary_sensor.livingroom_window
       to: "on"
@@ -15,27 +15,27 @@
     - platform: state
       entity_id: binary_sensor.hall_motion
       to: "on"
-    - platform: state
-      entity_id: binary_sensor.hall_motion_camera
-      to: "on"
+    # - platform: state
+    #   entity_id: binary_sensor.hall_motion_camera
+    #   to: "on"
     - platform: state
       entity_id: binary_sensor.hall_entrance
       to: "on"
     - platform: state
       entity_id: binary_sensor.kitchen_motion
       to: "on"
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion_camera
-      to: "on"
+    # - platform: state
+    #   entity_id: binary_sensor.kitchen_motion_camera
+    #   to: "on"
     - platform: state
       entity_id: binary_sensor.kitchen_window
       to: "on"
     - platform: state
       entity_id: binary_sensor.bedroom_motion
       to: "on"
-    - platform: state
-      entity_id: binary_sensor.bedroom_motion_camera
-      to: "on"
+    # - platform: state
+    #   entity_id: binary_sensor.bedroom_motion_camera
+    #   to: "on"
     - platform: state
       entity_id: binary_sensor.bedroom_window
       to: "on"
@@ -55,17 +55,17 @@
     - platform: state
       entity_id: 
         binary_sensor.livingroom_motion, 
-        binary_sensor.livingroom_motion_camera, 
+#        binary_sensor.livingroom_motion_camera, 
         binary_sensor.livingroom_window,
         binary_sensor.livingroom_balcony,
         binary_sensor.hall_motion,
-        binary_sensor.hall_motion_camera,
+#        binary_sensor.hall_motion_camera,
         binary_sensor.hall_entrance,
         binary_sensor.kitchen_motion,
-        binary_sensor.kitchen_motion_camera,
+#        binary_sensor.kitchen_motion_camera,
         binary_sensor.kitchen_window,
         binary_sensor.bedroom_motion,
-        binary_sensor.bedroom_motion_camera,
+ #       binary_sensor.bedroom_motion_camera,
         binary_sensor.bedroom_window        
       to: "on"
   condition:

@@ -1,13 +1,11 @@
   - name: livingroom
     platform: smartir
-    unique_id: livingroom_ac
     device_code: 1800
     controller_send_service: switch.broadlink_send_packet_192_168_1_51
     temperature_sensor: sensor.br_livingroom_temperature
     humidity_sensor: sensor.br_livingroom_humidity
   - name: bedroom
     platform: smartir
-    unique_id: bedroom_ac
     device_code: 1810
     controller_send_service: switch.broadlink_send_packet_192_168_1_62
     temperature_sensor: sensor.br_bedroom_temperature
