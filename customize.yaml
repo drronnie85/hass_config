@@ -93,7 +93,11 @@ binary_sensor.wc_waterleak:
 binary_sensor.bathroom_waterleak:
   friendly_name: Утечка воды
 binary_sensor.door_bell:
-  friendly_name: Утечка воды
+  friendly_name: Звонок
+binary_sensor.porch_motion_camera:
+  friendly_name: Движение (камера)
+binary_sensor.loft_motion_camera:
+  friendly_name: Движение (камера)
 
 device_tracker.phone_oksana:
   friendly_name: Оксана
