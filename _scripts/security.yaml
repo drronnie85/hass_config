@@ -33,7 +33,7 @@ alarm_telegram:
         message: photos
         data:
           photo:
-            - url: http://192.168.1.8:8123/api/camera_proxy/camera.zal?api_password=80c0587b93750a246a22166bc0e9b6df
-            - url: http://192.168.1.8:8123/api/camera_proxy/camera.kukhnia?api_password=80c0587b93750a246a22166bc0e9b6df
-            - url: http://192.168.1.8:8123/api/camera_proxy/camera.spalnia?api_password=80c0587b93750a246a22166bc0e9b6df
-            - url: http://192.168.1.8:8123/api/camera_proxy/camera.prikhozhaia?api_password=80c0587b93750a246a22166bc0e9b6df
+            - url: http://127.0.0.1:8123/api/camera_proxy/camera.zal?api_password=80c0587b93750a246a22166bc0e9b6df
+            - url: http://127.0.0.1:8123/api/camera_proxy/camera.kukhnia?api_password=80c0587b93750a246a22166bc0e9b6df
+            - url: http://127.0.0.1:8123/api/camera_proxy/camera.spalnia?api_password=80c0587b93750a246a22166bc0e9b6df
+            - url: http://127.0.0.1:8123/api/camera_proxy/camera.prikhozhaia?api_password=80c0587b93750a246a22166bc0e9b6df

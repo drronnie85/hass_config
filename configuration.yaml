@@ -13,7 +13,7 @@ lovelace:
   mode: yaml
   
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
@@ -59,6 +59,10 @@ sun:
 
 #logger:
 #  default: debug
+
+# recorder:
+#   purge_keep_days: 5
+#   db_url: mssql+pymssql://hass:hass@192.168.1.6/Hass?charset=utf8
 
 hassio:
 
