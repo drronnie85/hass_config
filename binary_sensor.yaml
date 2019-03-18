@@ -90,9 +90,9 @@
     platform: mqtt
     state_topic: bridge/rfin_sensor
     payload_on: "800064859"
-    device_class: smoke
+    device_class: problem
     off_delay: !secret sensor_delay_waterleak
-  - name: kitchen_smokel
+  - name: kitchen_smoke
     platform: mqtt
     state_topic: bridge/rfin_sensor
     payload_on: "80031DC0B"
@@ -103,14 +103,14 @@
     platform: mqtt
     state_topic: bridge/rfin_sensor
     payload_on: "800411111"
-    device_class: smoke
+    device_class: problem
     off_delay: !secret sensor_delay_waterleak
 
   - name: bathroom_waterleak
     platform: mqtt
     state_topic: bridge/rfin_sensor
     payload_on: "80020FC59"
-    device_class: smoke
+    device_class: problem
     off_delay: !secret sensor_delay_waterleak
 
   - name: door_bell

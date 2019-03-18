@@ -56,6 +56,7 @@
 
   - platform: synologydsm
     host: !secret syno_host
+    ssl: false
     port: 5000
     username: !secret syno_user
     password: !secret syno_pass

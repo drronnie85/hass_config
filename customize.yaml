@@ -76,6 +76,8 @@ binary_sensor.kitchen_motion_camera:
   friendly_name: Движение (камера)
 binary_sensor.kitchen_waterleak:
   friendly_name: Утечка воды
+binary_sensor.kitchen_smoke:
+  friendly_name: Дым
 binary_sensor.tambour_motion_camera:
   friendly_name: Движение (камера)
 binary_sensor.livingroom_window:
