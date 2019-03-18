@@ -5,8 +5,15 @@
     to: disarmed
   action:
     - service: notify.telegram
-      data_template:
+      data:
         message: Система снята с охраны
+    - service: notify.telegram
+      data:
+        message: photos
+        data:
+          photo:
+            - url: http://127.0.0.1:8123/api/camera_proxy/camera.tambur?api_password=80c0587b93750a246a22166bc0e9b6df
+
 
 - alias: Message when disarmed
   trigger:
@@ -16,4 +23,10 @@
   action:
     - service: notify.telegram
       data_template:
-        message: Система под охраной
+        message: Система на охране
+    - service: notify.telegram
+      data:
+        message: photos
+        data:
+          photo:
+            - url: http://127.0.0.1:8123/api/camera_proxy/camera.tambur?api_password=80c0587b93750a246a22166bc0e9b6df
