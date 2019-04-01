@@ -25,14 +25,15 @@
       iot_mc1_bedroom:        192.168.1.60
       iot_a1_livingroom:      192.168.1.61
       iot_rmpro_bedroom:      192.168.1.62
+      iot_th10_server:        192.168.1.63
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
       srv_esxi:               192.168.1.2
       srv_nas:                192.168.1.4
       srv_db1:                192.168.1.6
-  - platform: google_maps
-    username: drronnie85.smarthome@gmail.com
-    password: !secret google_pass
-  - platform: bluetooth_tracker
+   - platform: google_maps
+     username: !secret google_login
+     password: !secret google_pass
+  # - platform: bluetooth_tracker
   # - platform: googlehome
   #   host: 192.168.1.92

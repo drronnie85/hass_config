@@ -1,0 +1,38 @@
+- alias: No ping device
+  trigger:
+    platform: state
+    entity_id:
+      device_tracker.router_main,
+      device_tracker.router_kitchen,
+      device_tracker.router_livingroom,
+      device_tracker.media_mibox_livingroom,
+      device_tracker.media_ghmini_bedroom,
+      device_tracker.srv_esxi,
+      device_tracker.srv_nas,
+      device_tracker.srv_db1,
+      device_tracker.camera_loft,
+      device_tracker.camera_entrance,
+      device_tracker.camera_tambour,
+      device_tracker.camera_livingroom,
+      device_tracker.camera_bedroom,
+      device_tracker.camera_cristoph,
+      device_tracker.camera_kitchen,
+      device_tracker.camera_hall,
+      device_tracker.camera_mobile,
+      device_tracker.iot_rmpro_livingroom,
+      device_tracker.iot_a1_bedroom,
+      device_tracker.iot_mp1_kitchen,
+      device_tracker.iot_bridge_hall,
+      device_tracker.iot_powb1_wc,
+      device_tracker.iot_mc1_bedroom,
+      device_tracker.iot_th10_kitchen,
+      device_tracker.iot_th10_server,
+      device_tracker.iot_a1_livingroom,
+      device_tracker.iot_rmpro_bedroom
+    to: not_home
+    for:
+      minutes: 10
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Не пингуется {{ trigger.entity_id }}"

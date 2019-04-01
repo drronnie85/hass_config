@@ -16,6 +16,12 @@ sensor.kitchen_temperature:
 sensor.kitchen_humidity:
   friendly_name: Влажность
   icon: mdi:water-percent
+sensor.server_temperature:
+  friendly_name: Температура
+  icon: mdi:thermometer
+sensor.server_humidity:
+  friendly_name: Влажность
+  icon: mdi:water-percent
 sensor.dark_sky_temperature:
   friendly_name: Температура
   icon: mdi:thermometer
@@ -53,9 +59,9 @@ light.hall:
 switch.projector_screen:
   friendly_name: Экран
 
-climate.livingroom:
+climate.livingroom_ac:
   friendly_name: Зал
-climate.bedroom:
+climate.bedroom_ac:
   friendly_name: Спальня
 
 binary_sensor.livingroom_motion:
@@ -163,6 +169,9 @@ device_tracker.iot_mc1_bedroom:
   icon: mdi:lightbulb
 device_tracker.iot_th10_kitchen:
   friendly_name: Кухня
+  icon: mdi:thermometer
+device_tracker.iot_th10_server:
+  friendly_name: Сервер
   icon: mdi:thermometer
 device_tracker.iot_a1_livingroom:
   friendly_name: Зал

@@ -4,16 +4,9 @@
     entity_id: alarm_control_panel.ha_alarm
     to: disarmed
   action:
-    - service: notify.telegram
+    - service: script.alarm_armdisarm
       data:
         message: Система снята с охраны
-    - service: notify.telegram
-      data:
-        message: photos
-        data:
-          photo:
-            - url: http://127.0.0.1:8123/api/camera_proxy/camera.tambur?api_password=80c0587b93750a246a22166bc0e9b6df
-
 
 - alias: Message when disarmed
   trigger:
@@ -21,12 +14,6 @@
     entity_id: alarm_control_panel.ha_alarm
     to: armed_away
   action:
-    - service: notify.telegram
-      data_template:
-        message: Система на охране
-    - service: notify.telegram
+    - service: script.alarm_armdisarm
       data:
-        message: photos
-        data:
-          photo:
-            - url: http://127.0.0.1:8123/api/camera_proxy/camera.tambur?api_password=80c0587b93750a246a22166bc0e9b6df
+        message: Система на охране

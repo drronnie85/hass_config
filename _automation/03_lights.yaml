@@ -41,7 +41,7 @@
     entity_id: binary_sensor.hall_motion
     to: "off"
     for:
-      minutes: 5
+      minutes: 2
   condition:
     - condition: time
       after: "23:00:00"

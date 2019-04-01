@@ -40,6 +40,12 @@ views:
               entities:
                 - sensor.kitchen_temperature
                 - sensor.kitchen_humidity
+            - type: glance
+              title: Сервер
+              show_name: false
+              entities:
+                - sensor.server_temperature
+                - sensor.server_humidity
       - type: history-graph
         title: Температура
         entities:
@@ -49,6 +55,8 @@ views:
             name: Спальня
           - entity: sensor.kitchen_temperature
             name: Кухня
+          - entity: sensor.server_temperature
+            name: Сервер
       - type: history-graph
         title: Влажность
         entities:
@@ -58,6 +66,8 @@ views:
             name: Спальня
           - entity: sensor.kitchen_humidity
             name: Кухня
+          - entity: sensor.server_humidity
+            name: Сервер
       - type: iframe
         url: "https://embed.windy.com/embed2.html?lat=50.455&lon=30.524&zoom=10&overlay=wind&location=coordinates"
         aspect_ratio: 90%
@@ -193,7 +203,7 @@ views:
               - sensor.br_livingroom_temperature
               - sensor.br_livingroom_humidity
           - type: thermostat
-            entity: climate.livingroom
+            entity: climate.livingroom_ac
       - type: vertical-stack
         cards:
           - type: history-graph
@@ -202,7 +212,7 @@ views:
               - sensor.br_bedroom_temperature
               - sensor.br_bedroom_humidity
           - type: thermostat
-            entity: climate.bedroom
+            entity: climate.bedroom_ac
           - type: glance
             title: Увлажнитель спальня
             show_state: false
@@ -284,6 +294,7 @@ views:
               - device_tracker.iot_th10_kitchen
               - device_tracker.iot_a1_livingroom
               - device_tracker.iot_rmpro_bedroom
+              - device_tracker.iot_th10_server
   - id: floorplan
     title: План
     icon: mdi:floor-plan
