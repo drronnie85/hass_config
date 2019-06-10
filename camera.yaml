@@ -1,6 +1,7 @@
-  - platform: synology
-    url: !secret syno_addr
-    username: !secret syno_user
-    password: !secret syno_pass
-    timeout: 15
-    verify_ssl: False
+- platform: synology
+  url: !secret syno_addr
+  username: !secret syno_user
+  password: !secret syno_pass
+  timeout: 15
+  verify_ssl: False
+

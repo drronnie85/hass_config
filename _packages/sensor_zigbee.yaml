@@ -1,0 +1,109 @@
+homeassistant:
+  customize:
+    # ванная
+    sensor.bathroom_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: bathroom
+    sensor.bathroom_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: bathroom
+    sensor.bathroom_pressure:
+      friendly_name: Давление
+      icon: mdi:gauge
+      device_class: pressure
+      room: bathroom
+    sensor.bathroom_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: bathroom
+    sensor.bathroom_linkquality:
+      friendly_name: Сигнал
+      device_class: signal_strength
+      room: bathroom
+
+    # зал
+    binary_sensor.livingroom_window:
+      friendly_name: Окно
+      device_class: window
+      room: livingroom
+    sensor.livingroom_window_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_window_linkquality:
+      friendly_name: Сигнал
+      device_class: signal_strength
+      room: livingroom
+
+    binary_sensor.livingroom_balcony:
+      friendly_name: Балкон
+      device_class: door
+      room: livingroom
+    sensor.livingroom_balcony_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_balcony_linkquality:
+      friendly_name: Сигнал
+      device_class: signal_strength
+      room: livingroom
+
+    binary_sensor.livingroom_motion:
+      friendly_name: Движение
+      device_class: occupancy
+      room: livingroom
+    sensor.livingroom_motion_illuminance:
+      friendly_name: Яркость
+      device_class: illuminance
+      room: livingroom
+    sensor.livingroom_motion_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_motion_linkquality:
+      friendly_name: Сигнал
+      device_class: signal_strength
+      room: livingroom
+
+    sensor.livingroom_cube:
+      friendly_name: Действие
+      device_class: illuminance
+      icon: mdi:gesture-double-tap
+      room: livingroom
+    sensor.livingroom_cube_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_cube_linkquality:
+      friendly_name: Сигнал
+      device_class: signal_strength
+      room: livingroom
+
+    # кухня
+    sensor.kitchen_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: kitchen
+    sensor.kitchen_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: kitchen
+    sensor.kitchen_pressure:
+      friendly_name: Давление
+      icon: mdi:gauge
+      device_class: pressure
+      room: kitchen
+    sensor.kitchen_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: kitchen
+    sensor.kitchen_linkquality:
+      friendly_name: Сигнал
+      device_class: signal_strength
+      room: kitchen

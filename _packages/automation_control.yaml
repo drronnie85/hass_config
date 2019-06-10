@@ -1,0 +1,41 @@
+input_boolean:
+  automation:
+    name: Автоматизация
+    icon: mdi:home-automation
+    initial: on
+
+  automation_light:
+    name: Автоматизация освещения
+    icon: mdi:lightbulb
+    initial: on
+
+  automation_exhaust:
+    name: Автоматизация вытяжек
+    icon: mdi:fan
+    initial: on
+
+  automation_temperature:
+    name: Автоматизация температуры
+    icon: mdi:thermometer
+    initial: on
+
+input_text:
+  last_motion_room:
+    name: Движение - последняя комната
+    initial: none
+
+automation:
+  - alias: Last_Motion
+    trigger:
+      platform: state
+      entity_id:
+        - binary_sensor.livingroom_motion
+        - binary_sensor.bedroom_motion
+        - binary_sensor.hall_motion
+        - binary_sensor.kitchen_motion
+      to: "on"
+    action:
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.last_motion_room
+          value: "{{ states[trigger.entity_id].room }}"

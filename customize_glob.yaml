@@ -1,9 +1,0 @@
-"device_tracker.*_state":
-  templates:
-    theme: >
-      if (state === 'home') return 'green';
-      return 'red';
-    _stateDisplay: >
-      if (state === 'home') return 'Онлайн';
-      return 'Офлайн';
-      

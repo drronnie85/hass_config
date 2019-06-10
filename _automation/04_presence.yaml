@@ -1,11 +1,13 @@
 - alias: Somebody Came Motherinlaw
   trigger:
-    platform: zone
-    event: enter
-    zone: zone.motherinlaw
+    platform: state
     entity_id:
       device_tracker.google_maps_104258330239786803059,
       device_tracker.google_maps_105861814760109955404
+    from: not_home
+    to: motherinlaw
+    for:
+      minutes: 5
   action:
     service: notify.telegram
     data_template:
@@ -13,11 +15,13 @@
 
 - alias: Andrew Came Work
   trigger:
-    platform: zone
-    event: enter
-    zone: zone.work
+    platform: state
     entity_id:
       device_tracker.google_maps_105861814760109955404
+    from: not_home
+    to: work
+    for:
+      minutes: 5
   action:
     service: notify.telegram
     data_template:
@@ -25,11 +29,13 @@
 
 - alias: Andrew Left Work
   trigger:
-    platform: zone
-    event: leave
-    zone: zone.work
+    platform: state
     entity_id:
       device_tracker.google_maps_105861814760109955404
+    from: work
+    to: not_home
+    for:
+      minutes: 5
   action:
     service: notify.telegram
     data_template:
@@ -37,12 +43,14 @@
 
 - alias: Somebody Left Home
   trigger:
-    platform: zone
-    event: leave
-    zone: zone.home
+    platform: state
     entity_id:
       device_tracker.google_maps_104258330239786803059,
       device_tracker.google_maps_105861814760109955404
+    from: home
+    to: not_home
+    for:
+      minutes: 5
   action:
     service: notify.telegram
     data_template:
@@ -56,9 +64,8 @@
       device_tracker.google_maps_105861814760109955404
     to: home
     for:
-      minutes: 1
+      minutes: 5
   action:
     service: notify.telegram
     data_template:
       message: "{{ states[trigger.entity_id.split('.')[0]][trigger.entity_id.split('.')[1]].name }} возле дома."
-

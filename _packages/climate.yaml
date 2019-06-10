@@ -1,0 +1,21 @@
+climate:
+  - name: livingroom_ac
+    platform: smartir
+    device_code: 1800
+    controller_data: 192.168.1.62
+    temperature_sensor: sensor.livingroom_temperature
+    humidity_sensor: sensor.livingroom_humidity
+
+  - name: bedroom_ac
+    platform: smartir
+    device_code: 1810
+    controller_data: 192.168.1.64
+    temperature_sensor: sensor.bedroom_temperature
+    humidity_sensor: sensor.bedroom_humidity
+
+homeassistant:
+  customize:
+    climate.livingroom_ac:
+      friendly_name: Зал
+    climate.bedroom_ac:
+      friendly_name: Спальня

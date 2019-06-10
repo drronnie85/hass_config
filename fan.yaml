@@ -1,5 +1,0 @@
-  - platform: mqtt
-    name: wc_fan
-    command_topic: "bridge/rfout/set"
-    payload_on: "C001015A18000BDAA8"
-    payload_off: "C001015A18000BDAA2"

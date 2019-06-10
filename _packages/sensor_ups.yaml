@@ -1,0 +1,40 @@
+sensor:
+  - name: ups
+    platform: nut
+    host: !secret nut_host
+    username: !secret nut_user
+    password: !secret nut_pass
+    resources:
+      - input.voltage
+      - output.voltage
+      - battery.temperature
+      - battery.charge
+      - ups.load
+      - battery.runtime
+      - battery.voltage
+      - output.current
+
+homeassistant:
+  customize:
+    sensor.ups_input_voltage:
+      friendly_name: Вход, В
+      icon: mdi:current-ac
+      room: flat
+    sensor.ups_output_voltage:
+      friendly_name: Выход, В
+      icon: mdi:current-ac
+    sensor.ups_battery_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+    sensor.ups_battery_charge:
+      friendly_name: Заряд
+      icon: mdi:battery-charging
+    sensor.ups_load:
+      friendly_name: Нагрузка
+      icon: mdi:gauge
+    sensor.ups_battery_voltage:
+      friendly_name: Батарея, В
+      icon: mdi:current-dc
+    sensor.ups_output_current:
+      friendly_name: Выход, А
+      icon: mdi:current-ac

@@ -1,0 +1,86 @@
+automation:
+  - alias: Exhaust kitchen on
+    initial_state: 'false'
+    trigger:
+      platform: numeric_state
+      entity_id:
+        - sensor.kitchen_humidity
+        - sensor.flat_humidity_avg
+      value_template: >- 
+            {{ (((states.sensor.kitchen_humidity.state | float) - (states.sensor.flat_humidity_avg.state | float)) / (states.sensor.kitchen_humidity.state | float)) | round(0) }}
+      above: 7
+      for:
+        minutes: 1
+    condition:
+      - condition: state
+        entity_id: input_boolean.automation_exhaust
+        state: 'on'
+    action:
+      service: script.alarm_alert
+      data_template:
+        message: "Вытяжка в кухне включена. (Проверка триггера)"
+
+  - alias: Exhaust kitchen off
+    initial_state: 'false'
+    trigger:
+      platform: numeric_state
+      entity_id:
+        - sensor.kitchen_humidity
+        - sensor.flat_humidity_avg
+      value_template: >- 
+            {{ (((states.sensor.kitchen_humidity.state | float) - (states.sensor.flat_humidity_avg.state | float)) / 
+                 (states.sensor.kitchen_humidity.state | float) * (100 | float)) | round(0) }}
+      below: 7
+      for:
+        minutes: 1
+    condition:
+      - condition: state
+        entity_id: input_boolean.automation_exhaust
+        state: 'on'
+    action:
+      service: script.alarm_alert
+      data_template:
+        message: "Вытяжка в кухне выключена. (Проверка триггера)"
+
+  - alias: Exhaust bathroom on
+    initial_state: 'false'
+    trigger:
+      platform: numeric_state
+      entity_id:
+        - sensor.0x00158d000303cb5f_temperature
+        - sensor.flat_humidity_avg
+      value_template: >- 
+            {{ (((states.sensor['0x00158d000303cb5f_temperature'].state | float) - (states.sensor.flat_humidity_avg.state | float)) /
+                 (states.sensor['0x00158d000303cb5f_temperature'].state | float) * (100 | float)) | round(0) }}
+      above: 7
+      for:
+        minutes: 1
+    condition:
+      - condition: state
+        entity_id: input_boolean.automation_exhaust
+        state: 'on'
+    action:
+      service: script.alarm_alert
+      data_template:
+        message: "Вытяжка в ванной включена. (Проверка триггера)"
+
+  - alias: Exhaust bathroom off
+    initial_state: 'false'
+    trigger:
+      platform: numeric_state
+      entity_id:
+        - sensor.0x00158d000303cb5f_temperature
+        - sensor.flat_humidity_avg
+      value_template: >- 
+            {{ (((states.sensor['0x00158d000303cb5f_temperature'].state | float) - (states.sensor.flat_humidity_avg.state | float)) / (states.sensor['0x00158d000303cb5f_temperature'].state | float)) | round(0) }}
+      below: 7
+      for:
+        minutes: 1
+    condition:
+      - condition: state
+        entity_id: input_boolean.automation_exhaust
+        state: 'on'
+    action:
+      service: script.alarm_alert
+      data_template:
+        message: "Вытяжка в ванной выключена. (Проверка триггера)"

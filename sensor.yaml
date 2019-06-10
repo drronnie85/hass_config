@@ -1,94 +1,22 @@
-  - platform: darksky
-    api_key: !secret darksky_key
-    monitored_conditions:
-      - temperature
-      - humidity
-      - pressure
-      - cloud_cover
-      - precip_type
-      - precip_probability
-      - precip_intensity
-      - wind_speed
-      - wind_bearing
-    scan_interval:
-      minutes: 20
   - platform: moon
   - platform: yr
-  - platform: broadlink
-    name: br_bedroom
-    scan_interval: 60
-    host: 192.168.1.52
-    mac: "b4:43:0d:d1:18:d2"
-    monitored_conditions:
-      - temperature
-      - humidity
-      - air_quality
-      - light
-      - noise
-  - platform: broadlink
-    name: br_livingroom
-    scan_interval: 60
-    host: 192.168.1.61
-    mac: "34:ea:34:b2:a8:26"
-    monitored_conditions:
-      - temperature
-      - humidity
-      - air_quality
-      - light
-      - noise
+
   - name: voltage
     platform: mqtt
     state_topic: boiler/voltage
     unit_of_measurement: V
-  - name: kitchen_temperature
-    platform: mqtt
-    state_topic: kitchen_th10/temperature
-    unit_of_measurement: "°C"
-  - name: kitchen_humidity
-    platform: mqtt
-    state_topic: kitchen_th10/humidity
-    unit_of_measurement: "%"
-  - name: server_temperature
-    platform: mqtt
-    state_topic: server_th10/temperature
-    unit_of_measurement: "°C"
-  - name: server_humidity
-    platform: mqtt
-    state_topic: server_th10/humidity
-    unit_of_measurement: "%"
 
-  - name: ups
-    platform: nut
-    host: !secret nut_host
-    username: !secret nut_user
-    password: !secret nut_pass
-    resources:
-      - ups.load
-      - ups.realpower.nominal
-      - input.voltage
-      - battery.runtime
-      - battery.charge
-      - battery.temperature
-      - battery.voltage
-      - output.current
-      - output.voltage
-  # - name: hass_temperature
-  #   platform: command_line
-  #   command: "cat /sys/class/thermal/thermal_zone0/temp"
-  #   value_template: "{{ value | multiply(0.001) | round(1) }}"
-  #   unit_of_measurement: "°C"
-
-  - platform: synologydsm
-    host: !secret syno_host
-    ssl: false
-    port: 5000
-    username: !secret syno_user
-    password: !secret syno_pass
-    monitored_conditions:
-      - cpu_total_load
-      - memory_real_usage
-      - network_up
-      - network_down
+  # - platform: synologydsm
+  #   host: !secret syno_host
+  #   ssl: false
+  #   port: 5000
+  #   username: !secret syno_user
+  #   password: !secret syno_pass
+  #   monitored_conditions:
+  #     - cpu_total_load
+  #     - memory_real_usage
+  #     - network_up
+  #     - network_down
   #     - volume_percentage_used
   #     - volume_disk_temp_avg
   #     - volume_disk_temp_max

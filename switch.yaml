@@ -1,27 +1,3 @@
-  - platform: broadlink
-    host: 192.168.1.51
-    mac: 'B4:43:0D:EE:EF:E7'
-    type: rm2_pro_plus
-    timeout: 15
-    switches:
-      projector_screen:
-        command_on: 'eACuAAoeHwoeCgofCh4fCR8KHwkLHgoeCx4eCgofCgABOAoeHwoKHh8KHgofCh4KCx4KHh8KHgoKHx4KHwkLHgoeHwofCR8KCh4LHgoeHwoKHgoAATkKHh8JCx4eCh8KHwkfCgoeCx4eCh8KCh4fCh4KCx4KHh8JHwofCgoeCh4LHh8JCx4KAAE4Cx4eCgsdHwofCR8KHwoKHgoeHwofCQseHwkfCgoeCx4eCh8KBAAF3AAAAAAAAAAAAAA='
-        command_off: 'eAC4AB4LHQsJIAkfHgsdCx4LCR8eCwkfCR8KHwkAAToJHx0LCSAdCx4LHQseCwkfCh8dCx4LCR8dDB0LCSAJHx4LHQseCwkfHQwJHwkfCh8JAAE5Ch8dCwkfHgsdDB0LHgsJHwkfHgseCgofHgoeCwkfCh8dCx4LHQsKHx0LCh8JHwofCQABOQoeHgsJIB0LHgoeCx4LCR8JHx4LHgsJHx0LHgsJIAggHQseCx0LCh8dCwofCR8JHwoABdw='
-  - platform: broadlink
-    host: 192.168.1.62
-    mac: '78:0F:77:00:D7:1B'
-    type: rm2_pro_plus
-    timeout: 15
-    switches:
-      projector_screen_bedroom:
-        command_on: 'eACuAAoeHwoeCgofCh4fCR8KHwkLHgoeCx4eCgofCgABOAoeHwoKHh8KHgofCh4KCx4KHh8KHgoKHx4KHwkLHgoeHwofCR8KCh4LHgoeHwoKHgoAATkKHh8JCx4eCh8KHwkfCgoeCx4eCh8KCh4fCh4KCx4KHh8JHwofCgoeCh4LHh8JCx4KAAE4Cx4eCgsdHwofCR8KHwoKHgoeHwofCQseHwkfCgoeCx4eCh8KBAAF3AAAAAAAAAAAAAA='
-        command_off: 'eAC4AB4LHQsJIAkfHgsdCx4LCR8eCwkfCR8KHwkAAToJHx0LCSAdCx4LHQseCwkfCh8dCx4LCR8dDB0LCSAJHx4LHQseCwkfHQwJHwkfCh8JAAE5Ch8dCwkfHgsdDB0LHgsJHwkfHgseCgofHgoeCwkfCh8dCx4LHQsKHx0LCh8JHwofCQABOQoeHgsJIB0LHgoeCx4LCR8JHx4LHgsJHx0LHgsJIAggHQseCx0LCh8dCwofCR8JHwoABdw='
-  - platform: broadlink
-    host: 192.168.1.60
-    mac: '34:EA:34:BD:B5:B3'
-    type: sp2
-    timeout: 15
-    friendly_name: 'salt_lamp'
   - platform: mqtt
     name: wc_boiler
     state_topic: boiler/relay/0

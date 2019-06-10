@@ -1,0 +1,44 @@
+sensor:
+  - platform: broadlink
+    name: bedroom
+    scan_interval: 60
+    host: 192.168.1.65
+    mac: "b4:43:0d:d1:18:d2"
+    monitored_conditions:
+      - temperature
+      - humidity
+
+  - platform: broadlink
+    name: livingroom
+    scan_interval: 60
+    host: 192.168.1.61
+    mac: "34:ea:34:b2:a8:26"
+    monitored_conditions:
+      - temperature
+      - humidity
+
+homeassistant:
+  customize:
+    # зал
+    sensor.livingroom_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: livingroom
+    sensor.livingroom_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: livingroom
+
+    # спальня
+    sensor.bedroom_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: bedroom
+    sensor.bedroom_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: bedroom

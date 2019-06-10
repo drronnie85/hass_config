@@ -1,0 +1,121 @@
+# binary_sensor:
+#   - name: bedroom_motion
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "80000F419"
+#     off_delay: !secret sensor_delay_motion
+#   - name: bedroom_window
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "800FE3259"
+#     off_delay: !secret sensor_delay_window
+
+#   - name: hall_motion
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "8005F9E26"
+#     off_delay: !secret sensor_delay_motion
+#   - name: hall_entrance
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "8004BB90E"
+#     off_delay: !secret sensor_delay_door
+
+#   - name: kitchen_motion
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "800111111"
+#     off_delay: !secret sensor_delay_motion
+#   - name: kitchen_window
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "8004FEF99"
+#     off_delay: !secret sensor_delay_window
+#   - name: kitchen_waterleak
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "800064859"
+#     off_delay: !secret sensor_delay_waterleak
+#   - name: kitchen_smoke
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "80031DC0B"
+#     off_delay: !secret sensor_delay_waterleak
+  
+#   - name: wc_waterleak
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "800411111"
+#     off_delay: !secret sensor_delay_waterleak
+
+#   - name: bathroom_waterleak
+#     platform: mqtt
+#     state_topic: bridge/rfin_sensor
+#     payload_on: "80020FC59"
+#     off_delay: !secret sensor_delay_waterleak
+
+# homeassistant:
+#   customize:
+#     # зал
+#     binary_sensor.0x00158d0002f2a39b_occupancy:
+#       friendly_name: Движение
+#       device_class: motion
+#       room: livingroom
+#     binary_sensor.livingroom_window:
+#       friendly_name: Окно
+#       device_class: window
+#       room: livingroom
+#     binary_sensor.livingroom_balcony:
+#       friendly_name: Балкон
+#       device_class: door
+#       room: livingroom
+
+#     # спальня
+#     binary_sensor.bedroom_motion:
+#       friendly_name: Движение
+#       device_class: motion
+#       room: bedroom
+#     binary_sensor.bedroom_window:
+#       friendly_name: Окно
+#       device_class: window
+#       room: bedroom
+
+#     # кухня
+#     binary_sensor.kitchen_motion:
+#       friendly_name: Движение
+#       device_class: motion
+#       room: kitchen
+#     binary_sensor.kitchen_window:
+#       friendly_name: Окно
+#       device_class: window
+#       room: kitchen
+#     binary_sensor.kitchen_waterleak:
+#       friendly_name: Утечка воды
+#       device_class: problem
+#       room: kitchen
+#     binary_sensor.kitchen_smoke:
+#       friendly_name: Дым
+#       device_class: smoke
+#       room: kitchen
+
+#     # туалет
+#     binary_sensor.wc_waterleak:
+#       friendly_name: Утечка воды
+#       device_class: problem
+#       room: wc
+
+#     # ванная
+#     binary_sensor.bathroom_waterleak:
+#       friendly_name: Утечка воды
+#       device_class: problem
+#       room: bathroom
+
+#     # прихожая
+#     binary_sensor.hall_motion:
+#       friendly_name: Движение
+#       device_class: motion
+#       room: hall
+#     binary_sensor.hall_entrance:
+#       friendly_name: Вход
+#       device_class: door
+#       room: hall

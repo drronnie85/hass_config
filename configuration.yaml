@@ -2,67 +2,52 @@ homeassistant:
   name: Home
   latitude: !secret lat_home
   longitude: !secret lon_home
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 0
   unit_system: metric
   time_zone: Europe/Kiev
   customize: !include customize.yaml
-  customize_glob: !include customize_glob.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.1.20
+        - 192.168.1.21
+        - 192.168.1.23
+    - type: legacy_api_password
+      api_password: !secret http_password
+  packages: !include_dir_named _packages/
+
+# sia:
+#   port: 1234
+#   hubs:
+#     - name: ajax
+#       account: 7F192
 
 lovelace:
   mode: yaml
   
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables the frontend
 frontend:
-
-# Enables configuration UI
 config:
-
-# zigbee:
-#   device: /dev/ttyACM0
-#   baud: 115200
-  
 http:
   base_url: nas.drronniesoft.info:8123
-  api_password: !secret darksky_key
-
-dialogflow:
-# Checks for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
-# Discover some devices automatically
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
-
-# Enables support for tracking state changes over time
+dialogflow:
 history:
-
-# View all events in a logbook
 logbook:
-
-# Enables a map showing the location of tracked devices
 map:
-
-# Track the sun
 sun:
 
 #logger:
 #  default: debug
 
-# recorder:
-#   purge_keep_days: 5
-#   db_url: mssql+pymssql://hass:hass@192.168.1.6/Hass?charset=utf8
+recorder:
+  purge_keep_days: 365
+  db_url: !secret mssql
 
 hassio:
 
@@ -90,37 +75,23 @@ zone:
     radius: 100
     icon: mdi:human-female
 
-
 weather:
   - platform: darksky
     api_key: !secret darksky_key
     mode: daily
 
 mqtt:
-  broker: 192.168.1.4
-  port: 1883
+  password: hello
+  discovery: true
+  discovery_prefix: homeassistant
 
-# Text to speech
-tts:
-  - platform: google
+#tts:
+#  - platform: google
 
 #cloud:
 system_health:
 
-alarm_control_panel:
-  - platform: manual_mqtt
-    # code: !secret alarm_code
-    state_topic: home/alarm
-    command_topic: home/alarm/set
-    pending_time: 2
-    delay_time: 20
-    trigger_time: 4
-    disarmed:
-      trigger_time: 0
-    armed_home:
-      delay_time: 0
-    triggered:
-      pending_time: 0
+api:
 
 telegram_bot:
   platform: polling
@@ -139,16 +110,9 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet_key
 
-group: !include groups.yaml
 automation: !include_dir_merge_list _automation/
 script: !include_dir_merge_named _scripts/
 sensor: !include sensor.yaml
 switch: !include switch.yaml
-light: !include light.yaml
-binary_sensor: !include binary_sensor.yaml
-camera: !include camera.yaml
-device_tracker: !include device_tracker.yaml
-climate: !include climate.yaml
-fan: !include fan.yaml
 input_select: !include input_select.yaml
-media_player: !include media_player.yaml
+camera: !include camera.yaml

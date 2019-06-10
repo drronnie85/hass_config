@@ -1,12 +1,16 @@
-# - alias: Rain is Started
-#   trigger:
-#     - platform: numeric_state
-#       entity_id: sensor.dark_sky_precip_intensity
-#       above: 0.1
-#   action:
-#     service: notify.telegram
-#     data_template:
-#       message: "Возможен дождь"
+- alias: Chance of rain
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.dark_sky_precip_intensity
+      above: 0.1
+  condition:
+    - condition: time
+      after: "06:00:00"
+      before: "23:00:00"
+  action:
+    - service: script.alarm_alert
+      data_template:
+        message: "Возможен дождь. Рекомендую взять зонт."
 
 # - alias: "Rain is Over"
 #   trigger:

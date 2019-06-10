@@ -1,0 +1,11 @@
+switch:
+  - platform: broadlink
+    host: 192.168.1.64
+    mac: "B4:43:0D:EE:EF:E7"
+    type: rm2_pro_plus
+    timeout: 15
+  - platform: broadlink
+    host: 192.168.1.62
+    mac: "78:0F:77:00:D7:1B"
+    type: rm2_pro_plus
+    timeout: 15
