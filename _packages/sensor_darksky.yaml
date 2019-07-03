@@ -21,14 +21,14 @@ homeassistant:
       friendly_name: Температура
       icon: mdi:thermometer
       device_class: temperature
-      room: outdoor
+      room: other
     sensor.dark_sky_humidity:
       friendly_name: Влажность
       icon: mdi:water-percent
       device_class: humidity
-      room: outdoor
+      room: other
     sensor.dark_sky_pressure:
       friendly_name: Давление
       icon: mdi:gauge
       device_class: pressure
-      room: outdoor
+      room: other

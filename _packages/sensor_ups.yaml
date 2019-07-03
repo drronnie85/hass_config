@@ -19,22 +19,28 @@ homeassistant:
     sensor.ups_input_voltage:
       friendly_name: Вход, В
       icon: mdi:current-ac
-      room: flat
+      room: other
     sensor.ups_output_voltage:
       friendly_name: Выход, В
       icon: mdi:current-ac
+      room: other
     sensor.ups_battery_temperature:
       friendly_name: Температура
       icon: mdi:thermometer
+      room: other
     sensor.ups_battery_charge:
       friendly_name: Заряд
       icon: mdi:battery-charging
+      room: other
     sensor.ups_load:
       friendly_name: Нагрузка
       icon: mdi:gauge
+      room: other
     sensor.ups_battery_voltage:
       friendly_name: Батарея, В
       icon: mdi:current-dc
+      room: other
     sensor.ups_output_current:
       friendly_name: Выход, А
       icon: mdi:current-ac
+      room: other

@@ -1,13 +1,11 @@
 - alias: Somebody Came Motherinlaw
   trigger:
-    platform: state
+    platform: zone
     entity_id:
       device_tracker.google_maps_104258330239786803059,
       device_tracker.google_maps_105861814760109955404
-    from: not_home
-    to: motherinlaw
-    for:
-      minutes: 5
+    zone: zone.motherinlaw
+    event: enter
   action:
     service: notify.telegram
     data_template:
@@ -15,13 +13,11 @@
 
 - alias: Andrew Came Work
   trigger:
-    platform: state
+    platform: zone
     entity_id:
       device_tracker.google_maps_105861814760109955404
-    from: not_home
-    to: work
-    for:
-      minutes: 5
+    zone: zone.work
+    event: enter
   action:
     service: notify.telegram
     data_template:
@@ -29,43 +25,38 @@
 
 - alias: Andrew Left Work
   trigger:
-    platform: state
+    platform: zone
     entity_id:
       device_tracker.google_maps_105861814760109955404
-    from: work
-    to: not_home
-    for:
-      minutes: 5
+    zone: zone.work
+    event: leave
   action:
     service: notify.telegram
     data_template:
       message: "Андрей ушел с работы"
 
-- alias: Somebody Left Home
-  trigger:
-    platform: state
-    entity_id:
-      device_tracker.google_maps_104258330239786803059,
-      device_tracker.google_maps_105861814760109955404
-    from: home
-    to: not_home
-    for:
-      minutes: 5
-  action:
-    service: notify.telegram
-    data_template:
-      message: "{{ states[trigger.entity_id.split('.')[0]][trigger.entity_id.split('.')[1]].name }} не дома."
-
 - alias: Somebody Near Home
   trigger:
-    platform: state
+    platform: zone
     entity_id:
       device_tracker.google_maps_104258330239786803059,
       device_tracker.google_maps_105861814760109955404
-    to: home
-    for:
-      minutes: 5
+    zone: zone.home
+    event: enter
   action:
     service: notify.telegram
     data_template:
       message: "{{ states[trigger.entity_id.split('.')[0]][trigger.entity_id.split('.')[1]].name }} возле дома."
+
+- alias: Somebody Left Home
+  trigger:
+    platform: zone
+    entity_id:
+      device_tracker.google_maps_104258330239786803059,
+      device_tracker.google_maps_105861814760109955404
+    zone: zone.home
+    event: leave
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ states[trigger.entity_id.split('.')[0]][trigger.entity_id.split('.')[1]].name }} не дома."

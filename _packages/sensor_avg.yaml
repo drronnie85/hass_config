@@ -8,10 +8,12 @@ sensor:
           - sensor.kitchen_temperature
           - sensor.bathroom_temperature
         value_template: >- 
-          {{ ((states.sensor | rejectattr('state','eq','unavailable') | rejectattr('state','eq','unknown') |
-                rejectattr('attributes.room', 'eq', 'outdoor') |
-                rejectattr('attributes.room', 'eq', 'flat') |
-                selectattr('attributes.device_class', 'eq', 'temperature') | list | count | float )) | round(2) }}
+          {{ states.sensor |
+             rejectattr('state','eq','unavailable') | 
+             rejectattr('state','eq','unknown') |
+             rejectattr('attributes.room', 'eq', 'other') |
+             selectattr('attributes.device_class', 'eq', 'temperature') |
+             list | count | int }}
       flat_temperature_sum:
         entity_id:
           - sensor.livingroom_temperature
@@ -19,18 +21,19 @@ sensor:
           - sensor.kitchen_temperature
           - sensor.bathroom_temperature
         value_template: >- 
-          {{ ((states.sensor.livingroom_temperature.state | float) + 
-              (states.sensor.bedroom_temperature.state | float) + 
-              (states.sensor.kitchen_temperature.state | float) + 
-              (states.sensor.bathroom_temperature.state | float)) }}
-      flat_temperature_avg:
+          {{ (states.sensor |
+              rejectattr('state','eq','unavailable') | 
+              rejectattr('state','eq','unknown') |
+              rejectattr('attributes.room', 'eq', 'other') |
+              selectattr('attributes.device_class', 'eq', 'temperature') |
+              map(attribute='state') | map('float') | sum) | round(2) }}
+      flat_temperature:
         unit_of_measurement: "°C"
         entity_id:
-          - sensor.flat_temperature_sum
           - sensor.flat_temperature_count
+          - sensor.flat_temperature_sum
         value_template: >- 
-          {{ ((states.sensor.flat_temperature_sum.state | float) / 
-              (states.sensor.flat_temperature_count.state | float)) | round(2) }}
+          {{ ((states.sensor.flat_temperature_sum.state | float) / (states.sensor.flat_temperature_count.state | float)) | round(2) }}
 
       flat_humidity_count:
         entity_id:
@@ -39,10 +42,12 @@ sensor:
           - sensor.kitchen_humidity
           - sensor.bathroom_humidity
         value_template: >- 
-          {{ ((states.sensor | rejectattr('state','eq','unavailable') | rejectattr('state','eq','unknown') |
-                rejectattr('attributes.room', 'eq', 'outdoor') |
-                rejectattr('attributes.room', 'eq', 'flat') |
-                selectattr('attributes.device_class', 'eq', 'humidity') | list | count | float )) | round(2) }}
+          {{ states.sensor |
+             rejectattr('state','eq','unavailable') |
+             rejectattr('state','eq','unknown') |
+             rejectattr('attributes.room', 'eq', 'other') |
+             selectattr('attributes.device_class', 'eq', 'humidity') |
+             list | count | int }}
       flat_humidity_sum:
         entity_id:
           - sensor.livingroom_humidity
@@ -50,45 +55,30 @@ sensor:
           - sensor.kitchen_humidity
           - sensor.bathroom_humidity
         value_template: >- 
-          {{ ((states.sensor.livingroom_humidity.state | float) + 
-              (states.sensor.bedroom_humidity.state | float) + 
-              (states.sensor.kitchen_humidity.state | float) + 
-              (states.sensor['bathroom_humidity'].state | float)) }}
-      flat_humidity_avg:
+          {{ (states.sensor |
+              rejectattr('state','eq','unavailable') |
+              rejectattr('state','eq','unknown') |
+             rejectattr('attributes.room', 'eq', 'other') |
+              selectattr('attributes.device_class', 'eq', 'humidity') |
+              map(attribute='state') | map('float') | sum) | round(2) }}
+      flat_humidity:
         unit_of_measurement: "%"
         entity_id:
-          - sensor.flat_humidity_sum
           - sensor.flat_humidity_count
+          - sensor.flat_humidity_sum
         value_template: >- 
-          {{ ((states.sensor.flat_humidity_sum.state | float) / 
-              (states.sensor.flat_humidity_count.state | float)) | round(2) }}
-
-      # kitchen_humidity_diff:
-      #   unit_of_measurement: "%"
-      #   entity_id:
-      #     - sensor.flat_humidity_avg
-      #     - sensor.kitchen_humidity
-      #   value_template: >- 
-      #     {{ (states.sensor.kitchen_humidity.state | float) - (states.sensor.flat_humidity_avg.state | float) }}
-      # bathroom_humidity_diff:
-      #   unit_of_measurement: "%"
-      #   entity_id:
-      #     - sensor.flat_humidity_avg
-      #     - sensor.0x00158d000303cb5f_humidity
-      #   value_template: >- 
-      #     {{ (states.sensor['0x00158d000303cb5f_humidity'].state | float) - (states.sensor.flat_humidity_avg.state | float) }}
+          {{ ((states.sensor.flat_humidity_sum.state | float) / (states.sensor.flat_humidity_count.state | float)) | round(2) }}
 
 homeassistant:
   customize:
     # общее
-    sensor.flat_temperature_avg:
+    sensor.flat_temperature:
       friendly_name: Температура
       icon: mdi:thermometer
       device_class: temperature
-      room: flat
-    sensor.flat_humidity_avg:
+      room: other
+    sensor.flat_humidity:
       friendly_name: Влажность
       icon: mdi:water-percent
       device_class: humidity
-      room: flat
-
+      room: other

@@ -1,0 +1,130 @@
+sensor:
+  - platform: template
+    sensors:
+      bathroom_temperature_battery:
+        entity_id: sensor.bathroom_temperature
+        value_template: "{{ state_attr('sensor.bathroom_temperature', 'battery_level') }}"
+
+      serverbox_temperature_battery:
+        entity_id: sensor.serverbox_temperature
+        value_template: "{{ state_attr('sensor.serverbox_temperature', 'battery_level') }}"
+
+      balcony_temperature_battery:
+        entity_id: sensor.balcony_temperature
+        value_template: "{{ state_attr('sensor.balcony_temperature', 'battery_level') }}"
+
+      livingroom_window_battery:
+        entity_id: binary_sensor.livingroom_window
+        value_template: "{{ state_attr('binary_sensor.livingroom_window', 'battery_level') }}"
+      livingroom_balcony_battery:
+        entity_id: binary_sensor.livingroom_balcony
+        value_template: "{{ state_attr('binary_sensor.livingroom_balcony', 'battery_level') }}"
+      livingroom_motion_battery:
+        entity_id: binary_sensor.livingroom_motion
+        value_template: "{{ state_attr('binary_sensor.livingroom_motion', 'battery_level') }}"
+      livingroom_cube_battery:
+        entity_id: binary_sensor.livingroom_cube
+        value_template: "{{ state_attr('binary_sensor.livingroom_cube', 'battery_level') }}"
+
+      kitchen_window_battery:
+        entity_id: binary_sensor.kitchen_window
+        value_template: "{{ state_attr('binary_sensor.kitchen_window', 'battery_level') }}"
+      kitchen_motion_battery:
+        entity_id: binary_sensor.kitchen_motion
+        value_template: "{{ state_attr('binary_sensor.kitchen_motion', 'battery_level') }}"
+      kitchen_waterleak_battery:
+        entity_id: binary_sensor.kitchen_waterleak
+        value_template: "{{ state_attr('binary_sensor.kitchen_waterleak', 'battery_level') }}"
+
+      hall_temperature_battery:
+        entity_id: sensor.hall_temperature
+        value_template: "{{ state_attr('sensor.hall_temperature', 'battery_level') }}"
+      hall_entrance_battery:
+        entity_id: binary_sensor.hall_entrance
+        value_template: "{{ state_attr('binary_sensor.hall_entrance', 'battery_level') }}"
+      hall_motion_battery:
+        entity_id: binary_sensor.hall_motion
+        value_template: "{{ state_attr('binary_sensor.hall_motion', 'battery_level') }}"
+
+      bedroom_window_battery:
+        entity_id: binary_sensor.bedroom_window
+        value_template: "{{ state_attr('binary_sensor.bedroom_window', 'battery_level') }}"
+      bedroom_motion_battery:
+        entity_id: binary_sensor.bedroom_motion
+        value_template: "{{ state_attr('binary_sensor.bedroom_motion', 'battery_level') }}"
+
+      wc_waterleak_battery:
+        entity_id: binary_sensor.wc_waterleak
+        value_template: "{{ state_attr('binary_sensor.wc_waterleak', 'battery_level') }}"
+
+homeassistant:
+  customize:
+    # ванная
+    sensor.bathroom_temperature_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: bathroom
+
+    # серверный шкаф
+    sensor.serverbox_temperature_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: other
+
+    # зал
+    sensor.livingroom_window_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_balcony_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_motion_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+    sensor.livingroom_cube_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: livingroom
+
+    # кухня
+    sensor.kitchen_window_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: kitchen
+    sensor.kitchen_motion_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: kitchen
+    sensor.kitchen_waterleak_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: kitchen
+
+    # прихожая
+    sensor.hall_entrance_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: hall
+    sensor.hall_motion_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: hall
+
+    # спальня
+    sensor.bedroom_window_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: bedroom
+    sensor.bedroom_motion_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: bedroom
+
+    # туалет
+    sensor.wc_waterleak_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: kitchen

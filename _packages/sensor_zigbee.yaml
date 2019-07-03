@@ -16,94 +16,99 @@ homeassistant:
       icon: mdi:gauge
       device_class: pressure
       room: bathroom
-    sensor.bathroom_battery:
-      friendly_name: Батарея
-      device_class: battery
-      room: bathroom
-    sensor.bathroom_linkquality:
-      friendly_name: Сигнал
-      device_class: signal_strength
-      room: bathroom
+
+    # серверный шкаф
+    sensor.serverbox_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: other
+    sensor.serverbox_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: other
+    sensor.serverbox_pressure:
+      friendly_name: Давление
+      icon: mdi:gauge
+      device_class: pressure
+      room: other
 
     # зал
     binary_sensor.livingroom_window:
       friendly_name: Окно
       device_class: window
       room: livingroom
-    sensor.livingroom_window_battery:
-      friendly_name: Батарея
-      device_class: battery
-      room: livingroom
-    sensor.livingroom_window_linkquality:
-      friendly_name: Сигнал
-      device_class: signal_strength
-      room: livingroom
-
     binary_sensor.livingroom_balcony:
       friendly_name: Балкон
       device_class: door
       room: livingroom
-    sensor.livingroom_balcony_battery:
-      friendly_name: Батарея
-      device_class: battery
-      room: livingroom
-    sensor.livingroom_balcony_linkquality:
-      friendly_name: Сигнал
-      device_class: signal_strength
-      room: livingroom
-
     binary_sensor.livingroom_motion:
       friendly_name: Движение
       device_class: occupancy
       room: livingroom
-    sensor.livingroom_motion_illuminance:
+    sensor.livingroom_illuminance:
       friendly_name: Яркость
       device_class: illuminance
       room: livingroom
-    sensor.livingroom_motion_battery:
-      friendly_name: Батарея
-      device_class: battery
-      room: livingroom
-    sensor.livingroom_motion_linkquality:
-      friendly_name: Сигнал
-      device_class: signal_strength
-      room: livingroom
-
     sensor.livingroom_cube:
       friendly_name: Действие
       device_class: illuminance
       icon: mdi:gesture-double-tap
       room: livingroom
-    sensor.livingroom_cube_battery:
-      friendly_name: Батарея
-      device_class: battery
-      room: livingroom
-    sensor.livingroom_cube_linkquality:
-      friendly_name: Сигнал
-      device_class: signal_strength
-      room: livingroom
 
     # кухня
-    sensor.kitchen_temperature:
-      friendly_name: Температура
-      icon: mdi:thermometer
-      device_class: temperature
+    binary_sensor.kitchen_motion:
+      friendly_name: Движение
+      device_class: occupancy
       room: kitchen
-    sensor.kitchen_humidity:
-      friendly_name: Влажность
-      icon: mdi:water-percent
-      device_class: humidity
+    sensor.kitchen_illuminance:
+      friendly_name: Яркость
+      device_class: illuminance
       room: kitchen
-    sensor.kitchen_pressure:
-      friendly_name: Давление
-      icon: mdi:gauge
-      device_class: pressure
+    binary_sensor.kitchen_waterleak:
+      friendly_name: Утечка воды
+      device_class: problem
       room: kitchen
-    sensor.kitchen_battery:
-      friendly_name: Батарея
-      device_class: battery
+    binary_sensor.kitchen_window:
+      friendly_name: Окно
+      device_class: window
       room: kitchen
-    sensor.kitchen_linkquality:
-      friendly_name: Сигнал
-      device_class: signal_strength
-      room: kitchen
+
+    # прихожая
+    binary_sensor.hall_motion:
+      friendly_name: Движение
+      device_class: motion
+      room: hall
+    sensor.hall_illuminance:
+      friendly_name: Яркость
+      device_class: illuminance
+      room: hall
+    sensor.hall_illuminance_gw:
+      friendly_name: Яркость
+      device_class: illuminance
+      room: other
+    binary_sensor.hall_entrance:
+      friendly_name: Вход
+      device_class: door
+      room: hall
+
+    # спальня
+    binary_sensor.bedroom_motion:
+      friendly_name: Движение
+      device_class: motion
+      room: bedroom
+    sensor.bedroom_illuminance:
+      friendly_name: Яркость
+      device_class: illuminance
+      room: bedroom
+    binary_sensor.bedroom_window:
+      friendly_name: Окно
+      device_class: window
+      room: bedroom
+
+    # туалет
+    binary_sensor.wc_waterleak:
+      friendly_name: Утечка воды
+      device_class: problem
+      room: wc

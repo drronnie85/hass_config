@@ -17,47 +17,6 @@ homeassistant:
       api_password: !secret http_password
   packages: !include_dir_named _packages/
 
-# sia:
-#   port: 1234
-#   hubs:
-#     - name: ajax
-#       account: 7F192
-
-lovelace:
-  mode: yaml
-  
-frontend:
-config:
-http:
-  base_url: nas.drronniesoft.info:8123
-updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
-
-discovery:
-conversation:
-dialogflow:
-history:
-logbook:
-map:
-sun:
-
-#logger:
-#  default: debug
-
-recorder:
-  purge_keep_days: 365
-  db_url: !secret mssql
-
-hassio:
-
-smartir:
-
-upnp:
-  port_mapping: true
-  ports:
-    hass: 8123
-
 zone:
   - name: home
     latitude: !secret lat_home
@@ -79,11 +38,62 @@ weather:
   - platform: darksky
     api_key: !secret darksky_key
     mode: daily
+    
+telegram_bot:
+  platform: polling
+  api_key: !secret telegram_key
+  allowed_chat_ids:
+    - !secret telegram_chatid_andrey
+    - !secret telegram_chatid_oksana
+    - !secret telegram_chatid_group
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_key
 
 mqtt:
   password: hello
-  discovery: true
-  discovery_prefix: homeassistant
+  # discovery: true
+  # discovery_prefix: homeassistant
+
+hassio:
+smartir:
+recorder:
+  purge_keep_days: 365
+  db_url: !secret mssql
+
+lovelace:
+  mode: yaml
+  
+http:
+  base_url: nas.drronniesoft.info:8123
+
+frontend:
+config:
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+discovery:
+conversation:
+dialogflow:
+history:
+logbook:
+map:
+sun:
+
+#logger:
+#  default: debug
+
+
+
+
+upnp:
+  port_mapping: true
+  ports:
+    hass: 8123
+
 
 #tts:
 #  - platform: google
@@ -93,13 +103,6 @@ system_health:
 
 api:
 
-telegram_bot:
-  platform: polling
-  api_key: !secret telegram_key
-  allowed_chat_ids:
-    - !secret telegram_chatid_andrey
-    - !secret telegram_chatid_oksana
-    - !secret telegram_chatid_group
 
 notify:
   - name: telegram

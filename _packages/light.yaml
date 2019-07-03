@@ -94,6 +94,7 @@ group:
     icon: mdi:lightbulb
     entities:
       - light.hall
+      - light.hall_back
 
 homeassistant:
   customize:
@@ -126,6 +127,9 @@ homeassistant:
       room: bathroom
     light.hall:
       friendly_name: Прихожая
+      room: hall
+    light.hall_back:
+      friendly_name: Прихожая ночник
       room: hall
 
     group.light_livingroom:

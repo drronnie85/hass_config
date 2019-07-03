@@ -2,8 +2,12 @@ device_tracker:
   - platform: ping
     interval_seconds: 10
     consider_home: 180
+    new_device_defaults:
+      track_new_devices: true
+      hide_if_away: false
     hosts:
       srv_router_main:        192.168.1.1
+      srv_switch:             192.168.1.2
       srv_router_hall:        192.168.1.252
       srv_router_kitchen:     192.168.1.253
       srv_router_livingroom:  192.168.1.254
@@ -21,6 +25,9 @@ device_tracker:
       cam_cristoph:           192.168.1.46
       cam_hall:               192.168.1.47
       cam_bedroom:            192.168.1.48
+      cam_balcony:            192.168.1.49
+      cam_radunska:           192.168.1.50
+      cam_balzaka:            192.168.1.51
       iot_a1_livingroom:      192.168.1.61
       iot_rmpro_livingroom:   192.168.1.62
       iot_th10_bathroom:      192.168.1.63
@@ -33,6 +40,7 @@ device_tracker:
       iot_saltlamp_bedroom:   192.168.1.73
       iot_ajax:               192.168.1.74
       iot_mamibot:            192.168.1.75
+      iot_zigbee_hall:        192.168.1.76
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
   - platform: google_maps
@@ -50,6 +58,9 @@ homeassistant:
     device_tracker.phone_drronnie:
       friendly_name: Андрей
       icon: mdi:cellphone-android
+    device_tracker.srv_switch:
+      friendly_name: Свитч
+      icon: mdi:switch
     device_tracker.srv_router_main:
       friendly_name: Главный
       icon: mdi:router-wireless
@@ -86,6 +97,15 @@ homeassistant:
     device_tracker.cam_bedroom:
       friendly_name: Спальня
       icon: mdi:cctv
+    device_tracker.can_balcony:
+      friendly_name: Балкон
+      icon: mdi:cctv
+    device_tracker.can_radunska:
+      friendly_name: Радунская
+      icon: mdi:cctv
+    device_tracker.can_balzaka:
+      friendly_name: Бальзака
+      icon: mdi:cctv
     device_tracker.iot_rmpro_livingroom:
       friendly_name: Зал
       icon: mdi:remote
@@ -96,7 +116,10 @@ homeassistant:
       friendly_name: Кухня MP1
       icon: mdi:power-socket-eu
     device_tracker.iot_bridge_hall:
-      friendly_name: Прихожая
+      friendly_name: RF Прихожая
+      icon: mdi:remote
+    device_tracker.iot_zigbee_hall:
+      friendly_name: ZigBee Прихожая
       icon: mdi:remote
     device_tracker.iot_powr2_wc:
       friendly_name: Туалет

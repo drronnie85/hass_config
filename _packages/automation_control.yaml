@@ -23,19 +23,3 @@ input_text:
   last_motion_room:
     name: Движение - последняя комната
     initial: none
-
-automation:
-  - alias: Last_Motion
-    trigger:
-      platform: state
-      entity_id:
-        - binary_sensor.livingroom_motion
-        - binary_sensor.bedroom_motion
-        - binary_sensor.hall_motion
-        - binary_sensor.kitchen_motion
-      to: "on"
-    action:
-      - service: input_text.set_value
-        data_template:
-          entity_id: input_text.last_motion_room
-          value: "{{ states[trigger.entity_id].room }}"

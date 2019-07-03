@@ -1,0 +1,14 @@
+binary_sensor:
+  - name: kitchen_smoke
+    platform: mqtt
+    state_topic: bridge/rfin_sensor
+    payload_on: "80031DC0B"
+    off_delay: !secret sensor_delay_waterleak
+  
+homeassistant:
+  customize:
+    # кухня
+    binary_sensor.kitchen_smoke:
+      friendly_name: Дым
+      device_class: smoke
+      room: kitchen

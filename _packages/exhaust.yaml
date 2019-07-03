@@ -1,16 +1,28 @@
+sensor:
+  - platform: template
+    sensors:
+      kitchen_humidity_diff:
+        unit_of_measurement: "%"
+        entity_id:
+          - sensor.flat_humidity
+          - sensor.kitchen_humidity
+        value_template: >- 
+          {{ (((states.sensor.kitchen_humidity.state | float) - (states.sensor.flat_humidity.state | float)) / (states.sensor.flat_humidity.state | float) * 100) | round(0) }}
+      bathroom_humidity_diff:
+        unit_of_measurement: "%"
+        entity_id:
+          - sensor.flat_humidity
+          - sensor.bathroom_humidity
+        value_template: >- 
+          {{ (((states.sensor.bathroom_humidity.state | float) - (states.sensor.flat_humidity.state | float)) / (states.sensor.flat_humidity.state | float) * 100) | round(0) }}
+
 automation:
-  - alias: Exhaust kitchen on
+  - alias: exhaust_kitchen_on
     initial_state: 'false'
     trigger:
       platform: numeric_state
-      entity_id:
-        - sensor.kitchen_humidity
-        - sensor.flat_humidity_avg
-      value_template: >- 
-            {{ (((states.sensor.kitchen_humidity.state | float) - (states.sensor.flat_humidity_avg.state | float)) / (states.sensor.kitchen_humidity.state | float)) | round(0) }}
-      above: 7
-      for:
-        minutes: 1
+      entity_id: sensor.kitchen_humidity_diff
+      above: 10
     condition:
       - condition: state
         entity_id: input_boolean.automation_exhaust
@@ -18,21 +30,14 @@ automation:
     action:
       service: script.alarm_alert
       data_template:
-        message: "Вытяжка в кухне включена. (Проверка триггера)"
+        message: "Вытяжка в кухне включена."
 
-  - alias: Exhaust kitchen off
+  - alias: exhaust_kitchen_off
     initial_state: 'false'
     trigger:
       platform: numeric_state
-      entity_id:
-        - sensor.kitchen_humidity
-        - sensor.flat_humidity_avg
-      value_template: >- 
-            {{ (((states.sensor.kitchen_humidity.state | float) - (states.sensor.flat_humidity_avg.state | float)) / 
-                 (states.sensor.kitchen_humidity.state | float) * (100 | float)) | round(0) }}
-      below: 7
-      for:
-        minutes: 1
+      entity_id: sensor.kitchen_humidity_diff
+      below: 8
     condition:
       - condition: state
         entity_id: input_boolean.automation_exhaust
@@ -40,21 +45,14 @@ automation:
     action:
       service: script.alarm_alert
       data_template:
-        message: "Вытяжка в кухне выключена. (Проверка триггера)"
+        message: "Вытяжка в кухне выключена."
 
-  - alias: Exhaust bathroom on
+  - alias: exhaust_bathroom_on
     initial_state: 'false'
     trigger:
       platform: numeric_state
-      entity_id:
-        - sensor.0x00158d000303cb5f_temperature
-        - sensor.flat_humidity_avg
-      value_template: >- 
-            {{ (((states.sensor['0x00158d000303cb5f_temperature'].state | float) - (states.sensor.flat_humidity_avg.state | float)) /
-                 (states.sensor['0x00158d000303cb5f_temperature'].state | float) * (100 | float)) | round(0) }}
-      above: 7
-      for:
-        minutes: 1
+      entity_id: sensor.bathroom_humidity_diff
+      above: 10
     condition:
       - condition: state
         entity_id: input_boolean.automation_exhaust
@@ -62,20 +60,14 @@ automation:
     action:
       service: script.alarm_alert
       data_template:
-        message: "Вытяжка в ванной включена. (Проверка триггера)"
+        message: "Вытяжка в ванной включена."
 
-  - alias: Exhaust bathroom off
+  - alias: exhaust_bathroom_off
     initial_state: 'false'
     trigger:
       platform: numeric_state
-      entity_id:
-        - sensor.0x00158d000303cb5f_temperature
-        - sensor.flat_humidity_avg
-      value_template: >- 
-            {{ (((states.sensor['0x00158d000303cb5f_temperature'].state | float) - (states.sensor.flat_humidity_avg.state | float)) / (states.sensor['0x00158d000303cb5f_temperature'].state | float)) | round(0) }}
-      below: 7
-      for:
-        minutes: 1
+      entity_id: sensor.bathroom_humidity_diff
+      below: 8
     condition:
       - condition: state
         entity_id: input_boolean.automation_exhaust
@@ -83,4 +75,4 @@ automation:
     action:
       service: script.alarm_alert
       data_template:
-        message: "Вытяжка в ванной выключена. (Проверка триггера)"
+        message: "Вытяжка в ванной выключена."

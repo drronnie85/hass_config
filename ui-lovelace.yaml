@@ -2,6 +2,8 @@ title: Дом Андрея и Оксаны
 resources:
   - type: module
     url: /local/custom_ui/weather-card.js?v=0.24
+  - type: module
+    url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.1
 views:
   - id: climate
     title: Климат
@@ -21,47 +23,62 @@ views:
             type: custom:weather-card
       - type: vertical-stack
         cards:
-          - type: glance
-            title: Улица
-            show_name: false
-            entities:
-              - sensor.dark_sky_temperature
-              - sensor.dark_sky_humidity
-              - sensor.dark_sky_pressure
           - type: horizontal-stack
             cards:
-            - type: glance
-              title: Зал
-              show_name: false
-              entities:
-                - sensor.livingroom_temperature
-                - sensor.livingroom_humidity
-            - type: glance
-              title: Спальня
-              show_name: false
-              entities:
-                - sensor.bedroom_temperature
-                - sensor.bedroom_humidity
+              - type: glance
+                title: Улица
+                show_name: false
+                entities:
+                  - sensor.dark_sky_temperature
+                  - sensor.dark_sky_humidity
+              - type: glance
+                title: Среднее
+                show_name: false
+                entities:
+                  - sensor.flat_temperature
+                  - sensor.flat_humidity
           - type: horizontal-stack
             cards:
-            - type: glance
-              title: Кухня
-              show_name: false
-              entities:
-                - sensor.kitchen_temperature
-                - sensor.kitchen_humidity
-            - type: glance
-              title: Ванная
-              show_name: false
-              entities:
-                - sensor.bathroom_temperature
-                - sensor.bathroom_humidity
-          - type: glance
-            title: Среднее
-            show_name: false
-            entities:
-              - sensor.flat_temperature_avg
-              - sensor.flat_humidity_avg
+              - type: glance
+                title: Зал
+                show_name: false
+                entities:
+                  - sensor.livingroom_temperature
+                  - sensor.livingroom_humidity
+              - type: glance
+                title: Спальня
+                show_name: false
+                entities:
+                  - sensor.bedroom_temperature
+                  - sensor.bedroom_humidity
+          - type: horizontal-stack
+            cards:
+              - type: glance
+                title: Кухня
+                show_name: false
+                entities:
+                  - sensor.kitchen_temperature
+                  - sensor.kitchen_humidity
+              - type: glance
+                title: Ванная
+                show_name: false
+                entities:
+                  - sensor.bathroom_temperature
+                  - sensor.bathroom_humidity
+          - type: horizontal-stack
+            cards:
+              - type: glance
+                title: Прихожая
+                show_name: false
+                entities:
+                  - sensor.hall_temperature
+                  - sensor.hall_humidity
+              - type: glance
+                title: Балкон
+                show_name: false
+                entities:
+                  - sensor.balcony_temperature
+                  - sensor.balcony_humidity
       - type: vertical-stack
         cards:
           - type: history-graph
@@ -75,7 +92,7 @@ views:
                 name: Кухня
               - entity: sensor.bathroom_temperature
                 name: Ванная
-              - entity: sensor.flat_temperature_avg
+              - entity: sensor.flat_temperature
                 name: Средняя
           - type: history-graph
             title: Влажность
@@ -88,19 +105,22 @@ views:
                 name: Кухня
               - entity: sensor.bathroom_humidity
                 name: Ванная
-              - entity: sensor.flat_humidity_avg
+              - entity: sensor.flat_humidity
                 name: Средняя
   - id: home
     title: Дом
     icon: mdi:home-assistant
     cards:
       - type: entities
-        title: Освещение гр
-        show_header_toggle: false
+        title: Освещение
         entities:
           - group.light_livingroom
           - group.light_bedroom
           - group.light_kitchen
+          - group.light_hall
+          - group.light_corridor
+          - group.light_wc
+          - group.light_bathroom
       - type: entities
         title: Освещение
         show_header_toggle: false
@@ -121,6 +141,7 @@ views:
           - light.bathroom
           - type: divider
           - light.hall
+          - light.hall_back
       - type: glance
         title: Пылесос
         #show_name: false
@@ -172,6 +193,20 @@ views:
               - entity: script.humidifier_bedroom_ion
                 tap_action:
                   action: toggle
+  - id: multimedia
+    title: Мультимедиа
+    icon: mdi:play-circle-outline
+    cards:
+      - type: custom:mini-media-player
+        entity: media_player.bedroom_ghmini
+      - type: custom:mini-media-player
+        entity: media_player.livingroom_mitvbox
+      - type: entities
+        title: Экран
+        show_header_toggle: false
+        entities:
+          - cover.projector_screen
+
   # - id: camera
   #   title: Камеры
   #   icon: mdi:camera
@@ -255,36 +290,80 @@ views:
   - id: devices
     title: Устройства
     icon: mdi:tablet-cellphone
-    badges:
-      - device_tracker.phone_oksana
-      - device_tracker.phone_drronnie
     cards:
       - type: history-graph
         title: Температура
         entities:
-          - entity: sensor.server_temperature
-            name: Сервер
-      - type: history-graph
-        title: Напряжение
-        entities:
-          - sensor.ups_input_voltage
-          - sensor.ups_output_voltage
+          - entity: sensor.serverbox_temperature
+            name: Серверный шкаф
+          - entity: sensor.ups_battery_temperature
+            name: Батарея ИБП
       - type: horizontal-stack
         cards:
-          - type: gauge
-            entity: sensor.ups_battery_charge
-            min: 0
-            max: 100
-          - type: gauge
-            entity: sensor.ups_battery_temperature
-            min: 10
-            max: 60
+          - type: entities
+            title: Показатели
+            show_header_toggle: false
+            entities:
+              - entity: sensor.serverbox_temperature
+                name: Серверный шкаф
+              - entity: sensor.ups_battery_temperature
+                name: Батарея ИБП
+              - sensor.ups_battery_charge
+              - sensor.ups_input_voltage
+              - sensor.ups_output_voltage
+          - type: entities
+            title: Датчики
+            show_header_toggle: false
+            entities:
+              - entity: sensor.livingroom_window_battery
+                name: Зал окно
+              - entity: sensor.livingroom_balcony_battery
+                name: Зал балкон
+              - entity: sensor.livingroom_motion_battery
+                name: Зал движение
+              - entity: sensor.livingroom_cube_battery
+                name: Зал куб
+              - type: divider
+              - entity: sensor.bedroom_window_battery
+                name: Спальня окно
+              - entity: sensor.bedroom_motion_battery
+                name: Спальня движение
+              - type: divider
+              - entity: sensor.kitchen_window_battery
+                name: Кухня окно
+              - entity: sensor.kitchen_motion_battery
+                name: Кухня движение
+              - entity: sensor.kitchen_waterleak_battery
+                name: Кухня утечка
+              - type: divider
+              - entity: sensor.wc_waterleak_battery
+                name: Туалет утечка
+              - type: divider
+              - entity: sensor.bathroom_temperature_battery
+                name: Ванная утечка
+              - type: divider
+              - entity: sensor.hall_entrance_battery
+                name: Прихожая вход
+              - entity: sensor.hall_motion_battery
+                name: Прихожая движение
+              - entity: sensor.hall_temperature_battery
+                name: Прихожая температура
+              - type: divider
+              - entity: sensor.balcony_temperature_battery
+                name: Балкон температура
+              - type: divider
+              - entity: sensor.serverbox_temperature_battery
+                name: Серверный шкаф температура
       - type: horizontal-stack
         cards:
           - type: entities
             title: Медиа
             show_header_toggle: false
             entities:
+              - device_tracker.phone_oksana
+              - device_tracker.phone_drronnie
+              - type: divider
+              - device_tracker.srv_switch
               - device_tracker.srv_router_main
               - device_tracker.srv_router_hall
               - device_tracker.srv_router_kitchen
@@ -309,10 +388,13 @@ views:
               - device_tracker.cam_entrance
               - device_tracker.cam_tambour
               - device_tracker.cam_livingroom
+              - device_tracker.cam_balcony
               - device_tracker.cam_bedroom
               - device_tracker.cam_cristoph
               - device_tracker.cam_kitchen
               - device_tracker.cam_hall
+              - device_tracker.cam_radunska
+              - device_tracker.cam_balzaka
           - type: entities
             title: IoT
             show_header_toggle: false
@@ -329,16 +411,4 @@ views:
               - device_tracker.iot_powr2_wc
               - device_tracker.iot_ajax
               - device_tracker.iot_mamibot
-  - id: map
-    title: Карта
-    icon: mdi:map
-    panel: true
-    cards:
-      - type: map
-        default_zoom: 15
-        entities:
-          - device_tracker.google_maps_105861814760109955404
-          - device_tracker.google_maps_104258330239786803059
-          - zone.home
-          - zone.work
-          - zone.motherinlaw
+              - device_tracker.iot_zigbee_hall
