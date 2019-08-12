@@ -25,10 +25,26 @@ cover:
   - platform: template
     covers:
       projector_screen:
-        friendly_name: "Экран проектора"
         open_cover:
           service: script.open_projector_screen
         close_cover:
           service: script.close_projector_screen
         stop_cover:
           service: script.stop_projector_screen
+  - platform: mqtt
+    name: shutters_kitchen
+    command_topic: "bridge/rfout/set"
+    payload_open: "C001016E18000B60E8"
+    payload_close: "C001016D18000B60E2"
+    payload_stop: "C001016D18000B60E4"
+
+homeassistant:
+  customize:
+    cover.projector_screen:
+      friendly_name: Экран проектора
+      room: livingroom
+
+    cover.shutters_kitchen:
+      friendly_name: Рольставни Кухня
+      room: kitchen
+

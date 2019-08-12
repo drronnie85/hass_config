@@ -19,6 +19,23 @@ input_boolean:
     icon: mdi:thermometer
     initial: on
 
+  daylight:
+    name: Светлое время суток
+    icon: mdi:lightbulb
+    initial: on
+
+
+  exhaust_kitchen:
+    name: Вытяжка
+    icon: mdi:fan
+    initial: off
+
+  exhaust_bathroom:
+    name: Вытяжка
+    icon: mdi:fan
+    initial: off
+
+
 input_text:
   last_motion_room:
     name: Движение - последняя комната

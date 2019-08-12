@@ -2,9 +2,7 @@ device_tracker:
   - platform: ping
     interval_seconds: 10
     consider_home: 180
-    new_device_defaults:
-      track_new_devices: true
-      hide_if_away: false
+    track_new_devices: true
     hosts:
       srv_router_main:        192.168.1.1
       srv_switch:             192.168.1.2
@@ -28,9 +26,13 @@ device_tracker:
       cam_balcony:            192.168.1.49
       cam_radunska:           192.168.1.50
       cam_balzaka:            192.168.1.51
+      cam_yard:               192.168.1.52
+      cam_23entrance:         192.168.31.160
+      cam_23flat:             192.168.31.229
+      cam_23vitalik:          192.168.31.128
       iot_a1_livingroom:      192.168.1.61
       iot_rmpro_livingroom:   192.168.1.62
-      iot_th10_bathroom:      192.168.1.63
+      iot_th10_server:        192.168.1.63
       iot_rmpro_bedroom:      192.168.1.64
       iot_a1_bedroom:         192.168.1.65
       iot_mp1_kitchen:        192.168.1.66
@@ -43,6 +45,7 @@ device_tracker:
       iot_zigbee_hall:        192.168.1.76
       media_mibox_livingroom: 192.168.1.91
       media_ghmini_bedroom:   192.168.1.92
+      media_firetv_bedroom:   192.168.1.92
   - platform: google_maps
     username: !secret google_login
     password: !secret google_pass
@@ -54,96 +57,131 @@ homeassistant:
   customize:
     device_tracker.phone_oksana:
       friendly_name: Оксана
+      friendly_type: Телефон
       icon: mdi:cellphone-android
     device_tracker.phone_drronnie:
       friendly_name: Андрей
+      friendly_type: Телефон
       icon: mdi:cellphone-android
     device_tracker.srv_switch:
-      friendly_name: Свитч
+      friendly_name: Главный
+      friendly_type: Свитч
       icon: mdi:switch
     device_tracker.srv_router_main:
       friendly_name: Главный
+      friendly_type: Роутер
       icon: mdi:router-wireless
     device_tracker.srv_router_hall:
       friendly_name: Прихожая
+      friendly_type: Роутер
       icon: mdi:router-wireless
     device_tracker.srv_router_kitchen:
       friendly_name: Кухня
+      friendly_type: Роутер
       icon: mdi:router-wireless
     device_tracker.srv_router_livingroom:
       friendly_name: Зал
+      friendly_type: Роутер
       icon: mdi:router-wireless
     device_tracker.cam_livingroom:
       friendly_name: Зал
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_tambour:
       friendly_name: Тамбур
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_loft:
       friendly_name: Чердак
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_entrance:
       friendly_name: Подъезд
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_kitchen:
       friendly_name: Кухня
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_cristoph:
       friendly_name: Кристоф
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_hall:
       friendly_name: Прихожая
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.cam_bedroom:
       friendly_name: Спальня
+      friendly_type: Камера
       icon: mdi:cctv
-    device_tracker.can_balcony:
+    device_tracker.cam_balcony:
       friendly_name: Балкон
+      friendly_type: Камера
       icon: mdi:cctv
-    device_tracker.can_radunska:
+    device_tracker.cam_radunska:
       friendly_name: Радунская
+      friendly_type: Камера
       icon: mdi:cctv
-    device_tracker.can_balzaka:
+    device_tracker.cam_balzaka:
       friendly_name: Бальзака
+      friendly_type: Камера
+      icon: mdi:cctv
+    device_tracker.cam_yard:
+      friendly_name: Двор
+      friendly_type: Камера
       icon: mdi:cctv
     device_tracker.iot_rmpro_livingroom:
       friendly_name: Зал
+      friendly_type: RMPro
       icon: mdi:remote
     device_tracker.iot_a1_bedroom:
       friendly_name: Спальня
+      friendly_type: A1
       icon: mdi:thermometer
     device_tracker.iot_mp1_kitchen:
       friendly_name: Кухня MP1
+      friendly_type: MP1
       icon: mdi:power-socket-eu
     device_tracker.iot_bridge_hall:
-      friendly_name: RF Прихожая
+      friendly_name: Прихожая
+      friendly_type: RF Bridge
       icon: mdi:remote
     device_tracker.iot_zigbee_hall:
-      friendly_name: ZigBee Прихожая
+      friendly_name: Прихожая
+      friendly_type: ZigBee Bridge
       icon: mdi:remote
     device_tracker.iot_powr2_wc:
       friendly_name: Туалет
+      friendly_type: POWR2
       icon: mdi:power-socket-eu
     device_tracker.iot_saltlamp_bedroom:
       friendly_name: Спальня
+      friendly_type: SP1
       icon: mdi:lightbulb
     device_tracker.iot_th10_kitchen:
       friendly_name: Кухня
+      friendly_type: TH10
       icon: mdi:thermometer
     device_tracker.iot_th10_server:
       friendly_name: Ванная
+      friendly_type: TH10
       icon: mdi:thermometer
     device_tracker.iot_a1_livingroom:
       friendly_name: Зал
+      friendly_type: A1
       icon: mdi:thermometer
     device_tracker.iot_rmpro_bedroom:
       friendly_name: Спальня
+      friendly_type: RMPro
       icon: mdi:remote
     device_tracker.iot_ajax:
-      friendly_name: Хаб Ajax
+      friendly_name: Ajax
+      friendly_type: Хаб
       icon: mdi:shield-home
     device_tracker.iot_mamibot:
       friendly_name: Mamibot
+      friendly_type: Пылесос
       icon: mdi:robot-vacuum
 
     device_tracker.media_mibox_livingroom:
@@ -152,6 +190,9 @@ homeassistant:
     device_tracker.media_ghmini_bedroom:
       friendly_name: Спальня
       icon: mdi:google-home
+    device_tracker.media_firetv_livingroom:
+      friendly_name: Зал
+      icon: mdi:television
 
     device_tracker.srv_esxi:
       friendly_name: ESXi

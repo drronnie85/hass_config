@@ -16,23 +16,10 @@ homeassistant:
       icon: mdi:gauge
       device_class: pressure
       room: bathroom
-
-    # серверный шкаф
-    sensor.serverbox_temperature:
-      friendly_name: Температура
-      icon: mdi:thermometer
-      device_class: temperature
-      room: other
-    sensor.serverbox_humidity:
-      friendly_name: Влажность
-      icon: mdi:water-percent
-      device_class: humidity
-      room: other
-    sensor.serverbox_pressure:
-      friendly_name: Давление
-      icon: mdi:gauge
-      device_class: pressure
-      room: other
+    binary_sensor.bathroom_waterleak:
+      friendly_name: Утечка воды
+      device_class: problem
+      room: bathroom
 
     # зал
     binary_sensor.livingroom_window:
@@ -53,7 +40,7 @@ homeassistant:
       room: livingroom
     sensor.livingroom_cube:
       friendly_name: Действие
-      device_class: illuminance
+      device_class: touch
       icon: mdi:gesture-double-tap
       room: livingroom
 
@@ -93,6 +80,22 @@ homeassistant:
       device_class: door
       room: hall
 
+    sensor.hall_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: hall
+    sensor.hall_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: hall
+    sensor.hall_pressure:
+      friendly_name: Давление
+      icon: mdi:gauge
+      device_class: pressure
+      room: hall
+
     # спальня
     binary_sensor.bedroom_motion:
       friendly_name: Движение
@@ -112,3 +115,20 @@ homeassistant:
       friendly_name: Утечка воды
       device_class: problem
       room: wc
+
+    # балкон
+    sensor.balcony_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: other
+    sensor.balcony_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: other
+    sensor.balcony_pressure:
+      friendly_name: Давление
+      icon: mdi:gauge
+      device_class: pressure
+      room: other

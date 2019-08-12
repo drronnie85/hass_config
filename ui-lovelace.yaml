@@ -31,12 +31,14 @@ views:
                 entities:
                   - sensor.dark_sky_temperature
                   - sensor.dark_sky_humidity
+                  - sensor.dark_sky_pressure
               - type: glance
                 title: Среднее
                 show_name: false
                 entities:
                   - sensor.flat_temperature
                   - sensor.flat_humidity
+                  - sensor.flat_pressure
           - type: horizontal-stack
             cards:
               - type: glance
@@ -92,8 +94,12 @@ views:
                 name: Кухня
               - entity: sensor.bathroom_temperature
                 name: Ванная
+              - entity: sensor.hall_temperature
+                name: Прихожая
               - entity: sensor.flat_temperature
                 name: Средняя
+              - entity: sensor.balcony_temperature
+                name: Балкон
           - type: history-graph
             title: Влажность
             entities:
@@ -105,22 +111,16 @@ views:
                 name: Кухня
               - entity: sensor.bathroom_humidity
                 name: Ванная
+              - entity: sensor.hall_humidity
+                name: Прихожая
               - entity: sensor.flat_humidity
                 name: Средняя
+              - entity: sensor.balcony_humidity
+                name: Балкон
   - id: home
     title: Дом
     icon: mdi:home-assistant
     cards:
-      - type: entities
-        title: Освещение
-        entities:
-          - group.light_livingroom
-          - group.light_bedroom
-          - group.light_kitchen
-          - group.light_hall
-          - group.light_corridor
-          - group.light_wc
-          - group.light_bathroom
       - type: entities
         title: Освещение
         show_header_toggle: false
@@ -131,6 +131,7 @@ views:
           - light.bedroom
           - light.bedroom_back
           - type: divider
+          - cover.shutters_kitchen
           - light.kitchen
           - light.kitchen_back
           - type: divider
@@ -158,22 +159,22 @@ views:
     cards:
       - type: vertical-stack
         cards:
+          - type: thermostat
+            entity: climate.livingroom_ac
           - type: history-graph
             title: Зал
             entities:
               - sensor.livingroom_temperature
               - sensor.livingroom_humidity
-          - type: thermostat
-            entity: climate.livingroom_ac
       - type: vertical-stack
         cards:
+          - type: thermostat
+            entity: climate.bedroom_ac
           - type: history-graph
             title: Спальня
             entities:
               - sensor.bedroom_temperature
               - sensor.bedroom_humidity
-          - type: thermostat
-            entity: climate.bedroom_ac
           - type: glance
             title: Увлажнитель спальня
             show_state: false
@@ -206,46 +207,47 @@ views:
         show_header_toggle: false
         entities:
           - cover.projector_screen
-
-  # - id: camera
-  #   title: Камеры
-  #   icon: mdi:camera
-  #   cards:
-  #     - type: picture-glance
-  #       title: Тамбур
-  #       entities: []
-  #       camera_image: camera.tambur
-  #     - type: picture-glance
-  #       title: Прихожая
-  #       entities:
-  #         - light.hall
-  #       camera_image: camera.prikhozhaia
-  #     - type: picture-glance
-  #       title: Зал
-  #       entities:
-  #         - light.livingroom
-  #         - light.livingroom_back
-  #       camera_image: camera.zal
-  #     - type: picture-glance
-  #       title: Спальня
-  #       entities:
-  #         - light.bedroom
-  #         - light.bedroom_back
-  #       camera_image: camera.spalnia
-  #     - type: picture-glance
-  #       title: Кристоф
-  #       entities: []
-  #       camera_image: camera.kristof
-  #     - type: picture-glance
-  #       title: Кухня
-  #       entities:
-  #         - light.kitchen
-  #         - light.kitchen_back
-  #       camera_image: camera.kukhnia
+  - id: camera
+    title: Камеры
+    icon: mdi:camera
+    cards:
+      - type: picture-glance
+        title: Тамбур
+        entities: []
+        camera_image: camera.tambour
+      - type: picture-glance
+        title: Прихожая
+        entities:
+          - light.hall
+        camera_image: camera.hall
+      - type: picture-glance
+        title: Зал
+        entities:
+          - light.livingroom
+          - light.livingroom_back
+        camera_image: camera.livingroom
+      - type: picture-glance
+        title: Спальня
+        entities:
+          - light.bedroom
+          - light.bedroom_back
+        camera_image: camera.bedroom
+      - type: picture-glance
+        title: Кристоф
+        entities: []
+        camera_image: camera.christoph
+      - type: picture-glance
+        title: Кухня
+        entities:
+          - light.kitchen
+          - light.kitchen_back
+        camera_image: camera.kitchen
   - id: security
     title: Информация
     icon: mdi:shield
     cards:
+      - type: alarm-panel
+        entity: alarm_control_panel.ha_alarm
       - type: entities
         title: Охрана
         show_header_toggle: false
@@ -339,6 +341,8 @@ views:
               - entity: sensor.wc_waterleak_battery
                 name: Туалет утечка
               - type: divider
+              - entity: sensor.bathroom_waterleak_battery
+                name: Ванная температура
               - entity: sensor.bathroom_temperature_battery
                 name: Ванная утечка
               - type: divider
@@ -351,9 +355,6 @@ views:
               - type: divider
               - entity: sensor.balcony_temperature_battery
                 name: Балкон температура
-              - type: divider
-              - entity: sensor.serverbox_temperature_battery
-                name: Серверный шкаф температура
       - type: horizontal-stack
         cards:
           - type: entities
@@ -369,6 +370,7 @@ views:
               - device_tracker.srv_router_kitchen
               - device_tracker.srv_router_livingroom
               - device_tracker.media_mibox_livingroom
+              - device_tracker.media_firetv_livingroom
               - device_tracker.media_ghmini_bedroom
           - type: entities
             title: Серверы
@@ -395,6 +397,7 @@ views:
               - device_tracker.cam_hall
               - device_tracker.cam_radunska
               - device_tracker.cam_balzaka
+              - device_tracker.cam_yard
           - type: entities
             title: IoT
             show_header_toggle: false
@@ -406,7 +409,7 @@ views:
               - device_tracker.iot_saltlamp_bedroom
               - device_tracker.iot_th10_kitchen
               - device_tracker.iot_mp1_kitchen
-              - device_tracker.iot_th10_bathroom
+              - device_tracker.iot_th10_server
               - device_tracker.iot_bridge_hall
               - device_tracker.iot_powr2_wc
               - device_tracker.iot_ajax

@@ -7,6 +7,14 @@ sensor:
     platform: mqtt
     state_topic: kitchen_th10/humidity
     unit_of_measurement: "%"
+  - name: serverbox_temperature
+    platform: mqtt
+    state_topic: server_th10/temperature
+    unit_of_measurement: "°C"
+  - name: serverbox_humidity
+    platform: mqtt
+    state_topic: server_th10/humidity
+    unit_of_measurement: "%"
 
 homeassistant:
   customize:
@@ -21,3 +29,15 @@ homeassistant:
       icon: mdi:water-percent
       device_class: humidity
       room: kitchen
+
+    # серверный шкаф
+    sensor.serverbox_temperature:
+      friendly_name: Температура
+      icon: mdi:thermometer
+      device_class: temperature
+      room: other
+    sensor.serverbox_humidity:
+      friendly_name: Влажность
+      icon: mdi:water-percent
+      device_class: humidity
+      room: other

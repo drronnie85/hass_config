@@ -1,0 +1,47 @@
+alarm_control_panel:
+  - name: ha_alarm
+    platform: manual_mqtt
+    state_topic: home/alarm
+    command_topic: home/alarm/set
+    pending_time: 0
+    trigger_time: 0
+
+automation:
+  - alias: ajax_disarmed
+    trigger:
+      platform: state
+      entity_id: binary_sensor.sia_status_ajaxhub
+      to: "on"
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: home/alarm/set
+          payload_template: DISARM
+  - alias: ajax_armed_away
+    trigger:
+      platform: state
+      entity_id: binary_sensor.sia_status_ajaxhub
+      to: "off"
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: home/alarm/set
+          payload_template: ARM_AWAY
+  - alias: notify_armed
+    trigger:
+      platform: state
+      entity_id: alarm_control_panel.ha_alarm
+      to: disarmed
+    action:
+      - service: script.alarm_armdisarm
+        data:
+          message: Система снята с охраны
+  - alias: notify_disarmed
+    trigger:
+      platform: state
+      entity_id: alarm_control_panel.ha_alarm
+      to: armed_away
+    action:
+      - service: script.alarm_armdisarm
+        data:
+          message: Система на охране

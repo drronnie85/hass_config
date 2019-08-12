@@ -4,10 +4,9 @@ sensor:
       bathroom_temperature_battery:
         entity_id: sensor.bathroom_temperature
         value_template: "{{ state_attr('sensor.bathroom_temperature', 'battery_level') }}"
-
-      serverbox_temperature_battery:
-        entity_id: sensor.serverbox_temperature
-        value_template: "{{ state_attr('sensor.serverbox_temperature', 'battery_level') }}"
+      bathroom_waterleak_battery:
+        entity_id: binary_sensor.bathroom_waterleak
+        value_template: "{{ state_attr('binary_sensor.bathroom_waterleak', 'battery_level') }}"
 
       balcony_temperature_battery:
         entity_id: sensor.balcony_temperature
@@ -22,9 +21,6 @@ sensor:
       livingroom_motion_battery:
         entity_id: binary_sensor.livingroom_motion
         value_template: "{{ state_attr('binary_sensor.livingroom_motion', 'battery_level') }}"
-      livingroom_cube_battery:
-        entity_id: binary_sensor.livingroom_cube
-        value_template: "{{ state_attr('binary_sensor.livingroom_cube', 'battery_level') }}"
 
       kitchen_window_battery:
         entity_id: binary_sensor.kitchen_window
@@ -64,9 +60,13 @@ homeassistant:
       friendly_name: Батарея
       device_class: battery
       room: bathroom
+    sensor.bathroom_waterleak_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: bathroom
 
-    # серверный шкаф
-    sensor.serverbox_temperature_battery:
+    # балкон
+    sensor.balcony_temperature_battery:
       friendly_name: Батарея
       device_class: battery
       room: other
@@ -109,6 +109,10 @@ homeassistant:
       device_class: battery
       room: hall
     sensor.hall_motion_battery:
+      friendly_name: Батарея
+      device_class: battery
+      room: hall
+    sensor.hall_temperature_battery:
       friendly_name: Батарея
       device_class: battery
       room: hall

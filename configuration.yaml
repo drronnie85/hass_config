@@ -38,7 +38,7 @@ weather:
   - platform: darksky
     api_key: !secret darksky_key
     mode: daily
-    
+
 telegram_bot:
   platform: polling
   api_key: !secret telegram_key
@@ -52,57 +52,25 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_key
 
+sia:
+  port:  12344
+  hubs:
+    - name: ajaxhub
+      account: 7F192
+
 mqtt:
   password: hello
-  # discovery: true
-  # discovery_prefix: homeassistant
+  discovery: true
+  discovery_prefix: homeassistant
 
-hassio:
-smartir:
 recorder:
   purge_keep_days: 365
   db_url: !secret mssql
-
-lovelace:
-  mode: yaml
-  
-http:
-  base_url: nas.drronniesoft.info:8123
-
-frontend:
-config:
-updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
-
-discovery:
-conversation:
-dialogflow:
-history:
-logbook:
-map:
-sun:
-
-#logger:
-#  default: debug
-
-
-
 
 upnp:
   port_mapping: true
   ports:
     hass: 8123
-
-
-#tts:
-#  - platform: google
-
-#cloud:
-system_health:
-
-api:
-
 
 notify:
   - name: telegram
@@ -119,3 +87,23 @@ sensor: !include sensor.yaml
 switch: !include switch.yaml
 input_select: !include input_select.yaml
 camera: !include camera.yaml
+
+lovelace:
+  mode: yaml
+http:
+  base_url: nas.drronniesoft.info:8123
+hassio:
+smartir:
+frontend:
+config:
+updater:
+  # include_used_components: true
+discovery:
+conversation:
+dialogflow:
+history:
+logbook:
+map:
+sun:
+system_health:
+api:

@@ -7,6 +7,7 @@ sensor:
           - sensor.bedroom_temperature
           - sensor.kitchen_temperature
           - sensor.bathroom_temperature
+          - sensor.hall_temperature
         value_template: >- 
           {{ states.sensor |
              rejectattr('state','eq','unavailable') | 
@@ -20,6 +21,7 @@ sensor:
           - sensor.bedroom_temperature
           - sensor.kitchen_temperature
           - sensor.bathroom_temperature
+          - sensor.hall_temperature
         value_template: >- 
           {{ (states.sensor |
               rejectattr('state','eq','unavailable') | 
@@ -41,6 +43,7 @@ sensor:
           - sensor.bedroom_humidity
           - sensor.kitchen_humidity
           - sensor.bathroom_humidity
+          - sensor.hall_humidity
         value_template: >- 
           {{ states.sensor |
              rejectattr('state','eq','unavailable') |
@@ -54,6 +57,7 @@ sensor:
           - sensor.bedroom_humidity
           - sensor.kitchen_humidity
           - sensor.bathroom_humidity
+          - sensor.hall_humidity
         value_template: >- 
           {{ (states.sensor |
               rejectattr('state','eq','unavailable') |
@@ -69,6 +73,36 @@ sensor:
         value_template: >- 
           {{ ((states.sensor.flat_humidity_sum.state | float) / (states.sensor.flat_humidity_count.state | float)) | round(2) }}
 
+      flat_pressure_count:
+        entity_id:
+          - sensor.bathroom_pressure
+          - sensor.hall_pressure
+        value_template: >- 
+          {{ states.sensor |
+             rejectattr('state','eq','unavailable') |
+             rejectattr('state','eq','unknown') |
+             rejectattr('attributes.room', 'eq', 'other') |
+             selectattr('attributes.device_class', 'eq', 'pressure') |
+             list | count | int }}
+      flat_pressure_sum:
+        entity_id:
+          - sensor.bathroom_pressure
+          - sensor.hall_pressure
+        value_template: >- 
+          {{ (states.sensor |
+              rejectattr('state','eq','unavailable') |
+              rejectattr('state','eq','unknown') |
+             rejectattr('attributes.room', 'eq', 'other') |
+              selectattr('attributes.device_class', 'eq', 'pressure') |
+              map(attribute='state') | map('float') | sum) | round(2) }}
+      flat_pressure:
+        unit_of_measurement: hPa
+        entity_id:
+          - sensor.flat_pressure_count
+          - sensor.flat_pressure_sum
+        value_template: >- 
+          {{ ((states.sensor.flat_pressure_sum.state | float) / (states.sensor.flat_pressure_count.state | float)) | round(2) }}
+
 homeassistant:
   customize:
     # общее
@@ -81,4 +115,9 @@ homeassistant:
       friendly_name: Влажность
       icon: mdi:water-percent
       device_class: humidity
+      room: other
+    sensor.flat_pressure:
+      friendly_name: Давление
+      icon: mdi:gauge
+      device_class: pressure
       room: other

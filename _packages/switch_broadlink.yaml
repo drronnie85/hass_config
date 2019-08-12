@@ -5,7 +5,7 @@ switch:
     type: rm2_pro_plus
     timeout: 15
   - platform: broadlink
-    host: 192.168.1.62
+    host: 97
     mac: "78:0F:77:00:D7:1B"
     type: rm2_pro_plus
     timeout: 15

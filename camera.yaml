@@ -1,7 +1,30 @@
-- platform: synology
-  url: !secret syno_addr
-  username: !secret syno_user
-  password: !secret syno_pass
-  timeout: 15
-  verify_ssl: False
-
+# - platform: synology
+#   url: !secret syno_addr
+#   username: !secret syno_user
+#   password: !secret syno_pass
+#   timeout: 15
+#   verify_ssl: false
+- platform: ffmpeg
+  name: tambour
+  #input: rtsp://syno:e7c1d48c1cc0b577a96d80861d4f4504@192.168.1.4:554/Sms=3.unicast
+  input: rtsp://admin:18511910@192.168.1.42/media/stream1
+- platform: ffmpeg
+  name: hall
+  #input: rtsp://syno:61833d410b019d8191bfafc61d7fa855@192.168.1.4:554/Sms=4.unicast
+  input: rtsp://admin:18511910@192.168.1.47/media/stream1
+- platform: ffmpeg
+  name: livingroom
+  #input: rtsp://syno:2bab01a76070a61188fc06216dbc2c08@192.168.1.4:554/Sms=5.unicast
+  input: rtsp://192.168.1.41:554/ch0_0.h264
+- platform: ffmpeg
+  name: bedroom
+  #input: rtsp://syno:9f9dabc7b8813cce286ba822fda14e38@192.168.1.4:554/Sms=6.unicast
+  input: rtsp://192.168.1.48:554/ch0_0.h264
+- platform: ffmpeg
+  name: kitchen
+  #input: rtsp://syno:6982273ebc406eed1359cbf94662695d@192.168.1.4:554/Sms=7.unicast
+  input: rtsp://admin:18511910@192.168.1.45/media/stream1
+- platform: ffmpeg
+  name: christoph
+  #input: rtsp://syno:c9c4bb9f902574f802f71271116ddea9@192.168.1.4:554/Sms=8.unicast
+  input: rtsp://admin:18511910@192.168.1.46/media/stream1

@@ -62,40 +62,6 @@ light:
     payload_on: "C00101631800F94168"
     payload_off: "C00101621800F94162"
 
-group:
-  light_livingroom:
-    icon: mdi:lightbulb
-    entities:
-      - light.livingroom
-      - light.livingroom_back
-  light_bedroom:
-    icon: mdi:lightbulb
-    entities:
-      - light.bedroom
-      - light.bedroom_back
-  light_kitchen:
-    icon: mdi:lightbulb
-    entities:
-      - light.kitchen
-      - light.kitchen_back
-  light_wc:
-    icon: mdi:lightbulb
-    entities:
-      - light.wc
-  light_corridor:
-    icon: mdi:lightbulb
-    entities:
-      - light.corridor
-  light_bathroom:
-    icon: mdi:lightbulb
-    entities:
-      - light.bathroom
-  light_hall:
-    icon: mdi:lightbulb
-    entities:
-      - light.hall
-      - light.hall_back
-
 homeassistant:
   customize:
     light.livingroom:
@@ -131,19 +97,3 @@ homeassistant:
     light.hall_back:
       friendly_name: Прихожая ночник
       room: hall
-
-    group.light_livingroom:
-      friendly_name: Зал
-    group.light_bedroom:
-      friendly_name: Спальня
-    group.light_kitchen:
-      friendly_name: Кухня
-    group.light_wc:
-      friendly_name: Туалет
-    group.light_corridor:
-      friendly_name: Коридор
-    group.light_bathroom:
-      friendly_name: Ванная
-    group.light_hall:
-      friendly_name: Прихожая
-
